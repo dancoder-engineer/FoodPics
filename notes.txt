@@ -1,0 +1,49 @@
+
+        let userData = {
+            userName: formData.userName,
+            password: formData.password1,
+            password_confirmation: formData.password2,
+            email: formData.email,
+            gotHowFar: 1,
+            paidHowFar: 50,
+            quizzes: [
+              
+            ]
+          }
+
+
+
+
+          
+        fetch("/users/", {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            accept: 'application/json' 
+          },
+          body: JSON.stringify(userData)
+        })
+        .then(res => res.json())
+  //      .then(data => console.log(data))
+        .then(history.push("/login/"))
+
+
+
+
+
+
+        })
+
+      
+        
+
+
+
+
+              t.string :UserName
+      t.string :password_digest
+      t.string :ActualName
+      t.text :Description
+      t.string :Pronouns
+      t.string :Website
+      t.timestamps
