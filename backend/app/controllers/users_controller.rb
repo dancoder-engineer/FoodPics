@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    skip_before_action :verify_authenticity_token
+   skip_before_action :verify_authenticity_token
 
     def index
         users = User.all
@@ -14,8 +14,12 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user=User.create(allowed)
-        render json: @user, status: :created
+        user=User.create(allowed)
+        if user.save
+            render json: user, status: :created
+        else
+            render json: {error: "Passwords don't match."}
+        end
     end
 
     def update
@@ -34,7 +38,7 @@ class UsersController < ApplicationController
     private
 
     def allowed
-        params.permit(:ActualName, :Description, :Pronouns, :UserName, :Website, :avatar, :password, :password_confirmation)
+        params.require(:user).permit(:ActualName, :Description, :Pronouns, :UserName, :Website, :avatar, :password, :password_confirmation)
     end
 
 end

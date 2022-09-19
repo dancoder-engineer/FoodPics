@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   resources :users
 
   post 'rails/active_storage/direct_uploads', to: 'direct_uploads#create'

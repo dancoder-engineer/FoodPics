@@ -1,0 +1,26 @@
+
+
+.userData {
+    border-style: double;
+    border-radius: 5px;
+    margin: auto;
+    width: 50%;
+    display: block;
+    padding: 20px;
+    background-color: lemonchiffon;
+}
+
+.avatarPic {
+    height: 100px;
+    margin: auto;
+    display:block;
+}
+
+.centered {
+    text-align: center;
+}
+
+.textA{
+    width: 350px;
+    height: 100px
+}

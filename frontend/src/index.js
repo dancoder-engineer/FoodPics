@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 import MakeUser from './components/MakeUser.js'
+import MakePost from './components/MakePost.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,7 @@ root.render(
       <Routes>
         <Route path='/' element={<App />} />
         <Route path='/register/' element={<MakeUser />} />
+        <Route path='/newpost/' element={<MakePost />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
