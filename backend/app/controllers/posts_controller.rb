@@ -9,9 +9,8 @@ class PostsController < ApplicationController
 
     def show
         post = Post.find_by(id: params[:id])
-        pic1 = rails_blob_path(post.pics[0])
-        pic2 = rails_blob_path(post.pics[1])
-        render json: ({post: post, pic1: pic1, pic2: pic2}), status: 200
+        pics = post.pics.map{|p| rails_blob_path(p) }
+        render json: ({post: post, pics: pics}), status: 200
     end
 
     def create
