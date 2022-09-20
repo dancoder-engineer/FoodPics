@@ -24,3 +24,32 @@
     width: 350px;
     height: 100px
 }
+
+
+
+
+.post {
+    border-style: double;
+    border-radius: 5px;
+    margin: auto;
+    width: 50%;
+    display: block;
+    padding: 20px;
+    background-color: lemonchiffon;
+}
+
+.miniPic {
+    display: block;
+    margin: auto;
+    width: 50px;
+    border-radius: 50px;
+}
+
+.floatCenter{
+    text-align: center;
+}
+
+.postPic {
+    height:150px;
+    padding: 10px
+}

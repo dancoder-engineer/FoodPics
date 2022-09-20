@@ -35,6 +35,12 @@ class UsersController < ApplicationController
         render json: {user: user, avatar_url: avatar_url}, status: 200
     end
 
+    def userAvatar
+        user=User.find_by(id:params[:id])
+        avatar = rails_blob_path(user.avatar)
+        render json: {UserName: user.UserName, avatar: avatar}
+    end
+
     private
 
     def allowed

@@ -1,13 +1,16 @@
 import React, {useState} from "react";
 import './info.css'
 
-import {assembleData, printFormdata} from './sharedfunctions/assembleData.js'
+import {assembleData} from './sharedfunctions/assembleData.js'
+import Post from './Post.js'
 
 function MakePost() {
 
+    let [postData, setPostData] = useState(null)
+
     let [sendingData, setSendingData] = useState({
         pics: [],
-        user_id: 1
+        user_id: 2
     })
 
     function handleChange(e) {
@@ -52,12 +55,13 @@ function MakePost() {
             })
             .then(res => res.json())
             .then(data => console.log(data))
+    }
 
-        
-
-        
-
-     
+    function grabPost() {
+        let postNo = 3
+        fetch('/posts/' + postNo)
+        .then(res => res.json())
+        .then(data => setPostData(data) )
 
     }
 
@@ -73,6 +77,9 @@ function MakePost() {
             </form><br /><br />
 
             <button onClick={handleClick}>Submit</button>
+            <br /><br /><br /><br /><br /><br /><br /><br />
+            <button onClick={grabPost}>Show me a test post</button>
+            {postData && <Post post={postData} /> }
         </div>
     )
 }
