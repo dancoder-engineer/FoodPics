@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import './info.css'
 
 import {assembleData} from './sharedfunctions/assembleData.js'
+import MultiplePicUploader from './MultiplePicUploader.js'
 import Post from './Post.js'
 
 function MakePost() {
@@ -10,7 +11,7 @@ function MakePost() {
 
     let [sendingData, setSendingData] = useState({
         pics: [],
-        user_id: 2
+        user_id: 1
     })
 
     function handleChange(e) {
@@ -58,12 +59,13 @@ function MakePost() {
     }
 
     function grabPost() {
-        let postNo = 3
+        let postNo = 2
         fetch('/posts/' + postNo)
         .then(res => res.json())
         .then(data => setPostData(data) )
 
     }
+
 
     return(
         <div>
@@ -72,8 +74,7 @@ function MakePost() {
                 Title: <input id="title" name="title" onChange={handleChange} /> <br />
                 Where was it taken?: <input id="place" name="place" onChange={handleChange} /> <br />
                 <textarea id="description" name="description" className="textA" onChange={handleChange} /><br />
-                File 1: <input type="file" id="file0" name="file0" onChange={handleChange} /> <br />
-                File 2:<input type="file" id="file1" name="file1" onChange={handleChange} /> 
+                <MultiplePicUploader handleChange={handleChange}/>
             </form><br /><br />
 
             <button onClick={handleClick}>Submit</button>

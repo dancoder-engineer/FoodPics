@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
 
     belongs_to :user
+    has_one :recipe
     
     has_many_attached :pics
 

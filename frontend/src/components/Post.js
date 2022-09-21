@@ -18,7 +18,7 @@ function Post({post}) {
 
     function createData(data) {
         setUserInfo(data)
-        setPics(() => post.pics.map((i) => <img className="postPic" src={i} />))
+        setPics(() => post.pics.map((i, index) => <img className="postPic" key={index} src={i} />))
     }
 return(
     <div className="post">
