@@ -4,10 +4,12 @@ import './info.css'
 import {assembleData} from './sharedfunctions/assembleData.js'
 import MultiplePicUploader from './MultiplePicUploader.js'
 import Post from './Post.js'
+import CreateRecipe from './CreateRecipe.js'
 
 function MakePost() {
 
     let [postData, setPostData] = useState(null)
+    let [hasRecipe, setHasRecipe] = useState(false)
 
     let [sendingData, setSendingData] = useState({
         pics: [],
@@ -66,6 +68,10 @@ function MakePost() {
 
     }
 
+    function test(e) {
+        setHasRecipe(e.target.checked)
+    }
+
 
     return(
         <div>
@@ -74,7 +80,10 @@ function MakePost() {
                 Title: <input id="title" name="title" onChange={handleChange} /> <br />
                 Where was it taken?: <input id="place" name="place" onChange={handleChange} /> <br />
                 <textarea id="description" name="description" className="textA" onChange={handleChange} /><br />
-                <MultiplePicUploader handleChange={handleChange}/>
+                <MultiplePicUploader handleChange={handleChange}/><br />
+                Include a Recipe: <input type="checkbox" onChange={test} /><br />
+                {hasRecipe && <CreateRecipe />}
+
             </form><br /><br />
 
             <button onClick={handleClick}>Submit</button>
