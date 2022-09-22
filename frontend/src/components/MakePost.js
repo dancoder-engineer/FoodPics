@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './info.css'
 
-import {assembleData} from './sharedfunctions/assembleData.js'
+import {assembleData, printFormdata} from './sharedfunctions/assembleData.js'
 import MultiplePicUploader from './MultiplePicUploader.js'
 import Post from './Post.js'
 import CreateRecipe from './CreateRecipe.js'
@@ -13,13 +13,22 @@ function MakePost() {
 
     let [sendingData, setSendingData] = useState({
         pics: [],
+        captions: [],
         user_id: 1
     })
 
 
 
-    function handleChange(e) {
-        if(e.target.id.startsWith("file")) { console.log(e.target) }
+    function handleChange(e) { 
+        if(e.target.id.startsWith("caption")) { 
+            let captions = sendingData.captions
+            let place=parseInt(e.target.id.split('caption')[1])
+            captions[place] = e.target.value
+            setSendingData({
+                ...sendingData,
+                captions: captions
+            })
+        }
         if(e.target.type ==="file") {
             let fileNo = parseInt(e.target.name.split("e")[1])
             setSendingData({
@@ -46,7 +55,12 @@ function MakePost() {
     //     printFormdata(formData)
     // if this is true, no file has been entered yet
     // console.log(e.target.files.length === 0)
-
+        let picCaptions = ""
+        for (let i in sendingData.captions) {
+            picCaptions += sendingData.captions[i] + "||"
+        }
+        formData.append('post[captions]', picCaptions)
+//        console.log(picCaptions.split("||"))
 
         for (let i in sendingData.pics) {
            formData.append(
@@ -56,7 +70,7 @@ function MakePost() {
             ) }
 
            
-
+         //   printFormdata(formData)
             
             fetch('http://localhost:5000/posts', {
                 method: 'post',
@@ -67,7 +81,7 @@ function MakePost() {
     }
 
     function grabPost() {
-        let postNo = 1
+        let postNo = 7
         fetch('/posts/' + postNo)
         .then(res => res.json())
         .then(data => setPostData(data) )

@@ -52,11 +52,34 @@
 .postPic {
     display: block;
     margin: auto;
-    width:350px;
+    max-height: 350px;
     padding: 10px
 }
 
 .nums{
     text-align: center;
     font-size: smaller;
+}
+
+.userInfo{
+    display:grid;
+    grid-template-columns: 1fr 55px 20px auto 1fr;
+    margin: auto;
+    width: 50%;
+}
+
+.col1{
+    grid-column-start: 2;
+    width: 55px;
+    
+}
+
+.col2{
+    grid-column-start: 4;
+}
+
+.miniPicOnPost {
+    width: 50px;
+    border-radius: 50px;
+    float: right
 }

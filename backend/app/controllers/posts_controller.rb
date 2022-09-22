@@ -29,6 +29,6 @@ class PostsController < ApplicationController
     private
 
     def allowed
-        params.require(:post).permit(:title, :place, :description, :user_id, pics: [])
+        params.require(:post).permit(:title, :place, :description, :user_id, :captions, pics: [])
     end
 end

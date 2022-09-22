@@ -4,7 +4,7 @@
         let formData = new FormData()
 
         for (let i in sendingData) {
-          if (i==="avatar" || i==="avpic" || i==="pics") {}
+          if (i==="avatar" || i==="avpic" || i==="pics" || i.startsWith("capti")) {}
           else { 
               formData.append(kindOfUpload + '['+i+']', sendingData[i])
           } 
