@@ -16,7 +16,10 @@ function MakePost() {
         user_id: 1
     })
 
+
+
     function handleChange(e) {
+        if(e.target.id.startsWith("file")) { console.log(e.target) }
         if(e.target.type ==="file") {
             let fileNo = parseInt(e.target.name.split("e")[1])
             setSendingData({
@@ -40,7 +43,10 @@ function MakePost() {
         let formData = new FormData()
         formData = assembleData(sendingData, "post")
 
-     //     printFormdata(formData)
+    //     printFormdata(formData)
+    // if this is true, no file has been entered yet
+    // console.log(e.target.files.length === 0)
+
 
         for (let i in sendingData.pics) {
            formData.append(
@@ -61,7 +67,7 @@ function MakePost() {
     }
 
     function grabPost() {
-        let postNo = 2
+        let postNo = 1
         fetch('/posts/' + postNo)
         .then(res => res.json())
         .then(data => setPostData(data) )

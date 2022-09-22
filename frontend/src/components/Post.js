@@ -5,6 +5,7 @@ function Post({post}) {
 
     let [userInfo, setUserInfo] = useState(null)
     let [pics, setPics] = useState(null)
+    let [picNo, setPicNo] = useState(0)
 
   //  console.log(post)
 
@@ -20,6 +21,22 @@ function Post({post}) {
         setUserInfo(data)
         setPics(() => post.pics.map((i, index) => <img className="postPic" key={index} src={i} />))
     }
+
+    function changePic(e) {
+     //   console.log(picNo, post.pics.length-1)
+        let xPos = e.pageX - e.target.offsetLeft
+        let halfwayPoint = e.target.clientWidth / 2
+
+        if (xPos < halfwayPoint) {
+            if (picNo===0) {return 0}
+            setPicNo(picNo => picNo - 1)
+        }
+        else {
+            if (picNo===post.pics.length-1) {return 0}
+            setPicNo(picNo => picNo + 1)
+        }
+
+    }
 return(
     <div className="post">
         {userInfo && ( 
@@ -30,7 +47,8 @@ return(
                     {userInfo.UserName} <br/>
                     Location: {post.post.place}</p><br/>
                     {post.post.description}<br/>
-                    {pics && pics}
+                    <img src={post.pics[picNo]} className="postPic" onClick={changePic}/>
+                    <p className="nums">{picNo+1}/{post.pics.length}</p>
             </div> )}
 
     </div>
