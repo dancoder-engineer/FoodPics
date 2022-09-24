@@ -55,7 +55,11 @@ function MakePost() {
 
     function handleRid(elem) {
         if (sendingData.pics[elem]) {
-            console.log("A")
+            let sdp = sendingData.pics.splice(0, elem)
+            setSendingData({
+                ...sendingData,
+                pics: sdp
+        })
         }
     }
 
