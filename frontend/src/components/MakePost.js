@@ -20,8 +20,11 @@ function MakePost() {
 
 
     function handleChange(e) { 
+       
         if(e.target.id.startsWith("caption")) { 
             let captions = sendingData.captions
+            console.log(sendingData.pics)
+            console.log(sendingData.captions)
             let place=parseInt(e.target.id.split('caption')[1])
             captions[place] = e.target.value
             setSendingData({
@@ -29,15 +32,17 @@ function MakePost() {
                 captions: captions
             })
         }
-        if(e.target.type ==="file") {
-            let fileNo = parseInt(e.target.name.split("e")[1])
+        if(e.target.type ==="file") { console.log(e.target.files[0])
+            let fileNo = parseInt(e.target.name.split("file")[1])
+            console.log(sendingData.pics)
+            let sdp = sendingData.pics
+            sdp[fileNo] = {
+                picData: e.target.value,
+                pic: e.target.files[0]
+            }
             setSendingData({
                 ...sendingData,
-                pics: {...sendingData.pics,
-                [fileNo]: {
-                    picData: e.target.value,
-                    pic: e.target.files[0]
-                }}
+                pics: sdp
             })
         }
         else {
@@ -45,6 +50,12 @@ function MakePost() {
                 ...sendingData,
                 [e.target.id]: e.target.value
             })
+        }
+    }
+
+    function handleRid(elem) {
+        if (sendingData.pics[elem]) {
+            console.log("A")
         }
     }
 
@@ -70,7 +81,7 @@ function MakePost() {
             ) }
 
            
-         //   printFormdata(formData)
+            printFormdata(formData)
             
             fetch('http://localhost:5000/posts', {
                 method: 'post',
@@ -81,7 +92,8 @@ function MakePost() {
     }
 
     function grabPost() {
-        let postNo = 7
+        let postNo=document.querySelector("#title").value
+//        let postNo = 19
         fetch('/posts/' + postNo)
         .then(res => res.json())
         .then(data => setPostData(data) )
@@ -100,7 +112,7 @@ function MakePost() {
                 Title: <input id="title" name="title" onChange={handleChange} /> <br />
                 Where was it taken?: <input id="place" name="place" onChange={handleChange} /> <br />
                 <textarea id="description" name="description" className="textA" onChange={handleChange} /><br />
-                <MultiplePicUploader handleChange={handleChange}/><br />
+                <MultiplePicUploader handleChange={handleChange} handleRid={handleRid}/><br />
                 Include a Recipe: <input type="checkbox" onChange={test} /><br />
                 {hasRecipe && <CreateRecipe />}
 

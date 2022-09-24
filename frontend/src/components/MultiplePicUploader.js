@@ -1,13 +1,44 @@
-import React from "react";
+import React, {useState} from "react";
+import EachPicUpload from './EachPicUpload.js'
 
-function MultiplePicUploader({handleChange}) {
+function MultiplePicUploader({handleChange, handleRid}) {
 
+let [picUploads, setPicUploads] = useState([
+    (<div key="0">
+        <EachPicUpload handleChange={change} addAPic={addAPic} ridLast={ridLast} number="0"/>    </div>)
+])
+
+function change(e) { handleChange(e) }
+
+function ridLast(e) {
+    e.preventDefault()
+    let picu = picUploads
+    let len = picUploads.length
+    picu.pop()
+    setPicUploads([...picu])
+    handleRid(len-1)
+}
+
+
+function addAPic(e) {
+          e.preventDefault()
+//        console.log(e.target.files[0] === undefined)
+//        console.log(e.target.value === "")
+//        e.target.value = ""
+        let num = picUploads.length
+        let picu = picUploads
+        picu.push(
+            (<div key={num}><EachPicUpload handleChange={change} addAPic={addAPic} ridLast={ridLast} number={picUploads.length}/>    </div>)
+        )
+        console.log(picu)
+        setPicUploads([...picu])
+ 
+    }
 
     return (
     <div>
-                File 1: <input type="file" id="file0" name="file0" onChange={handleChange} /> <input onChange={handleChange} id="caption0" /><br />
-                File 2: <input type="file" id="file1" name="file1" onChange={handleChange} /> <input onChange={handleChange} id="caption1" />
-    </div>
+                {picUploads}
+     </div>
 )}
     
 export default MultiplePicUploader
