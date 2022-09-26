@@ -5,8 +5,11 @@ function MultiplePicUploader({handleChange, handleRid}) {
 
 let [picUploads, setPicUploads] = useState([
     (<div key="0">
-        <EachPicUpload handleChange={change} addAPic={addAPic} ridLast={ridLast} number="0"/>    </div>)
+        <EachPicUpload handleChange={change} number="0" ridThis={ridThis} />    </div>)
 ])
+
+
+//<button onClick={addAPic}>+</button> <button onClick={ridLast}>-</button>
 
 function change(e) { handleChange(e) }
 
@@ -19,6 +22,11 @@ function ridLast(e) {
     handleRid(len-1)
 }
 
+function ridThis(e) {
+ e.preventDefault()
+ console.log(picUploads)
+}
+
 
 function addAPic(e) {
           e.preventDefault()
@@ -28,7 +36,7 @@ function addAPic(e) {
         let num = picUploads.length
         let picu = picUploads
         picu.push(
-            (<div key={num}><EachPicUpload handleChange={change} addAPic={addAPic} ridLast={ridLast} number={picUploads.length}/>    </div>)
+            (<div key={num}><EachPicUpload handleChange={change} number={picUploads.length} ridThis={ridThis}/>    </div>)
         )
         console.log(picu)
         setPicUploads([...picu])
@@ -38,6 +46,7 @@ function addAPic(e) {
     return (
     <div>
                 {picUploads}
+                <button onClick={addAPic}>+</button> <button onClick={ridLast}>-</button>
      </div>
 )}
     
