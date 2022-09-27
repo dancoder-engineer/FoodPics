@@ -57,7 +57,7 @@ return(
                     <p className="nums">{picNo+1}/{post.pics.length}</p>
                     <p className="centered">{captions[picNo]}</p>
                     <br /><br /><br />
-                    {post.recipe && <Recipe recipe={post.recipe} /> }
+                    {post.recipe && <Recipe recipe={post.recipe} recipepic={post.recipepic} /> }
             </div> )}
 
     </div>

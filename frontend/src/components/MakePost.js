@@ -9,7 +9,7 @@ import CreateRecipe from './CreateRecipe.js'
 function MakePost() {
 
     let [postData, setPostData] = useState(null)
-    let [hasRecipe, setHasRecipe] = useState("off")
+    let [hasRecipe, setHasRecipe] = useState("↓")
     let [recipeData, setRecipeData] = useState({})
 
     let [sendingData, setSendingData] = useState({
@@ -71,10 +71,8 @@ function MakePost() {
     //     printFormdata(formData)
     // if this is true, no file has been entered yet
     // console.log(e.target.files.length === 0)
-        let picCaptions = ""
-        for (let i in sendingData.captions) {
-            picCaptions += sendingData.captions[i] + "||"
-        }
+        let picCaptions = sendingData.captions.join("||")
+
         formData.append('post[captions]', picCaptions)
 //        console.log(picCaptions.split("||"))
 
@@ -108,8 +106,8 @@ function MakePost() {
     }
 
     function switchRecipe() {
-        if (hasRecipe === "off") { setHasRecipe("on") }
-        if (hasRecipe === "on") { setHasRecipe("off") }
+        if (hasRecipe === "↓") { setHasRecipe("↑") }
+        if (hasRecipe === "↑") { setHasRecipe("↓") }
        
     }
 
