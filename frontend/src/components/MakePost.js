@@ -9,7 +9,8 @@ import CreateRecipe from './CreateRecipe.js'
 function MakePost() {
 
     let [postData, setPostData] = useState(null)
-    let [hasRecipe, setHasRecipe] = useState(false)
+    let [hasRecipe, setHasRecipe] = useState("off")
+    let [recipeData, setRecipeData] = useState({})
 
     let [sendingData, setSendingData] = useState({
         pics: [],
@@ -23,8 +24,8 @@ function MakePost() {
        
         if(e.target.id.startsWith("caption")) { 
             let captions = sendingData.captions
-            console.log(sendingData.pics)
-            console.log(sendingData.captions)
+       //     console.log(sendingData.pics)
+       //     console.log(sendingData.captions)
             let place=parseInt(e.target.id.split('caption')[1])
             captions[place] = e.target.value
             setSendingData({
@@ -92,20 +93,60 @@ function MakePost() {
                 body: formData,
             })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                if (hasRecipe === "on") { sendRecipe(data.id) }
+            })
     }
 
     function grabPost() {
         let postNo=document.querySelector("#title").value
-//        let postNo = 19
         fetch('/posts/' + postNo)
         .then(res => res.json())
         .then(data => setPostData(data) )
 
     }
 
-    function test(e) {
-        setHasRecipe(e.target.checked)
+    function switchRecipe() {
+        if (hasRecipe === "off") { setHasRecipe("on") }
+        if (hasRecipe === "on") { setHasRecipe("off") }
+       
+    }
+
+    function handleRecipe(e) {
+     
+
+        if(e.target.id === "avatar") {
+            setRecipeData({
+                ...recipeData,
+                [e.target.id]: e.target.value,
+                picFile: e.target.files[0]
+            })   
+        }
+        else {
+            setRecipeData({
+                ...recipeData,
+                [e.target.id]: e.target.value
+            })
+        }
+    }
+
+    function sendRecipe(postId) {
+        let formData = new FormData()
+        formData = assembleData(recipeData, "recipe")
+        formData.append('recipe[post_id]', postId)
+        formData.append('recipe[pic]', recipeData.picFile, recipeData.avatar)
+        printFormdata(formData)
+        if(Object.keys(recipeData).length === 5) {
+            fetch("/recipes/", {
+                method: 'post',
+                body: formData,
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
+
+        }
+        
     }
 
 
@@ -117,9 +158,10 @@ function MakePost() {
                 Where was it taken?: <input id="place" name="place" onChange={handleChange} /> <br />
                 <textarea id="description" name="description" className="textA" onChange={handleChange} /><br />
                 <MultiplePicUploader handleChange={handleChange} handleRid={handleRid}/><br />
-                Include a Recipe: <input type="checkbox" onChange={test} /><br />
-                {hasRecipe && <CreateRecipe />}
-
+                Include a Recipe: <input type="checkbox" onChange={switchRecipe} /><br />
+                <div className={hasRecipe}>
+                    <CreateRecipe handleRecipe={handleRecipe} />
+                </div>
             </form><br /><br />
 
             <button onClick={handleClick}>Submit</button>

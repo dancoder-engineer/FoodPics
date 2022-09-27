@@ -83,3 +83,7 @@
     border-radius: 50px;
     float: right
 }
+
+.off{
+    display: none
+}
