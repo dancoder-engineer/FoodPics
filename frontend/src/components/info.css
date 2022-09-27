@@ -87,3 +87,22 @@
 .off{
     display: none
 }
+
+.on{
+    text-align: center;
+}
+
+
+.recipePic{
+    width: 50px
+}
+
+
+.↓{
+    display: none
+}
+
+.↑{
+    text-align: center;
+}
+

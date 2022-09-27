@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
+import Recipe from './Recipe.js'
 import './info.css'
 
-function Post({post}) {
+function Post({post}) { 
 
     let [userInfo, setUserInfo] = useState(null)
     let [captions, setCaptions] = useState(null)
@@ -55,6 +56,8 @@ return(
                     <img src={post.pics[picNo]} className="postPic" onClick={changePic}/>
                     <p className="nums">{picNo+1}/{post.pics.length}</p>
                     <p className="centered">{captions[picNo]}</p>
+                    <br /><br /><br />
+                    {post.recipe && <Recipe recipe={post.recipe} /> }
             </div> )}
 
     </div>

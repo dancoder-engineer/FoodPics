@@ -33,9 +33,9 @@ function MakePost() {
                 captions: captions
             })
         }
-        if(e.target.type ==="file") { console.log(e.target.files[0])
+        if(e.target.type ==="file") { 
             let fileNo = parseInt(e.target.name.split("file")[1])
-            console.log(sendingData.pics)
+       //     console.log(sendingData.pics)
             let sdp = sendingData.pics
             sdp[fileNo] = {
                 picData: e.target.value,
@@ -94,7 +94,7 @@ function MakePost() {
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+        //        console.log(data)
                 if (hasRecipe === "on") { sendRecipe(data.id) }
             })
     }

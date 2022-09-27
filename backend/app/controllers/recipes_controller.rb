@@ -13,6 +13,12 @@ class RecipesController < ApplicationController
         render json: ({recipe: recipe, pic: pic}), status: 200
     end
 
+    def recipepic
+        recipe = Recipe.find_by(id: params[:id])
+        pic = rails_blob_path(recipe.pic)
+        render json: ({pic: pic}), status: 200
+    end
+
     def create
         recipe=Recipe.create(allowed)
 
