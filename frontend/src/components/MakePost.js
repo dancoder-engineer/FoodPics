@@ -21,6 +21,7 @@ function MakePost() {
 
 
     function handleChange(e) { 
+     
        
         if(e.target.id.startsWith("caption")) { 
             let captions = sendingData.captions
@@ -33,7 +34,7 @@ function MakePost() {
                 captions: captions
             })
         }
-        if(e.target.type ==="file") { 
+        if(e.target.id.startsWith("file")) { 
             let fileNo = parseInt(e.target.name.split("file")[1])
        //     console.log(sendingData.pics)
             let sdp = sendingData.pics
@@ -46,12 +47,8 @@ function MakePost() {
                 pics: sdp
             })
         }
-        else {
-            setSendingData({
-                ...sendingData,
-                [e.target.id]: e.target.value
-            })
-        }
+
+       
     }
 
     function handleRid(elem) {
@@ -64,11 +61,15 @@ function MakePost() {
         }
     }
 
-    function handleClick() {
+    function handleClick() { console.log(sendingData)
+        
         let formData = new FormData()
-        formData = assembleData(sendingData, "post")
-
-    //     printFormdata(formData)
+        //formData = assembleData(sendingData, "post")
+        formData.append('post[title]', document.querySelector("#title").value)
+        formData.append('post[place]', document.querySelector("#place").value)
+        formData.append('post[description]', document.querySelector("#description").value)
+        formData.append('post[user_id]', sendingData.user_id)
+   //     printFormdata(formData)
     // if this is true, no file has been entered yet
     // console.log(e.target.files.length === 0)
         let picCaptions = sendingData.captions.join("||")
@@ -92,8 +93,8 @@ function MakePost() {
             })
             .then(res => res.json())
             .then(data => {
-        //        console.log(data)
-                if (hasRecipe === "on") { sendRecipe(data.id) }
+                console.log(data)
+                if (hasRecipe === "↑") { sendRecipe(data.id) }
             })
     }
 
@@ -101,7 +102,9 @@ function MakePost() {
         let postNo=document.querySelector("#title").value
         fetch('/posts/' + postNo)
         .then(res => res.json())
-        .then(data => setPostData(data) )
+        .then(data => {console.log(data)
+            setPostData(data)
+         })
 
     }
 
@@ -129,13 +132,15 @@ function MakePost() {
         }
     }
 
-    function sendRecipe(postId) {
+    function sendRecipe(postId) { 
         let formData = new FormData()
         formData = assembleData(recipeData, "recipe")
+
         formData.append('recipe[post_id]', postId)
         formData.append('recipe[pic]', recipeData.picFile, recipeData.avatar)
         printFormdata(formData)
-        if(Object.keys(recipeData).length === 5) {
+        console.log(recipeData)
+      //  if(Object.keys(recipeData).length === 5) {
             fetch("/recipes/", {
                 method: 'post',
                 body: formData,
@@ -143,7 +148,7 @@ function MakePost() {
             .then(res => res.json())
             .then(data => console.log(data))
 
-        }
+   //     }
         
     }
 
@@ -152,9 +157,9 @@ function MakePost() {
         <div>
             <h1 className="centered">Create a New Post</h1><br /><br />
             <form>
-                Title: <input id="title" name="title" onChange={handleChange} /> <br />
-                Where was it taken?: <input id="place" name="place" onChange={handleChange} /> <br />
-                <textarea id="description" name="description" className="textA" onChange={handleChange} /><br />
+                Title: <input id="title" name="title" /> <br />
+                Where was it taken?: <input id="place" name="place" /> <br />
+                <textarea id="description" name="description" className="textA"  /><br />
                 <MultiplePicUploader handleChange={handleChange} handleRid={handleRid}/><br />
                 Include a Recipe: <input type="checkbox" onChange={switchRecipe} /><br />
                 <div className={hasRecipe}>

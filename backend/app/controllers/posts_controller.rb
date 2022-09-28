@@ -10,14 +10,17 @@ class PostsController < ApplicationController
     def show
         post = Post.find_by(id: params[:id])
         pics = post.pics.map{|p| rails_blob_path(p) }
-        recipepic = rails_blob_path(post.recipe.pic)
-        render json: ({post: post, recipe: post.recipe, pics: pics, recipepic: recipepic}), status: 200
+        if post.recipe
+            recipepic = rails_blob_path(post.recipe.pic)
+            render json: ({post: post, recipe: post.recipe, pics: pics, recipepic: recipepic}), status: 200
+        else
+            render json: ({post: post, pics: pics}), status: 200
+        end
     end
 
     def create
         post = Post.create(allowed)
 
- 
 
         if post.save
             render json: post, status: :created
