@@ -18,6 +18,12 @@ class PostsController < ApplicationController
         end
     end
 
+    def userposts
+        posts = Post.where(user_id: params[:id])
+        postnums = posts.map {|i| i.id }
+        render json: {posts: postnums}, status: 200
+    end
+
     def create
         post = Post.create(allowed)
 
