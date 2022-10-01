@@ -80,14 +80,9 @@ function MakeUser() {
     function getAv(e) { 
 
         if (!e.target.value) {return 0}
-   
-         fetch("/users/"+ e.target.value)
-         .then(res => res.json())
-         .then(data => {
-             
-             setUserData(data)
-             
-         }) }
+        let url = "/posts/"+ e.target.value
+         fetch(url, {method: 'DELETE'})
+ }
 
          function youGetMe() {
             fetch('/getme/')
