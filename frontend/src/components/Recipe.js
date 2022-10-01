@@ -15,7 +15,7 @@ function Recipe({recipe, recipepic}) {
 
     return(
         <div>
-            <h3 className="centered" onClick={switchRecipe}>Recipe: {recipe.title} {seeRecipe}</h3>
+            <h3 className="centered" onClick={switchRecipe}>{seeRecipe} Recipe: {recipe.title} {seeRecipe}</h3>
             <div className={seeRecipe}>
                 <img src={recipepic} className="recipePic" /> <br />
                 <p className="centered">{recipe.ingredientlist}</p> <br />

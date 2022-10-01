@@ -107,3 +107,7 @@
     text-align: center;
 }
 
+.smallCentered {
+    text-align: center;
+    font-size: smaller;
+}

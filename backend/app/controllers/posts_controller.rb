@@ -27,7 +27,9 @@ class PostsController < ApplicationController
                 recipepic: i.recipe ? rails_blob_path(i.recipe.pic) : nil,
                 pics: i.pics.map{|p| rails_blob_path(p) }
         }}
-        render json: {posts: postsWithInfo}, status: 200
+        sortedPosts = postsWithInfo.sort{|i| i[:post][:created_at]}
+      #  sortedPosts = sortedPosts.reverse
+        render json: {posts: sortedPosts}, status: 200
     end
 
     def create
