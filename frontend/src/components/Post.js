@@ -12,8 +12,7 @@ function Post({post, includeHeader}) {
 
 
     useEffect(() => { 
-     //   fetch('/posts/' )
-        setTimeDate(convertTimeDate(post.post.created_at))
+        setTimeDate(convertTimeDate(post.post.updated_at))
         setCaptions(post.post.captions.split('||'))
         let userId = post.post.user_id
         fetch('/useravatar/' + userId)
