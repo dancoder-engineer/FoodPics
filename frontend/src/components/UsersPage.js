@@ -27,7 +27,7 @@ function UsersPage() {
     function getPostNums(id) {
         fetch('/userposts/' + id)
         .then(res => res.json())
-        .then(data => { console.log(data.posts)
+        .then(data => { 
             setPostData(data.posts.map((i) => 
                 (
                 <div>
