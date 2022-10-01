@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import Recipe from './Recipe.js'
 import './info.css'
 
-function Post({post}) { 
+function Post({post, includeHeader}) { 
 
     let [userInfo, setUserInfo] = useState(null)
     let [captions, setCaptions] = useState(null)
@@ -43,20 +43,23 @@ return(
         {userInfo && ( 
             <div>
                 <h3 className="floatCenter">{post.post.title}</h3>
-                <div className="userInfo">
+                {includeHeader==="true" && 
+                (<div className="userInfo">
                     <div className="col1"><img className="miniPicOnPost" src={userInfo.avatar} /></div>
                     <div className="col2">
                            {userInfo.UserName}<br />
                            Location: {post.post.place}
-                    </div>
-                </div><br />
+                    </div><br />
+                </div>) }
+                
+                
                 
                     
-                    {post.post.description}<br/>
+                    {post.post.description}<br/><br/>
                     <img src={post.pics[picNo]} className="postPic" onClick={changePic}/>
                     <p className="nums">{picNo+1}/{post.pics.length}</p>
                     <p className="centered">{captions[picNo]}</p>
-                    <br /><br /><br />
+                    {post.recipe && <br /> }
                     {post.recipe && <Recipe recipe={post.recipe} recipepic={post.recipepic} /> }
             </div> )}
 

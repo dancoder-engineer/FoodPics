@@ -21,7 +21,13 @@ class PostsController < ApplicationController
     def userposts
         posts = Post.where(user_id: params[:id])
         postnums = posts.map {|i| i.id }
-        render json: {posts: postnums}, status: 200
+        postsWithInfo = posts.map{|i| {
+                post: i,
+                recipe: i.recipe,
+                recipepic: i.recipe ? rails_blob_path(i.recipe.pic) : nil,
+                pics: i.pics.map{|p| rails_blob_path(p) }
+        }}
+        render json: {posts: postsWithInfo}, status: 200
     end
 
     def create

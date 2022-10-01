@@ -15,7 +15,7 @@ function MakePost() {
     let [sendingData, setSendingData] = useState({
         pics: [],
         captions: [],
-        user_id: 1
+        user_id: 4
     })
 
 
@@ -168,9 +168,6 @@ function MakePost() {
             </form><br /><br />
 
             <button onClick={handleClick}>Submit</button>
-            <br /><br /><br /><br /><br /><br /><br /><br />
-            <button onClick={grabPost}>Show me a test post</button>
-            {postData && <Post post={postData} /> }
         </div>
     )
 }

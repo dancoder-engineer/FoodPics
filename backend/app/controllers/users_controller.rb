@@ -7,6 +7,25 @@ class UsersController < ApplicationController
         render json: users, status: 200
     end
 
+    def getme
+        if session[:user_id]
+            user = User.find_by(id: session[:user_id])
+            return render json: user, status: 200
+        else
+            return render json: {error: "Not logged in."}
+        end
+    end
+
+    def getid
+        user = User.find_by(UserName: params[:name])
+        if user
+            avatar = rails_blob_path(user.avatar)
+            return render json: ({user: user, avatar: avatar}), status: 200
+        else
+            return render json({error: "No such user"})
+        end
+    end
+
     def show
         user = User.find_by(id: params[:id])
         avatar = rails_blob_path(user.avatar)

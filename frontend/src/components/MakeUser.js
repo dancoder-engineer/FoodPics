@@ -61,6 +61,8 @@ function MakeUser() {
 
 
     function handleSubmit(e) {
+
+
         
         let formData = new FormData()
         formData = assembleData(sendingData, "user")
@@ -79,17 +81,22 @@ function MakeUser() {
 
         if (!e.target.value) {return 0}
    
-         fetch("/users/"+e.target.value)
+         fetch("/users/"+ e.target.value)
          .then(res => res.json())
          .then(data => {
-          //   console.log(data)
              
              setUserData(data)
              
          }) }
 
+         function youGetMe() {
+            fetch('/getme/')
+            .then(res => res.json())
+            .then(data => console.log(data))
+         }
+
     return(
-        <div>
+        <div> <button onClick={youGetMe}>Get Me</button>
             <button id="Ben" onClick={defaultData}>Chef Ben</button> 
             <button id="Tony" onClick={defaultData}>Chef Tony</button> 
 

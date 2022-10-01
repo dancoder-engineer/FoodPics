@@ -23,7 +23,6 @@ function InfoCard({data}) {
                      <br />
                      {data.user.Description}
                      </p>
-                     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                  </div>
     )
 }

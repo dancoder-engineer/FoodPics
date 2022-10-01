@@ -7,6 +7,8 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 import MakeUser from './components/MakeUser.js'
 import MakePost from './components/MakePost.js'
+import Login from './components/Login.js'
+import UsersPage from './components/UsersPage.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +18,8 @@ root.render(
         <Route path='/' element={<App />} />
         <Route path='/register/' element={<MakeUser />} />
         <Route path='/newpost/' element={<MakePost />} />
+        <Route path='/login/' element={<Login />} />
+        <Route path='/user/:name' element={<UsersPage /> } />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
