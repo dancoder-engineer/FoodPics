@@ -33,12 +33,15 @@ class UsersController < ApplicationController
     end
 
     def create
-        user=User.create(allowed)
+        user=User.create!(allowed)
+
         if user.save
             render json: user, status: :created
-        else
-            render json: {error: "Passwords don't match."}
         end
+
+        rescue ActiveRecord::RecordInvalid => invalid
+            render json: { errors: invalid.record.errors.full_messages  }, status: :unprocessable_entity
+
     end
 
     def update
@@ -65,5 +68,7 @@ class UsersController < ApplicationController
     def allowed
         params.require(:user).permit(:ActualName, :Description, :Pronouns, :UserName, :Website, :avatar, :password, :password_confirmation)
     end
+
+
 
 end

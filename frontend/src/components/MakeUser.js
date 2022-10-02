@@ -10,11 +10,12 @@ function MakeUser() {
   
     const [userData, setUserData] = useState(null)
     const [sendingData, setSendingData] = useState({})
+    const [errors, setErrors] = useState([])
 
     function defaultData(e) {
         if (e.target.id==="Ben") {
             setSendingData ({
-                UserName: "Chef Ben Shapiro",
+                UserName: "ChefBenShapiro",
                 password: "mywifeisadoctor",
                 password_confirmation: "mywifeisadoctor",
                 ActualName: "It's not Ben Shapiro... At least I THINK it's not...",
@@ -74,7 +75,18 @@ function MakeUser() {
             body: formData,
             })
             .then (res => res.json())
-            .then (data => console.log(data) )
+            .then (data => {
+                console.log(data)
+                if (data.errors) { 
+                    setErrors(data.errors.map((i, index) => 
+                        <p className="error" key={index}>{i}</p>
+                    ))
+                 }
+                 else {
+                    setErrors([])
+                 }
+               
+            })
     }
 
     function getAv(e) { 
@@ -116,9 +128,11 @@ function MakeUser() {
             
             </form>
             <button onClick={handleSubmit}>Submit</button><br />
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            {userData && <InfoCard data={userData} />}
             <br /><br />
+            {errors && errors}
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            
+
            
         </div>
     )
