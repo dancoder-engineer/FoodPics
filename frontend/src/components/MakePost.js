@@ -15,7 +15,7 @@ function MakePost() {
     let [sendingData, setSendingData] = useState({
         pics: [],
         captions: [],
-        user_id: 4
+        user_id: 5
     })
 
 

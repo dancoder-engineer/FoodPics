@@ -63,13 +63,18 @@ function MakeUser() {
 
     function handleSubmit(e) {
 
-
-        
         let formData = new FormData()
         formData = assembleData(sendingData, "user")
 
-        formData.append('user[avatar]', sendingData.avpic, sendingData.avatar)
-     
+        if (sendingData.avpic, sendingData.avatar) {
+            formData.append('user[avatar]', sendingData.avpic, sendingData.avatar)
+        }
+        else
+        {
+            setErrors("Must have an avatar.")
+            return 0
+        }
+        
             fetch('http://localhost:5000/users', {
             method: 'post',
             body: formData,

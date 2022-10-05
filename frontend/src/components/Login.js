@@ -25,9 +25,16 @@ function Login() {
         .then(data => console.log(data))
     }
 
+    function makeFeed() {
+        fetch('/makefeed/')
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
+
 return(
     <div>
         <h1>Login</h1>
+        <button onClick={makeFeed}>Make feed</button>
         Username: <input id="username" onChange={handleChange} /> <br />
         Password: <input type="password" id="password" onChange={handleChange} />
         <br /> <br />

@@ -63,6 +63,7 @@ class UsersController < ApplicationController
         render json: {UserName: user.UserName, avatar: avatar}
     end
 
+
     private
 
     def allowed
