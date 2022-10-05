@@ -38,7 +38,7 @@ class FollowingsController < ApplicationController
         #gather all followings where the current user is the follower into an array
         followings = Following.where(follower: session[:user_id])
         #make an array out of only the followees
-        followedUsers = followings.map{|i| i.followee }
+        followedUsers = followings.map{|i| i.followee}
         #for each of these, gather all the posts (in reality, we'd do only in the past week)
         #put all of those in an array
         feedPosts = []
@@ -52,13 +52,9 @@ class FollowingsController < ApplicationController
                     pics: j.pics.map{|p| rails_blob_path(p) }
                  })
             }
-            
-       #     feedPosts = Post.find_by(user_id: i)
-         #  feedPosts[1]=99
         }
         #sort that array by posting time
-      #  feedposts = Post.find_by(user_id: 4)
-      feedPosts = feedPosts.sort{|i| i[:post][:created_at]}
+        feedPosts = feedPosts.sort{|i| i[:post][:created_at]}
         render json: feedPosts
     end
 

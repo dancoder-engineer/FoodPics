@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { convertTimeDate } from './sharedfunctions/assembleData.js'
 import Recipe from './Recipe.js'
 import './info.css'
+import { NavLink } from "react-router-dom";
 
 function Post({post, includeHeader}) { 
 
@@ -46,11 +47,13 @@ return(
                 {timeDate && <p className="smallCentered">{timeDate}</p>}
                 {includeHeader==="true" && 
                 (<div className="userInfo">
+                    <NavLink to={'/user/'+userInfo.UserName} >
                     <div className="col1"><img className="miniPicOnPost" src={userInfo.avatar} /></div>
                     <div className="col2">
                            {userInfo.UserName}<br />
                            Location: {post.post.place}
                     </div><br />
+                    </NavLink>
                 </div>) }
                 
                 

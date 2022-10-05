@@ -9,13 +9,14 @@ import MakeUser from './components/MakeUser.js'
 import MakePost from './components/MakePost.js'
 import Login from './components/Login.js'
 import UsersPage from './components/UsersPage.js';
+import Feed from './components/Feed.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<App />} />
+        <Route path='/' element={<Feed />} />
         <Route path='/register/' element={<MakeUser />} />
         <Route path='/newpost/' element={<MakePost />} />
         <Route path='/login/' element={<Login />} />
