@@ -47,13 +47,15 @@ return(
                 {timeDate && <p className="smallCentered">{timeDate}</p>}
                 {includeHeader==="true" && 
                 (<div className="userInfo">
-                    <NavLink to={'/user/'+userInfo.UserName} >
-                    <div className="col1"><img className="miniPicOnPost" src={userInfo.avatar} /></div>
+                    
+                    <div className="col1"><NavLink to={'/user/'+userInfo.UserName}><img className="miniPicOnPost" src={userInfo.avatar} /></NavLink></div>
                     <div className="col2">
-                           {userInfo.UserName}<br />
-                           Location: {post.post.place}
+                           <NavLink to={'/user/'+userInfo.UserName}>
+                                {userInfo.UserName}<br />
+                                Location: {post.post.place}
+                           </NavLink>
                     </div><br />
-                    </NavLink>
+                    
                 </div>) }
                 
                 
