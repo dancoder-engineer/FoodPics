@@ -94,6 +94,9 @@
 
 
 .recipePic{
+    text-align: center;
+    margin: auto;
+    display: block;
     width: 100px;
     border-radius: 100px;
 }
@@ -104,10 +107,15 @@
 }
 
 .↑{
-    text-align: center;
+  
 }
 
 .smallCentered {
     text-align: center;
     font-size: smaller;
+}
+
+.centeredLi {
+    margin: auto;
+    display: block;
 }
