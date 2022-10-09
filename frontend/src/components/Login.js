@@ -1,8 +1,16 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import {useNavigate} from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import store from "./Redux/store.js";
 
 function Login() {
-
+    const dispatch = useDispatch();
     const [sendData, setSendData] = useState({})
+    const user = useSelector((state) => state.user.id);
+    const history = useNavigate() 
+
+    
+    store.subscribe(() => console.log(user))
 
     function handleChange(e) {
         setSendData({
@@ -22,13 +30,17 @@ function Login() {
             body: JSON.stringify(sendData)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            history('../')
+        })
     }
 
     function makeFeed() {
         fetch('/makefeed/')
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data)
+        })
     }
 
 return(

@@ -8,7 +8,6 @@ function Recipe({recipe, recipepic}) {
 
     useEffect(() => {
         let elements = recipe.ingredientlist.split('\r\n')
-        console.log(elements)
         setLiSet(elements.map((i, index) => (<li key={index}>{i}</li>))   )
     },[])
 

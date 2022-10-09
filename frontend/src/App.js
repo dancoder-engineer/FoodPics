@@ -1,30 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+
+
+import MakeUser from './components/MakeUser.js'
+import MakePost from './components/MakePost.js'
+import Login from './components/Login.js'
+import UsersPage from './components/UsersPage.js';
+import Feed from './components/Feed.js'
 
 function App() {
 
-  const oldThing = (
-    <header className="App-header">
-    <img src={logo} className="App-logo" alt="logo" />
-    <p>
-      Edit <code>src/App.js</code> and save to reload.
-    </p>
-    <a
-      className="App-link"
-      href="https://reactjs.org"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Learn React
-    </a>
-  </header>
 
-  )
   return (
-    <div className="App">
-      {oldThing}
-    </div>
+    
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Feed />} />
+        <Route path='/register/' element={<MakeUser />} />
+        <Route path='/newpost/' element={<MakePost />} />
+        <Route path='/login/' element={<Login />} />
+        <Route path='/user/:name' element={<UsersPage /> } />
+      </Routes>
+    </BrowserRouter>
+    
+  
   );
+  
 }
 
 export default App;

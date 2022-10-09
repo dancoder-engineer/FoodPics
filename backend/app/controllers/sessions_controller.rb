@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
 
         if user&.authenticate(params[:password])
             session[:user_id] = user.id
-            return render json: user, status: 200
+            avatar = rails_blob_path(user.avatar)
+            return render json: {user: user, avatar: avatar}, status: 200
         else
             return render json: ({bad: "bad"}), status: 200
         end

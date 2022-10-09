@@ -35,6 +35,9 @@ class FollowingsController < ApplicationController
 
     
     def makefeed
+        if !session[:user_id]
+            return render json: {error: "not logged in"}
+        end
         #gather all followings where the current user is the follower into an array
         followings = Following.where(follower: session[:user_id])
         #make an array out of only the followees
