@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/userid/:name', to: 'users#getid'
   get '/getme/', to: 'users#getme'
   post '/login/', to: 'sessions#login'
+  get '/logout/', to: 'sessions#logout'
   post '/newFollowing/:followee', to: 'followings#newFollowing'
   post '/deleteFollowing/:followee', to: 'followings#deleteFollowing'
   get '/checkFollowing/:followee', to: 'followings#checkFollowing'

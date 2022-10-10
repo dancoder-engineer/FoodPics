@@ -10,7 +10,8 @@ class UsersController < ApplicationController
     def getme
         if session[:user_id]
             user = User.find_by(id: session[:user_id])
-            return render json: user, status: 200
+            avatar = rails_blob_path(user.avatar)
+            return render json: ({user: user, avatar: avatar}), status: 200
         else
             return render json: {error: "Not logged in."}
         end

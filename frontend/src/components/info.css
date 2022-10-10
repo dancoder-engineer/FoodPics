@@ -119,3 +119,9 @@
     margin: auto;
     display: block;
 }
+
+
+.header {
+    position: sticky;
+    top: 0;
+}

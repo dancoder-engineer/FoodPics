@@ -2,10 +2,12 @@ import React, {useState, useEffect} from "react";
 import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import store from "./Redux/store.js";
+import Header from './Header.js'
 
 function Login() {
     const dispatch = useDispatch();
     const [sendData, setSendData] = useState({})
+    const [errorMessage, setErrorMessage] = useState(null)
     const user = useSelector((state) => state.user.id);
     const history = useNavigate() 
 
@@ -31,7 +33,12 @@ function Login() {
         })
         .then(res => res.json())
         .then(data => {
-            history('../')
+            if (data.user) {
+                history('../')
+            }
+            else {
+                setErrorMessage(data.error)
+            }
         })
     }
 
@@ -45,12 +52,13 @@ function Login() {
 
 return(
     <div>
+        <Header loginPage={"true"}/>
         <h1>Login</h1>
-        <button onClick={makeFeed}>Make feed</button>
         Username: <input id="username" onChange={handleChange} /> <br />
         Password: <input type="password" id="password" onChange={handleChange} />
         <br /> <br />
-        <button onClick={handleClick}>Submit</button>
+        <button onClick={handleClick}>Submit</button><br />
+        {errorMessage}
     </div>
 )
 }

@@ -11,8 +11,14 @@ class SessionsController < ApplicationController
             avatar = rails_blob_path(user.avatar)
             return render json: {user: user, avatar: avatar}, status: 200
         else
-            return render json: ({bad: "bad"}), status: 200
+            session.delete :user_id
+            return render json: ({error: "Login Failed. Check username and password."}), status: 200
         end
+    end
+
+    def logout
+        session.delete :user_id
+        render json: ({info: "logged out", session: session})
     end
 
 end

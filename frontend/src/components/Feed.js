@@ -3,6 +3,8 @@ import Post from './Post.js'
 import { useSelector } from "react-redux";
 import {useNavigate} from 'react-router-dom'
 
+import Header from './Header.js'
+
 function Feed() {
 
     const user = useSelector((state) => state);
@@ -34,6 +36,7 @@ function Feed() {
 
     return(
         <div>
+            <Header loginPage={"false"}/>
             {postData && postData}
         </div>
     )
