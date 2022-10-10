@@ -42,17 +42,11 @@ function Login() {
         })
     }
 
-    function makeFeed() {
-        fetch('/makefeed/')
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-        })
-    }
+
 
 return(
     <div>
-        <Header loginPage={"true"}/>
+        <Header />
         <h1>Login</h1>
         Username: <input id="username" onChange={handleChange} /> <br />
         Password: <input type="password" id="password" onChange={handleChange} />

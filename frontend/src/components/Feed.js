@@ -36,7 +36,7 @@ function Feed() {
 
     return(
         <div>
-            <Header loginPage={"false"}/>
+            <Header />
             {postData && postData}
         </div>
     )
