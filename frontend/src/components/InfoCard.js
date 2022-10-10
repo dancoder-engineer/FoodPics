@@ -3,10 +3,23 @@ import React, { useEffect, useState } from "react";
 function InfoCard({data}) {
 
     let followButton = <button onClick={getFollowerFollowee}>Follow</button>
-    
     let unfollowButton = <button onClick={deleteFollowing}>Unfollow</button>
 
     const [isFollowing, setIsFollowing] = useState(null)
+    
+    const [loggedIn, setloggedIn] = useState(null)
+
+
+    function checkLoggedin() {
+        fetch("/getme/")
+        .then(res => res.json())
+        .then(data => {
+            if (data.user) {  
+                setloggedIn("true")
+                
+            }
+        })
+    }
 
 
     function getFollowerFollowee() {
@@ -32,7 +45,10 @@ function InfoCard({data}) {
 
     }
 
-    useEffect(() => checkIfFollowing, [])
+    useEffect(() => {
+        checkIfFollowing()
+        checkLoggedin()
+    }, [])
 
     function checkIfFollowing() {
         let followee = data.user.id
@@ -57,8 +73,9 @@ function InfoCard({data}) {
 
     return(
              <div className="userData">
-                    {isFollowing ? unfollowButton : followButton}
-                    
+                {loggedIn && (
+                    isFollowing ? unfollowButton : followButton                 
+                )}
                      <h3 className="centered">{data.user.UserName}</h3>
                      <img className="avatarPic" src={data.avatar} /> 
                      <p className="centered">
