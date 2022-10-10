@@ -120,12 +120,24 @@
     display: block;
 }
 
-
-.header {
+.overHeader {
     position: sticky;
     top: 0;
+    background-color: white;
+}
+
+.header {
+
+    width: 50%;
+    margin: auto;
+}
+
+.headerCentered {
+    width: 60%;
+    margin: auto;
 }
 
 .headerPic {
-    height: 100px
+    height: 100px;
+    margin: auto;
 }

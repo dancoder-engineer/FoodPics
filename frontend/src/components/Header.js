@@ -7,28 +7,26 @@ function Header(){
     const [userInfo, setUserInfo] = useState(null)
     const history = useNavigate()
 
-    const login = <NavLink to="/login/"> <img className="headerPic" src="https://imgur.com/TSwaxAl.png" /> </NavLink>
-    const logout = <NavLink to="/logout/"> <img className="headerPic" src="https://imgur.com/JO1znon.png" /> </NavLink>
-    const register = <NavLink to="/register/"> <img className="headerPic" src="https://imgur.com/aaxS2Gq.png" /> </NavLink>
-    const newPost = <NavLink to="/newpost/">New Post</NavLink>
-    const home = <NavLink to="/">Home</NavLink>
+//    const userDiv = 
+
+    const login = <NavLink to="/login/"><img className="headerPic" src="https://imgur.com/TSwaxAl.png" /></NavLink>
+    const logout = <NavLink to="/logout/"><img className="headerPic" src="https://imgur.com/JO1znon.png" /></NavLink>
+    const register = <NavLink to="/register/"><img className="headerPic" src="https://imgur.com/aaxS2Gq.png" /></NavLink>
+    const newPost = <NavLink to="/newpost/"><img className="headerPic" src="https://imgur.com/1p7Otp1.png" /></NavLink>
+    const home = <NavLink to="/"><img className="headerPic" src="https://imgur.com/dWFT3ma.png" /></NavLink>
     
 
     const search = (<div></div>)
 
-    function clickLogout() {
-   //     setUserInfo(null)
-        history("/logout/")
-    }
 
 
 
 
     useEffect(() => {
     //    if (loginPage==="false") {
-            fetch("/getme/")
+        fetch("/getme/")
         .then(res => res.json())
-        .then(data => { console.log(data)
+        .then(data => {
             if (data.user) { 
                 setUserInfo(data)
             }
@@ -42,17 +40,28 @@ function Header(){
 
 
     return(
-        <div className="header">
-            <h1>{userInfo && userInfo.user.UserName}</h1>
-            {userInfo ? logout : login} {userInfo ? home : register} {userInfo ? newPost : null}
+        <div className="overHeader">
+            <div className="header">
+                <h1 className="centered">FoodBook</h1>
+                <div className="headerCentered">
+                {userInfo ? logout : login} {userInfo ? home : register} {userInfo ? newPost : null}
+                </div>
+                <br />
+            </div>
         </div>
     )
 }
 export default Header
 
 
-// <Route path='/' element={<Feed />} />
-// <Route path='/register/' element={<MakeUser />} />
-// <Route path='/newpost/' element={<MakePost />} />
-// <Route path='/login/' element={<Login />} />
-// <Route path='/user/:name' element={<UsersPage /> } />
+
+// {userInfo && (
+//     <div className="userInfo">
+//        <div className="col1"><NavLink to="/"><img className="miniPicOnPost" src={userInfo.avatar} /></NavLink></div>
+//        <div className="col2">
+//             <NavLink to={"/"}><br />
+//                {userInfo.user.UserName}<br />
+//            </NavLink>
+//        </div><br />
+//    </div>
+// )}
