@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post '/deleteFollowing/:followee', to: 'followings#deleteFollowing'
   get '/checkFollowing/:followee', to: 'followings#checkFollowing'
   get '/makefeed/',  to: 'followings#makefeed'
+  get '/commentsbypost/:id', to: 'comments#bypost'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
