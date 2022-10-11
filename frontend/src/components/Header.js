@@ -23,7 +23,6 @@ function Header(){
 
 
     useEffect(() => {
-    //    if (loginPage==="false") {
         fetch("/getme/")
         .then(res => res.json())
         .then(data => {
@@ -31,10 +30,6 @@ function Header(){
                 setUserInfo(data)
             }
         })
-    //}
-        // else {
-        //     setUserInfo(null)
-        // }
     }, [])
 
 

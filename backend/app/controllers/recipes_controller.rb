@@ -20,6 +20,9 @@ class RecipesController < ApplicationController
     end
 
     def create
+        if !session[:user_id]
+            return render json:{error: 'Not logged in.'}, status: :forbidden
+
         recipe=Recipe.create(allowed)
 
         if recipe.save
