@@ -3,6 +3,7 @@ import { convertTimeDate } from './sharedfunctions/assembleData.js'
 import Recipe from './Recipe.js'
 import './info.css'
 import { NavLink } from "react-router-dom";
+import CommentsSection from "./CommentsSection.js";
 
 function Post({post, includeHeader}) { 
 
@@ -67,6 +68,8 @@ return(
                     <p className="centered">{captions[picNo]}</p>
                     {post.recipe && <br /> }
                     {post.recipe && <Recipe recipe={post.recipe} recipepic={post.recipepic} /> }
+                    <br />
+                    <CommentsSection postId={post.post.id} />
             </div> )}
 
     </div>

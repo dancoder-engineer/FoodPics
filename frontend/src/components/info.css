@@ -141,3 +141,9 @@
     height: 100px;
     margin: auto;
 }
+
+.comment{
+    display:grid;
+    grid-template-columns: 1fr 55px 20px auto 1fr;
+    border-style: double;
+}

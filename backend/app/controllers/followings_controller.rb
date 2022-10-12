@@ -21,6 +21,7 @@ class FollowingsController < ApplicationController
     def deleteFollowing
         if !session[:user_id]
             return render json:{error: 'Not logged in.'}, status: :forbidden
+        end
         following = Following.where(follower: session[:user_id], followee: params[:followee])
         if following
             following.each{|i| i.destroy }
@@ -33,6 +34,7 @@ class FollowingsController < ApplicationController
     def checkFollowing
         if !session[:user_id]
             return render json:{error: 'Not logged in.'}, status: :forbidden
+        end
         following = Following.where(follower: session[:user_id], followee: params[:followee])
         render json: following, status: 200
     end
