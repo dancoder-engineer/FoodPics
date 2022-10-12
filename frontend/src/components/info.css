@@ -71,6 +71,7 @@
 .col1{
     grid-column-start: 2;
     width: 55px;
+    font-size: auto;
     
 }
 
@@ -144,6 +145,22 @@
 
 .comment{
     display:grid;
-    grid-template-columns: 1fr 55px 20px auto 1fr;
+    grid-template-columns: 10px 120px 20px 1fr 10px;
     border-style: double;
+}
+
+.col1comm{
+    grid-column-start: 2;
+    width: auto;
+    font-size: auto;
+    height: auto;
+}
+
+.col2comm{
+    grid-column-start: 4;
+}
+
+.miniPicOnPostcomm {
+    height: 50px;
+    border-radius: 50px;
 }

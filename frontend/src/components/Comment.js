@@ -21,10 +21,10 @@ function Comment(commentData) {
 
  {userData && (
           <div className="comment">
-                  <div className="col1"><NavLink to="/">
-                    <img className="miniPicOnPost" src={userData.avatar} /><br />
+                  <div className="col1comm"><NavLink to={"/user/"+userData.UserName}>
+                    <img className="miniPicOnPostcomm" src={userData.avatar} /><br />
                     {userData.UserName}<br /></NavLink></div>
-                     <div className="col2">
+                     <div className="col2comm">
                       {commentData.commentData.content}
                       </div><br />
               </div>

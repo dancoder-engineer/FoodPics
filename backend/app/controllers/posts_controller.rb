@@ -35,6 +35,7 @@ class PostsController < ApplicationController
     def create
         if !session[:user_id]
             return render json:{error: 'Not logged in.'}, status: :forbidden
+        end
 
         post = Post.create(allowed)
 
