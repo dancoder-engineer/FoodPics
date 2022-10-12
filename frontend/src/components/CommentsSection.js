@@ -5,8 +5,15 @@ import Comment from "./Comment";
 function CommentsSection({postId}) {
 
     const[comments, setComments] = useState(null)
+    const[loggedIn, setLoggedIn] = useState(null)
+    const[commentContent, setCommentContent] = useState("")
 
     useEffect(() => {
+        getComments()
+        checkLoggedIn()
+    },[])
+
+    function getComments() {
         fetch("/commentsbypost/"+postId)
         .then(res => res.json())
         .then(data => {
@@ -15,10 +22,60 @@ function CommentsSection({postId}) {
                     )
             }
         })
-    },[])
+    }
+
+    function checkLoggedIn() {
+        fetch("/getme/")
+        .then(res => res.json())
+        .then(data => {
+            if (data.user) { 
+                setLoggedIn(data)
+            }
+        })
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        let spaceLess = commentContent.replace(/\s+/g, '')
+        if(!spaceLess) { return 0 }
+        console.log(loggedIn.user.id)
+        const sendingData = {
+            post_id: postId,
+            user_id: loggedIn.user.id,
+            content: commentContent
+        }
+
+        fetch("/comments/", {
+            method: 'POST',
+            headers: { 
+              'Content-Type': 'application/json',
+              'accept': 'application/json' 
+            },
+            body: JSON.stringify(sendingData)
+          })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            document.getElementById("newComment").value = ""
+            setCommentContent("")
+            getComments()
+            checkLoggedIn()
+        })
+    }
+
+    function handleChange(e) {
+        setCommentContent(e.target.value)
+    }
 
     return(<div>
         {comments}
+        {loggedIn && (
+            <div>
+                <textarea id="newComment" className="allAcross" onChange={handleChange} />
+                <button id="submitNewComment" className="allAcross" onClick={handleSubmit}>Post!</button>
+            </div>
+        )}
+
     </div>)
 }
 

@@ -164,3 +164,11 @@
     height: 50px;
     border-radius: 50px;
 }
+
+.allAcross {
+    width: 100%
+}
+
+#newComment {
+    height: 80px
+}

@@ -11,6 +11,7 @@ function Comment(commentData) {
         .then(res => res.json())
         .then(data => {
             setUserData(data)
+            console.log(data)
         })
     }, [])
 
@@ -21,9 +22,10 @@ function Comment(commentData) {
 
  {userData && (
           <div className="comment">
-                  <div className="col1comm"><NavLink to={"/user/"+userData.UserName}>
-                    <img className="miniPicOnPostcomm" src={userData.avatar} /><br />
-                    {userData.UserName}<br /></NavLink></div>
+                  <div className="col1comm">
+                        <img className="miniPicOnPostcomm" src={userData.avatar} /><br />
+                        {userData.UserName}<br />
+                    </div>
                      <div className="col2comm">
                       {commentData.commentData.content}
                       </div><br />
@@ -37,3 +39,6 @@ function Comment(commentData) {
 
 export default Comment
 
+
+//<NavLink to={("/user/"+userData.UserName)}>
+//</NavLink>
