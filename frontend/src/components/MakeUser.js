@@ -1,10 +1,13 @@
 
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import './info.css'
 import InfoCard from './InfoCard.js'
 import {assembleData} from './sharedfunctions/assembleData.js'
 
 function MakeUser() {
+
+    const history = useNavigate()
 
 
   
@@ -44,6 +47,7 @@ function MakeUser() {
     }
 
     function handleChange(e){
+
         if (e.target.id==="avatar") {
             setSendingData({ 
                 ...sendingData,
@@ -107,38 +111,47 @@ function MakeUser() {
             .then(data => console.log(data))
          }
 
+
+         function goLog() {
+            history('/login/')
+        }
+    
+
     return(
-        <div> <button onClick={youGetMe}>Get Me</button>
-            <button id="Ben" onClick={defaultData}>Chef Ben</button> 
-            <button id="Tony" onClick={defaultData}>Chef Tony</button> 
+        
+        <div className="registerPage">
+{sendingData.avpic && <img src={sendingData.avpic} />}
+            <div className="registerInfo">
+                <h1>Make User</h1>
+                <form id="form">
+                User Name: <input name="UserName" id="UserName" onChange={handleChange} /><br />
+                Password: <input type="password" name="password" id="password" onChange={handleChange} /><br />
+                Password: <input type="password" name="password_confirmation" id="password_confirmation" onChange={handleChange}  /><br />
+                <br /><br />
+                Full Real Name: <input name="ActualName" id="ActualName" onChange={handleChange} /><br />
+                Pronouns: <input name="Pronouns" id="Pronouns" onChange={handleChange} /><br />
+                Website: <input name="Website" id="Website" onChange={handleChange} /><br /><br />
+                Description: <textarea className="description" name="Description" id="Description" onChange={handleChange} /><br /><br />
+                
+                Avatar: <input type="file" id="avatar" name="avatar" onChange={handleChange} /> <br />
+                <br />
+                </form>
+                <button onClick={handleSubmit}>Submit</button><br />
+                {errors && errors}
+                <br />
+            </div>
 
-            <input name="whatever" onClick={getAv} />
-            <br /><br /><br />
-            
-            <h1>Make User</h1>
-            <form id="form">
-            User Name: <input name="UserName" id="UserName" onChange={handleChange} /><br />
-            Password: <input type="password" name="password" id="password" onChange={handleChange} /><br />
-            Password: <input type="password" name="password_confirmation" id="password_confirmation" onChange={handleChange}  /><br />
-            <br /><br />
-            Full Real Name: <input name="ActualName" id="ActualName" onChange={handleChange} /><br />
-            Description: <textarea name="Description" id="Description" onChange={handleChange} /><br />
-            Pronouns: <input name="Pronouns" id="Pronouns" onChange={handleChange} /><br />
-            Website: <input name="Website" id="Website" onChange={handleChange} /><br /><br />
+            <div className="goLogin" onClick={goLog}>
+                <br />Login
+            </div>
 
-            Avatar: <input type="file" id="avatar" name="avatar" onChange={handleChange} /> <br />
+            <div className="devStuff">
+                <button onClick={youGetMe}>Get Me</button>
+                <button id="Ben" onClick={defaultData}>Chef Ben</button> 
+                <button id="Tony" onClick={defaultData}>Chef Tony</button> 
+                <input name="whatever" onClick={getAv} />
+           </div>
 
-            <br />
-
-            
-            </form>
-            <button onClick={handleSubmit}>Submit</button><br />
-            <br /><br />
-            {errors && errors}
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            
-
-           
         </div>
     )
 }

@@ -10,6 +10,10 @@
     background-color: lemonchiffon;
 }
 
+.description {
+    height: 50px
+}
+
 .avatarPic {
     height: 100px;
     margin: auto;
@@ -171,4 +175,91 @@
 
 #newComment {
     height: 80px
+}
+
+
+
+
+
+
+
+.loginPage{
+    background-image: url("https://imgur.com/Qe3LN4l.png");
+    background-color: #cccccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr 1fr 1fr 1fr 3fr;
+    grid-template-rows:  1fr 1.25fr 1.25fr 3fr 3fr 3fr 3fr;
+}
+
+.loginInfo{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
+}
+
+.goRegister{
+    grid-column-start: 5;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+
+
+
+.registerPage{
+    background-image: url("https://imgur.com/YmGrKF5.png");
+    background-color: #cccccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:  0.35fr 1fr 0.35fr 7fr 0.75fr 0.75fr 0.5fr;
+}
+
+.registerInfo{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
+}
+
+.devStuff{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 7;
+    grid-row-end: 7;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
+}
+
+.goLogin{
+    grid-column-start: 5;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
 }

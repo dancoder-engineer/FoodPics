@@ -39,7 +39,6 @@ class PostsController < ApplicationController
 
         post = Post.create(allowed)
 
-
         if post.save
             render json: post, status: :created
         else

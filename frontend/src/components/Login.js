@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
-import {useNavigate} from 'react-router-dom'
+import {NavLink, useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import store from "./Redux/store.js";
+
 import Header from './Header.js'
 
 function Login() {
@@ -42,17 +43,25 @@ function Login() {
         })
     }
 
+    function goReg() {
+        history('/register/')
+    }
+
 
 
 return(
-    <div>
-        <Header />
-        <h1>Login</h1>
-        Username: <input id="username" onChange={handleChange} /> <br />
-        Password: <input type="password" id="password" onChange={handleChange} />
-        <br /> <br />
-        <button onClick={handleClick}>Submit</button><br />
-        {errorMessage}
+    <div className="loginPage">
+        <div className="loginInfo">
+            <h1>Login</h1>
+            Username: <input id="username" onChange={handleChange} /> <br />
+            Password: <input type="password" id="password" onChange={handleChange} />
+            <br /> <br />
+            <button onClick={handleClick}>Submit</button><br />
+            {errorMessage}
+        </div>
+            <div className="goRegister" onClick={goReg}>
+                <br />Register
+            </div>
     </div>
 )
 }
