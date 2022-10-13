@@ -51,6 +51,7 @@ function Login() {
 
 return(
     <div className="loginPage">
+        <img className="backImg" src="https://imgur.com/Qe3LN4l.png" />
         <div className="loginInfo">
             <h1>Login</h1>
             Username: <input id="username" onChange={handleChange} /> <br />

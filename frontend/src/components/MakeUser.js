@@ -120,7 +120,7 @@ function MakeUser() {
     return(
         
         <div className="registerPage">
-{sendingData.avpic && <img src={sendingData.avpic} />}
+            <img className="backImg" src="https://imgur.com/YmGrKF5.png" />
             <div className="registerInfo">
                 <h1>Make User</h1>
                 <form id="form">

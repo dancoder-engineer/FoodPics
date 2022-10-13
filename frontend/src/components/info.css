@@ -181,16 +181,23 @@
 
 
 
-
+.backImg{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+      
+    width: 100%;
+    height: 100%;
+}
 
 .loginPage{
-    background-image: url("https://imgur.com/Qe3LN4l.png");
+/*    background-image: url("https://imgur.com/Qe3LN4l.png"); */
     background-color: #cccccc;
     background-size: cover;
     background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 3fr 1fr 3fr 1fr 1fr 1fr 3fr;
-    grid-template-rows:  1fr 1.25fr 1.25fr 3fr 3fr 3fr 3fr;
+    grid-template-rows:  1fr 1.25fr 1.25fr 3fr 1.7fr 1.7fr 1.7fr;
 }
 
 .loginInfo{
@@ -222,7 +229,7 @@
 
 
 .registerPage{
-    background-image: url("https://imgur.com/YmGrKF5.png");
+/*    background-image: url("https://imgur.com/YmGrKF5.png"); */
     background-color: #cccccc;
     background-size: cover;
     background-repeat: no-repeat;
