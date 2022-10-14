@@ -26,12 +26,16 @@ function Feed() {
             setPostData(data.map((i, index) => 
                 (
                 <div key={index}>
-                    <Post post={i} key={index} includeHeader="true" /> <br />
+                    <Post resetUser={resetUser} post={i} key={index} includeHeader="true" /> <br />
                 </div>
                 )
             ))}
         })
 
+    }
+
+    function resetUser(user) {
+        history('/user/'+user)
     }
 
     return(
