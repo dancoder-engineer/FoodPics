@@ -269,3 +269,32 @@
     color: white;
     text-align: center;
 }
+
+.editPage{
+    /*    background-image: url("https://imgur.com/YmGrKF5.png"); */
+        background-color: #cccccc;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template-columns: 3fr 1fr 3fr 1fr 1fr 1fr 1fr;
+        grid-template-rows:  0.25fr .1fr .25fr .35fr .35fr 0.15fr 0.35fr;
+    }
+
+.editHeader {
+    opacity:0.8;
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.deleteButton {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 6;
+    grid-row-end: 6;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
+}

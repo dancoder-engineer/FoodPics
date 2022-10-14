@@ -64,6 +64,26 @@ class UsersController < ApplicationController
         render json: {UserName: user.UserName, avatar: avatar}
     end
 
+    def update
+        user=User.find_by(id:params[:id])
+        if user
+            user.update(allowed)
+            return render json: user, status: 200
+        else
+            return render json: user
+        end
+    end
+
+    def destroy
+        user=User.find_by(id:params[:id])
+        if user
+            user.destroy
+            return render json: {finished: "It is done."}
+        else
+            return render json: {error: "User not found or not logged in."}
+        end
+    end
+
     private
 
     def allowed

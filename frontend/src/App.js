@@ -8,6 +8,7 @@ import Login from './components/Login.js'
 import Logout from './components/Logout.js'
 import UsersPage from './components/UsersPage.js';
 import Feed from './components/Feed.js'
+import EditUser from './components/EditUser.js'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/login/' element={<Login />} />
         <Route path='/logout/' element={<Logout />} />
         <Route path='/user/:name' element={<UsersPage /> } />
+        <Route path='/edituser/' element={<EditUser />} />
       </Routes>
     </BrowserRouter>
     
