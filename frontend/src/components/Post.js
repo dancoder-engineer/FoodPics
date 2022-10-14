@@ -2,15 +2,17 @@ import React, {useState, useEffect} from "react";
 import { convertTimeDate } from './sharedfunctions/assembleData.js'
 import Recipe from './Recipe.js'
 import './info.css'
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import CommentsSection from "./CommentsSection.js";
 
-function Post({post, includeHeader}) { 
+function Post({post, includeHeader, resetUser}) { 
 
     let [userInfo, setUserInfo] = useState(null)
     let [captions, setCaptions] = useState(null)
     let [timeDate, setTimeDate] = useState(null)
     let [picNo, setPicNo] = useState(0)
+
+    const history=useNavigate()
 
 
     useEffect(() => { 
@@ -40,6 +42,11 @@ function Post({post, includeHeader}) {
         }
 
     }
+
+    function toUser() {
+        history('/user/'+userInfo.UserName)
+    }
+
 return(
     <div className="post">
         {userInfo && ( 
@@ -50,11 +57,9 @@ return(
                 (<div className="userInfo">
                     
                     <div className="col1"><NavLink to={'/user/'+userInfo.UserName}><img className="miniPicOnPost" src={userInfo.avatar} /></NavLink></div>
-                    <div className="col2">
-                           <NavLink to={'/user/'+userInfo.UserName}>
+                    <div className="col2" onClick={toUser}>                           
                                 {userInfo.UserName}<br />
                                 Location: {post.post.place}
-                           </NavLink>
                     </div><br />
                     
                 </div>) }
@@ -69,7 +74,7 @@ return(
                     {post.recipe && <br /> }
                     {post.recipe && <Recipe recipe={post.recipe} recipepic={post.recipepic} /> }
                     <br />
-                    <CommentsSection postId={post.post.id} />
+                    <CommentsSection resetUser={resetUser} postId={post.post.id} />
             </div> )}
 
     </div>

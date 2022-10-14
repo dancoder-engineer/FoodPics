@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Comment from "./Comment";
 
-function CommentsSection({postId}) {
+function CommentsSection({postId, resetUser}) {
 
     const[comments, setComments] = useState(null)
     const[loggedIn, setLoggedIn] = useState(null)
@@ -13,12 +13,14 @@ function CommentsSection({postId}) {
         checkLoggedIn()
     },[])
 
+
+
     function getComments() {
         fetch("/commentsbypost/"+postId)
         .then(res => res.json())
         .then(data => {
             if(!data.error) {
-                setComments(data.map((i) => <Comment commentData={i} key={i.id}/>)
+                setComments(data.map((i) => <Comment resetUser={resetUser} commentData={i} key={i.id}/>)
                     )
             }
         })

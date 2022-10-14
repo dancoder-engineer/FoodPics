@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import InfoCard from "./InfoCard.js";
 import Header from "./Header.js";
 
@@ -10,6 +10,8 @@ function UsersPage() {
     
     const [userInfo, setUserInfo] = useState(null)
     const [postData, setPostData] = useState([])
+
+    const history=useNavigate()
    
 
 
@@ -18,27 +20,32 @@ function UsersPage() {
     }
   , [])
 
-    function setStates() {
-        fetch('/userid/' + params.name)
+  useEffect(() => {
+    setStates()
+  }, [params.name])
+
+    function setStates(user=params.name) {
+        setUserInfo(null)
+        getPostNums(null)
+        fetch('/userid/' + user)
         .then(res => res.json())
         .then(data => {
             setUserInfo(<InfoCard data={data} />)
             getPostNums(data.user.id)
+            if (user !== params.name) {history('/user/'+user)}
         })
     }
 
-
-    
 
 
     function getPostNums(id) {
         fetch('/userposts/' + id)
         .then(res => res.json())
         .then(data => { 
-            setPostData(data.posts.map((i) => 
+            setPostData(data.posts.map((i, index) => 
                 (
-                <div>
-                    <Post post={i} key={i.post.id} includeHeader="false" /> <br />
+                <div key={index}>
+                    <Post resetUser={setStates} post={i}includeHeader="false" /> <br />
                 </div>
                 )
             ))

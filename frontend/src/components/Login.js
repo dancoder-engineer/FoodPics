@@ -58,7 +58,7 @@ return(
             Password: <input type="password" id="password" onChange={handleChange} />
             <br /> <br />
             <button onClick={handleClick}>Submit</button><br />
-            {errorMessage}
+            {errorMessage} <br />
         </div>
             <div className="goRegister" onClick={goReg}>
                 <br />Register
