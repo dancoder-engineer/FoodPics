@@ -5,8 +5,6 @@ import {assembleData, printFormdata} from './sharedfunctions/assembleData.js'
 import MultiplePicUploader from './MultiplePicUploader.js'
 import Post from './Post.js'
 import CreateRecipe from './CreateRecipe.js'
-import store from "./Redux/store.js";
-import { useDispatch, useSelector } from "react-redux";
 
 function MakePost() {
 
@@ -19,11 +17,6 @@ function MakePost() {
         captions: [],
         user_id: 5
     })
-
-    const dispatch = useDispatch();
-    const makingPost = useSelector((state) => state);
-
-    store.subscribe(() => console.log(recipeData))
 
 
 

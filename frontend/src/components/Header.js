@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { setUser } from "./Redux/userSlice";
+import { setUser } from "./Redux/postSlice";
 
 function Header(){
 

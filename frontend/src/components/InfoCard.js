@@ -16,7 +16,6 @@ function InfoCard({data}) {
         .then(data => {
             if (data.user) {  
                 setloggedIn("true")
-                
             }
         })
     }

@@ -93,6 +93,7 @@ function MakeUser() {
                  }
                  else {
                     setErrors([])
+                    history('/login/')
                  }
                
             })

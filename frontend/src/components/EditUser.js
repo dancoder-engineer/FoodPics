@@ -31,7 +31,7 @@ function EditUser() {
         })
      }
 
-     function populateForm(userData) {console.log(userData)
+     function populateForm(userData) { 
         document.querySelector("#UserName").value = userData.user.UserName
         document.querySelector("#ActualName").value = userData.user.ActualName
         document.querySelector("#Pronouns").value = userData.user.Pronouns
@@ -46,9 +46,6 @@ function EditUser() {
         })
      }
 
-     function seeData() {
-        console.log(sendingData)
-     }
 
     function handleChange(e){
 
@@ -111,10 +108,7 @@ function EditUser() {
             .then (() => history('/login/'))
     }
 
-         function goLog() {
-            
-        }
-    
+
 
     return(
         

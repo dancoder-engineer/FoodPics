@@ -9,11 +9,10 @@ function Login() {
     const dispatch = useDispatch();
     const [sendData, setSendData] = useState({})
     const [errorMessage, setErrorMessage] = useState(null)
-    const user = useSelector((state) => state.user.id);
+    
     const history = useNavigate() 
 
     
-    store.subscribe(() => console.log(user))
 
     function handleChange(e) {
         setSendData({

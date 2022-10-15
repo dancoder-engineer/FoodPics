@@ -35,14 +35,15 @@ class UsersController < ApplicationController
 
     def create
         user=User.create!(allowed)
+        session.delete :user_id
 
         if user.save
-            render json: user, status: :created
+            session[:user_id] = user.id     
+            render json: {user: user, session: session}, status: :created
         end
 
         rescue ActiveRecord::RecordInvalid => invalid
             render json: { errors: invalid.record.errors.full_messages  }, status: :unprocessable_entity
-
     end
 
     def update
