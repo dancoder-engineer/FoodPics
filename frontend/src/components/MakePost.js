@@ -7,7 +7,7 @@ import CreateRecipe from './CreateRecipe.js'
 
 import store from "./Redux/store.js";
 import { useDispatch, useSelector } from "react-redux";
-import { setParam, setCaptions } from './Redux/postSlice.js'
+import { setParam, setCaptions, popPic } from './Redux/postSlice.js'
 
 function MakePost() {
 
@@ -78,30 +78,41 @@ function MakePost() {
                 pics: sdp
         })
         }
+
+        if (makingPost.captions[elem]) {
+            dispatch(popPic())
+        }
     }
 
-    function handleClick() { console.log(sendingData)
-        
+
+    function makeFormData() {
         let formData = new FormData()
-        //formData = assembleData(sendingData, "post")
-        formData.append('post[title]', document.querySelector("#title").value)
-        formData.append('post[place]', document.querySelector("#place").value)
-        formData.append('post[description]', document.querySelector("#description").value)
+        console.log(makingPost)
+        formData.append('post[title]', makingPost.post.title )
+        formData.append('post[place]', makingPost.post.place )
+        formData.append('post[description]', makingPost.post.description)
         formData.append('post[user_id]', sendingData.user_id)
-   //     printFormdata(formData)
-    // if this is true, no file has been entered yet
-    // console.log(e.target.files.length === 0)
-        let picCaptions = sendingData.captions.join("||")
+        let picCaptions = makingPost.captions.join("||")
 
         formData.append('post[captions]', picCaptions)
-//        console.log(picCaptions.split("||"))
 
         for (let i in sendingData.pics) {
-           formData.append(
-                'post[pics][]',
-                sendingData["pics"][i]["pic"],
-                sendingData["pics"][i]["picData"]
-            ) }
+            formData.append(
+                 'post[pics][]',
+                 sendingData["pics"][i]["pic"],
+                 sendingData["pics"][i]["picData"]
+             ) }
+
+        return formData
+    }
+
+    function handleClick() {
+
+        checkPics()
+        let formData = makeFormData()
+
+
+
 
            
             printFormdata(formData)

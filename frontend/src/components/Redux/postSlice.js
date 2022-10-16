@@ -45,6 +45,16 @@ const postSlice = createSlice({
         })
     },
 
+    popPic(state, action) { 
+
+        let captions = state.captions.slice(0, state.captions.length-1)
+        console.log(captions)
+         return({
+             ...state,
+             captions: captions
+         })
+    },
+
 
 
     setCaptions(state, action) { console.log(action)
@@ -61,5 +71,5 @@ const postSlice = createSlice({
 
     },
    });
-   export const {setParam, setRecipeParam, setCaptions} = postSlice.actions
+   export const {setParam, setRecipeParam, setCaptions, popPic} = postSlice.actions
    export default postSlice.reducer;
