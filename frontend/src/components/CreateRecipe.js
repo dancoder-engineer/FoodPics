@@ -12,30 +12,30 @@ function CreateRecipe({handleRecipe}){
 
         let payload = {}
 
-        if (e.target.files) {
+    
             payload = {
                 id: e.target.id,
                 value: e.target.value,
-                file: e.target.files[0]}
-        }
-        else {
-            payload = {
-                id: e.target.id,
-                value: e.target.value,
-                file: "n/a"}
-        }
+                }
+        
 
         dispatch(setRecipeParam(payload))
+    }
+
+    function setRecipe(e) {
+
+        handleRecipe(e)
+        
     }
 
 
 
     return(
         <div><br />
-            Name of the Recipe: <input id="name" onChange={setRedux} /> <br />
+            Name of the Recipe: <input id="title" onChange={setRedux} /> <br />
             List of Ingredients: <textarea id="ingredientlist" onChange={setRedux} className="textA" /> <br />
             How to Make: <textarea id="guide" onChange={setRedux} className="textA" /> <br />
-            Picture: <input type="file"  id="pic" name="pic" onChange={setRedux} />
+            Picture: <input type="file"  id="pic" name="pic" onChange={setRecipe} />
         </div>
     )
 }

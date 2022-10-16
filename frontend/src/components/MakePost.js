@@ -38,12 +38,13 @@ function MakePost() {
     useEffect(() => {
         fetch("/getme/")
         .then(res => res.json())
-        .then(data => {console.log(data)
+        .then(data => {
             if (!data.user) { 
                 history('/login/')
             }
         })
     }, [])
+
     function handleChange(e) { 
 
         let payload = {}
@@ -101,37 +102,45 @@ function MakePost() {
     }
 
 
-    function makeFormData() {
+    function makeFormData(type, postId=0) {
+
         let formData = new FormData()
-        console.log(makingPost)
-        formData.append('post[title]', makingPost.post.title )
-        formData.append('post[place]', makingPost.post.place )
-        formData.append('post[description]', makingPost.post.description)
-        formData.append('post[user_id]', sendingData.user_id)
-        let picCaptions = makingPost.captions.join("||")
 
-        formData.append('post[captions]', picCaptions)
+        if (type === "Post") {
+            formData.append('post[title]', makingPost.post.title )
+            formData.append('post[place]', makingPost.post.place )
+            formData.append('post[description]', makingPost.post.description)
+            formData.append('post[user_id]', sendingData.user_id)
+            let picCaptions = makingPost.captions.join("||")
 
-        for (let i in sendingData.pics) {
-            formData.append(
-                 'post[pics][]',
-                 sendingData["pics"][i]["pic"],
-                 sendingData["pics"][i]["picData"]
-             ) }
+            formData.append('post[captions]', picCaptions)
 
-        return formData
+            for (let i in sendingData.pics) {
+                formData.append(
+                    'post[pics][]',
+                    sendingData["pics"][i]["pic"],
+                    sendingData["pics"][i]["picData"]
+                ) }
+
+        
+    }
+
+    if (type==="Recipe") {
+        formData.append('recipe[title]', makingPost.recipe.title )
+        formData.append('recipe[ingredientlist]', makingPost.recipe.ingredientlist )
+        formData.append('recipe[guide]', makingPost.recipe.guide )
+        formData.append('recipe[post_id]', postId)
+        formData.append('recipe[pic]', recipeData.picFile, recipeData.pic)
+    }
+
+    return formData
+
     }
 
     function handleClick() {
 
         checkPics()
-        let formData = makeFormData()
-
-
-
-
-           
-            printFormdata(formData)
+        let formData = makeFormData("Post")
             
             fetch('/posts/', {
                 method: 'post',
@@ -159,30 +168,19 @@ function MakePost() {
     function handleRecipe(e) {
      
 
-        if(e.target.id === "avatar") {
+        if(e.target.id === "pic") {
             setRecipeData({
                 ...recipeData,
                 [e.target.id]: e.target.value,
                 picFile: e.target.files[0]
             })   
         }
-        else {
-            setRecipeData({
-                ...recipeData,
-                [e.target.id]: e.target.value
-            })
-        }
+
     }
 
     function sendRecipe(postId) { 
-        let formData = new FormData()
-        formData = assembleData(recipeData, "recipe")
+        let formData = makeFormData("Recipe", postId)
 
-        formData.append('recipe[post_id]', postId)
-        formData.append('recipe[pic]', recipeData.picFile, recipeData.avatar)
-        printFormdata(formData)
-        console.log(recipeData)
-      //  if(Object.keys(recipeData).length === 5) {
             fetch("/recipes/", {
                 method: 'post',
                 body: formData,
@@ -211,7 +209,7 @@ function MakePost() {
             }
         }
 
-        if (hasRecipe === "↑" && !makingPost.recipe.pic) { 
+        if (hasRecipe === "↑" && !recipeData.picFile) { 
             setErrorMessage(<p>If you're uploading a recipe, it must have a picture.</p>)
             return false
          }        

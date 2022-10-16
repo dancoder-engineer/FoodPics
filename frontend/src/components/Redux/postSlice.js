@@ -27,8 +27,6 @@ const postSlice = createSlice({
         if(action.payload.id === "pic") {
             editedRecipe = {
                 ...state.recipe,
-                pic: action.payload.value,
-                loc: action.payload.id
             } 
         }
         
