@@ -3,10 +3,11 @@ import './info.css'
 
 import {assembleData, printFormdata} from './sharedfunctions/assembleData.js'
 import MultiplePicUploader from './MultiplePicUploader.js'
-import Post from './Post.js'
 import CreateRecipe from './CreateRecipe.js'
+
 import store from "./Redux/store.js";
 import { useDispatch, useSelector } from "react-redux";
+import { setParam, setCaptions } from './Redux/postSlice.js'
 
 function MakePost() {
 
@@ -21,27 +22,27 @@ function MakePost() {
     })
 
     const dispatch = useDispatch();
-    const makingPost = useSelector((state) => state);
+    const makingPost = useSelector((state) => state.post);
 
-    store.subscribe(() => console.log(recipeData))
+    store.subscribe(() => console.log(makingPost))
 
 
 
     function handleChange(e) { 
+
+        let payload = {}
      
        
         if(e.target.id.startsWith("caption")) { 
-            let captions = sendingData.captions
-       //     console.log(sendingData.pics)
-       //     console.log(sendingData.captions)
-            let place=parseInt(e.target.id.split('caption')[1])
-            captions[place] = e.target.value
-            setSendingData({
-                ...sendingData,
-                captions: captions
-            })
+            payload = {
+                id: e.target.id,
+                value: e.target.value,
+                }
+            
+            dispatch(setCaptions(payload))
+            
         }
-        if(e.target.id.startsWith("file")) { 
+        else if(e.target.id.startsWith("file")) { 
             let fileNo = parseInt(e.target.name.split("file")[1])
        //     console.log(sendingData.pics)
             let sdp = sendingData.pics
@@ -53,9 +54,20 @@ function MakePost() {
                 ...sendingData,
                 pics: sdp
             })
+            
         }
 
+        else {
+            payload = {
+                param: e.target.id,
+                value: e.target.value,
+                file: "n/a"}
+
+            dispatch(setParam(payload))
+        }
        
+        
+
     }
 
     function handleRid(elem) {
@@ -105,16 +117,6 @@ function MakePost() {
             })
     }
 
-    function grabPost() {
-        let postNo=document.querySelector("#title").value
-        fetch('/posts/' + postNo)
-        .then(res => res.json())
-        .then(data => {console.log(data)
-            setPostData(data)
-         })
-
-    }
-
     function switchRecipe() {
         if (hasRecipe === "↓") { setHasRecipe("↑") }
         if (hasRecipe === "↑") { setHasRecipe("↓") }
@@ -160,13 +162,17 @@ function MakePost() {
     }
 
 
+    function seeRedux() {
+        console.log(makingPost)
+    }
+
     return(
         <div>
             <h1 className="centered">Create a New Post</h1><br /><br />
             <form>
-                Title: <input id="title" name="title" /> <br />
-                Where was it taken?: <input id="place" name="place" /> <br />
-                <textarea id="description" name="description" className="textA"  /><br />
+                Title: <input id="title" name="title" onChange={handleChange} /> <br />
+                Where was it taken?: <input id="place" name="place" onChange={handleChange} onClick={seeRedux} /> <br />
+                <textarea id="description" name="description" className="textA"  onChange={handleChange} /><br />
                 <MultiplePicUploader handleChange={handleChange} handleRid={handleRid}/><br />
                 Include a Recipe: <input type="checkbox" onChange={switchRecipe} /><br />
                 <div className={hasRecipe}>

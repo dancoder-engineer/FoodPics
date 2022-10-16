@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from "react";
 import './info.css'
 
+
+
+
 function Recipe({recipe, recipepic}) {
 
     let [seeRecipe, setSeeRecipe] = useState("↓")
     let [liSet, setLiSet] = useState(null)
+
 
     useEffect(() => {
         let elements = recipe.ingredientlist.split('\r\n')
