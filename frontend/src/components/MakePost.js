@@ -11,7 +11,7 @@ import { setParam, setCaptions } from './Redux/postSlice.js'
 
 function MakePost() {
 
-    let [postData, setPostData] = useState(null)
+    let [errorMessage, setErrorMessage] = useState(null)
     let [hasRecipe, setHasRecipe] = useState("↓")
     let [recipeData, setRecipeData] = useState({})
 
@@ -106,14 +106,20 @@ function MakePost() {
            
             printFormdata(formData)
             
-            fetch('http://localhost:5000/posts', {
+            fetch('/posts/', {
                 method: 'post',
                 body: formData,
             })
             .then(res => res.json())
             .then(data => {
+
+                if (data.errors) {
+                    setErrorMessage(data.errors.map((i) => <p>{i}</p>))
+                }
+                else {
                 console.log(data)
                 if (hasRecipe === "↑") { sendRecipe(data.id) }
+                }
             })
     }
 
@@ -164,6 +170,27 @@ function MakePost() {
 
     function seeRedux() {
         console.log(makingPost)
+        checkPics()
+    }
+
+
+    function checkPics() {
+        for (let i in makingPost.captions) {
+            let id = "file" + i
+            let fileInput = document.querySelector("#"+id)
+            if (!fileInput.files[0]) {
+                setErrorMessage(<p>A file must be uploaded for all pictures. If you don't need as many as you once thought, you can click the - button to take one away.</p>)
+                return false
+            }
+        }
+
+        if (hasRecipe === "↑" && !makingPost.recipe.pic) { 
+            setErrorMessage(<p>If you're uploading a recipe, it must have a picture.</p>)
+            return false
+         }        
+
+         setErrorMessage(null)
+         return true
     }
 
     return(
@@ -180,7 +207,8 @@ function MakePost() {
                 </div>
             </form><br /><br />
 
-            <button onClick={handleClick}>Submit</button>
+            <button onClick={handleClick}>Submit</button><br /><br />
+            {errorMessage}
         </div>
     )
 }

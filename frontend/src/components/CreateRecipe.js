@@ -36,7 +36,7 @@ function CreateRecipe({handleRecipe}){
             Name of the Recipe: <input id="name" onChange={setRedux} /> <br />
             List of Ingredients: <textarea id="ingredientlist" onChange={setRedux} className="textA" /> <br />
             How to Make: <textarea id="guide" onChange={setRedux} className="textA" /> <br />
-            Picture: <input type="file"  id="avatar" name="avatar" onChange={setRedux} />
+            Picture: <input type="file"  id="pic" name="pic" onChange={setRedux} />
         </div>
     )
 }

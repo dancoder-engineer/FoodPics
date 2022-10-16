@@ -3,25 +3,31 @@ import { createSlice } from '@reduxjs/toolkit';
 const postSlice = createSlice({
     name: 'post',
     initialState: {
-
+        post: {},
+        recipe: {},
+        captions: []
     },
     reducers: {
     setParam(state, action) {
-        console.log(action.payload)
+        let editedPost = {
+            ...state.post,
+            [action.payload.param]: action.payload.value
+        } 
         return({
             ...state,
-            [action.payload.param]: action.payload.value
+            post: editedPost
         })  
     },
+
     setRecipeParam(state, action) { 
         console.log(action.payload)
 
         let editedRecipe = []
 
-        if(action.payload.id === "avatar") {
+        if(action.payload.id === "pic") {
             editedRecipe = {
                 ...state.recipe,
-                avatar: action.payload.value,
+                pic: action.payload.value,
                 loc: action.payload.id
             } 
         }
@@ -32,14 +38,13 @@ const postSlice = createSlice({
                 [action.payload.id]: action.payload.value
             }
         }
-        
-        console.log(editedRecipe)
    
         return({
             ...state,
             recipe: editedRecipe
         })
     },
+
 
 
     setCaptions(state, action) { console.log(action)

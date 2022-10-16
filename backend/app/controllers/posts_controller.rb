@@ -33,17 +33,22 @@ class PostsController < ApplicationController
     end
 
     def create
+   #     return render json: session
         if !session[:user_id]
             return render json:{error: 'Not logged in.'}, status: :forbidden
         end
 
-        post = Post.create(allowed)
+        post = Post.create!(allowed)
 
         if post.save
             render json: post, status: :created
         else
             render json: {error: "Faild!", post: post}
         end
+
+    rescue ActiveRecord::RecordInvalid => invalid
+        render json: { errors: invalid.record.errors.full_messages  }, status: :unprocessable_entity
+        
     end
 
     def destroy
