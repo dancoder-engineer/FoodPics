@@ -20,7 +20,6 @@ const postSlice = createSlice({
     },
 
     setRecipeParam(state, action) { 
-        console.log(action.payload)
 
         let editedRecipe = []
 
@@ -55,7 +54,7 @@ const postSlice = createSlice({
 
 
 
-    setCaptions(state, action) { console.log(action)
+    setCaptions(state, action) { 
             let captions
             if (state.captions) { captions= [...state.captions] }
             else {captions = [] }

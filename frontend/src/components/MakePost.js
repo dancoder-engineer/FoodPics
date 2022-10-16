@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import './info.css'
 
-import {assembleData, printFormdata} from './sharedfunctions/assembleData.js'
 import MultiplePicUploader from './MultiplePicUploader.js'
 import CreateRecipe from './CreateRecipe.js'
 import Header from './Header.js'
@@ -13,8 +12,6 @@ import { useNavigate } from "react-router-dom";
 
 function MakePost() {
 
-
-    let [loggedIn, setLoggedIn] = useState(null)
     let [errorMessage, setErrorMessage] = useState(null)
     let [hasRecipe, setHasRecipe] = useState("↓")
     let [recipeData, setRecipeData] = useState({})
@@ -30,7 +27,7 @@ function MakePost() {
 
     const makingPost = useSelector((state) => state.post);
 
-    store.subscribe(() => console.log(makingPost))
+    //store.subscribe(() => console.log(makingPost))
 
 
 
@@ -38,9 +35,15 @@ function MakePost() {
     useEffect(() => {
         fetch("/getme/")
         .then(res => res.json())
-        .then(data => {
+        .then(data => { 
             if (!data.user) { 
                 history('/login/')
+            }
+            else {
+                setSendingData({
+                    ...sendingData,
+                    user_id: data.user.id
+                })
             }
         })
     }, [])
@@ -148,14 +151,14 @@ function MakePost() {
             })
             .then(res => res.json())
             .then(data => {
-
                 if (data.errors) {
                     setErrorMessage(data.errors.map((i) => <p>{i}</p>))
                 }
                 else {
-                console.log(data)
                 if (hasRecipe === "↑") { sendRecipe(data.id) }
+                else { history('/') }
                 }
+
             })
     }
 
@@ -186,16 +189,13 @@ function MakePost() {
                 body: formData,
             })
             .then(res => res.json())
-            .then(data => console.log(data))
-
-   //     }
+            .then(() => history('/'))
         
     }
 
 
     function seeRedux() {
-        console.log(makingPost)
-        checkPics()
+        console.log(Object.keys(makingPost.recipe).length === 3)
     }
 
 
@@ -214,6 +214,11 @@ function MakePost() {
             return false
          }        
 
+         if (hasRecipe === "↑" &&  (!makingPost.recipe.title || !makingPost.recipe.ingredientlist || !makingPost.recipe.guide )) { 
+            setErrorMessage(<p>If you wish to have a recipe, please fill out all of the recipe's fields.</p>)
+            return false
+         }
+
          setErrorMessage(null)
          return true
     }
@@ -230,7 +235,7 @@ function MakePost() {
                 <h3 className="centered">Create a New Post</h3>
                 <form>
                     Title: <input id="title" name="title" onChange={handleChange} /> <br />
-                    Where was it taken?: <input id="place" name="place" onChange={handleChange} onClick={seeRedux} /> <br />
+                    Where was it taken?: <input id="place" name="place" onChange={handleChange} /> <br />
                     <textarea id="description" name="description" className="textA"  onChange={handleChange} /><br />
                     <MultiplePicUploader handleChange={handleChange} handleRid={handleRid}/><br />
                     Include a Recipe: <input type="checkbox" onChange={switchRecipe} /><br />
