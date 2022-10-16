@@ -38,7 +38,6 @@ function addAPic(e) {
         picu.push(
             (<div key={num}><EachPicUpload handleChange={change} number={picUploads.length} ridThis={ridThis}/>    </div>)
         )
-        console.log(picu)
         setPicUploads([...picu])
  
     }

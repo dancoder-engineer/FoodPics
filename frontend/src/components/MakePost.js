@@ -1,16 +1,20 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import './info.css'
 
 import {assembleData, printFormdata} from './sharedfunctions/assembleData.js'
 import MultiplePicUploader from './MultiplePicUploader.js'
 import CreateRecipe from './CreateRecipe.js'
+import Header from './Header.js'
 
 import store from "./Redux/store.js";
 import { useDispatch, useSelector } from "react-redux";
 import { setParam, setCaptions, popPic } from './Redux/postSlice.js'
+import { useNavigate } from "react-router-dom";
 
 function MakePost() {
 
+
+    let [loggedIn, setLoggedIn] = useState(null)
     let [errorMessage, setErrorMessage] = useState(null)
     let [hasRecipe, setHasRecipe] = useState("↓")
     let [recipeData, setRecipeData] = useState({})
@@ -22,12 +26,24 @@ function MakePost() {
     })
 
     const dispatch = useDispatch();
+    const history = useNavigate()
+
     const makingPost = useSelector((state) => state.post);
 
     store.subscribe(() => console.log(makingPost))
 
 
 
+
+    useEffect(() => {
+        fetch("/getme/")
+        .then(res => res.json())
+        .then(data => {console.log(data)
+            if (!data.user) { 
+                history('/login/')
+            }
+        })
+    }, [])
     function handleChange(e) { 
 
         let payload = {}
@@ -205,23 +221,33 @@ function MakePost() {
     }
 
     return(
-        <div>
-            <h1 className="centered">Create a New Post</h1><br /><br />
-            <form>
-                Title: <input id="title" name="title" onChange={handleChange} /> <br />
-                Where was it taken?: <input id="place" name="place" onChange={handleChange} onClick={seeRedux} /> <br />
-                <textarea id="description" name="description" className="textA"  onChange={handleChange} /><br />
-                <MultiplePicUploader handleChange={handleChange} handleRid={handleRid}/><br />
-                Include a Recipe: <input type="checkbox" onChange={switchRecipe} /><br />
-                <div className={hasRecipe}>
-                    <CreateRecipe handleRecipe={handleRecipe} />
-                </div>
-            </form><br /><br />
+        <div className="makePostPage">
 
-            <button onClick={handleClick}>Submit</button><br /><br />
-            {errorMessage}
+            <img className="backImg" src="https://imgur.com/OLunZTA.png" />
+            <div className="makePostHeader">
+                <Header />
+            </div>
+
+            <div className="makePost">
+                <h3 className="centered">Create a New Post</h3>
+                <form>
+                    Title: <input id="title" name="title" onChange={handleChange} /> <br />
+                    Where was it taken?: <input id="place" name="place" onChange={handleChange} onClick={seeRedux} /> <br />
+                    <textarea id="description" name="description" className="textA"  onChange={handleChange} /><br />
+                    <MultiplePicUploader handleChange={handleChange} handleRid={handleRid}/><br />
+                    Include a Recipe: <input type="checkbox" onChange={switchRecipe} /><br />
+                    <div className={hasRecipe}>
+                        <CreateRecipe handleRecipe={handleRecipe} />
+                    </div>
+                </form><br /><br />
+
+                <button onClick={handleClick}>Submit</button><br /><br />
+                {errorMessage}
+            </div>
         </div>
     )
 }
 
 export default MakePost
+
+

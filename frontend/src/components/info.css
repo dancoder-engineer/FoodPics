@@ -298,3 +298,36 @@
     color: white;
     text-align: center;
 }
+
+
+
+.makePostPage{
+    /*    background-image: url("https://imgur.com/YmGrKF5.png"); */
+        background-color: #cccccc;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template-columns: 3fr 1fr 3.9fr 1fr 1fr 1fr 1fr;
+        grid-template-rows:  .5fr 5px 10px .35fr 2px 3px 5px;
+    }
+
+.makePost {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
+}
+
+.makePostHeader {
+    opacity:0.8;
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+

@@ -31,8 +31,7 @@ function CreateRecipe({handleRecipe}){
 
 
     return(
-        <div>
-            <h1>Recipe!!!!!!!!!!!!!!!!11111111111111111</h1>
+        <div><br />
             Name of the Recipe: <input id="name" onChange={setRedux} /> <br />
             List of Ingredients: <textarea id="ingredientlist" onChange={setRedux} className="textA" /> <br />
             How to Make: <textarea id="guide" onChange={setRedux} className="textA" /> <br />
