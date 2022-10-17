@@ -137,7 +137,7 @@ function EditUser() {
             </div>
 
             <div className="deleteButton" onClick={deleteAccount}>
-                lkj
+                <br /> Delete My Account
             </div>
 
 
