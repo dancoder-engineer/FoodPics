@@ -11,8 +11,9 @@ function EachPicUpload ({handleChange, number, ridThis}) {
   
 
     return(
-        <div>
-                File {num + 1}: <input type="file" id={idName} name={idName} onChange={handleChange} /> <input onChange={handleChange} id={captName} /><br />
+        <div><br />
+                File {num + 1}: <input type="file" id={idName} name={idName} onChange={handleChange} /><br />
+                <textarea onChange={handleChange} id={captName} className="textA"/><br />
         </div>
     )
 }

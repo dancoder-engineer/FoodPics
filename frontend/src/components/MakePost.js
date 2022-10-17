@@ -234,9 +234,9 @@ function MakePost() {
             <div className="makePost">
                 <h3 className="centered">Create a New Post</h3>
                 <form>
-                    Title: <input id="title" name="title" onChange={handleChange} /> <br />
-                    Where was it taken?: <input id="place" name="place" onChange={handleChange} /> <br />
-                    <textarea id="description" name="description" className="textA"  onChange={handleChange} /><br />
+                    Title:<br /><input id="title" name="title" onChange={handleChange} /> <br />
+                    Where was it taken?:<br /><input id="place" name="place" onChange={handleChange} /> <br />
+                    Description:<br /><textarea id="description" name="description" className="textA"  onChange={handleChange} /><br />
                     <MultiplePicUploader handleChange={handleChange} handleRid={handleRid}/><br />
                     Include a Recipe: <input type="checkbox" onChange={switchRecipe} /><br />
                     <div className={hasRecipe}>
