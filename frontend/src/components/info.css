@@ -277,7 +277,7 @@
         background-repeat: no-repeat;
         display: grid;
         grid-template-columns: 3fr 1fr 3fr 1fr 1fr 1fr 1fr;
-        grid-template-rows:  0.25fr .1fr .25fr .35fr .35fr 0.15fr 0.35fr;
+        grid-template-rows:  0.25fr .03fr 5px .35fr .35fr 0.15fr 0.35fr;
     }
 
 .editHeader {
@@ -285,7 +285,7 @@
     grid-column-start: 1;
     grid-column-end: 8;
     grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-end: 2;
 }
 
 .deleteButton {
