@@ -16,6 +16,10 @@ class TagsController < ApplicationController
 
     def postsbytag
         smallTag = params[:tag].downcase
+        posts = Tag.find_by(tag: smallTag)
+        if !posts
+            return render json: ({error: "No posts found"})
+        end
         posts = Tag.find_by(tag: smallTag).posts
         postNos = posts.map {|i| i.id}
         feedPosts = []

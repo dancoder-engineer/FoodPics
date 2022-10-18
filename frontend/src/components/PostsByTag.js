@@ -23,9 +23,9 @@ function PostsByTag() {
     function makeFeed(tag=params.tag) { console.log(tag)
         fetch('/postsbytag/' + tag)
         .then(res => res.json())
-        .then(data => { 
-            if(1 === 2) {
-               // history('./login')
+        .then(data => { console.log(data)
+            if(data.error) {
+               setPostData(<h1 className="centered">No posts with tag {tag} found!</h1>)
             }
             else 
             {

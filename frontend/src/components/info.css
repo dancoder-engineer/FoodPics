@@ -56,7 +56,7 @@
 .postPic {
     display: block;
     margin: auto;
-    max-height: 350px;
+    width: 50%;
     padding: 10px
 }
 
