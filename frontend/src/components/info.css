@@ -299,6 +299,10 @@
     text-align: center;
 }
 
+.followeduser{
+    background-color: lemonchiffon;
+}
+
 
 
 .makePostPage{
@@ -343,3 +347,37 @@
 }
 
 
+.followeduser{
+    display:grid;
+    margin:auto;
+    width: 70%;
+    grid-template-columns: 10px 120px 20px 1fr 10px;
+    border-style: double;
+}
+
+.followingsPage{
+    /*    background-image: url("https://imgur.com/YmGrKF5.png"); */
+        background-color: #cccccc;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .individualUsers{
+        opacity: 0.99999;
+        position: absolute
+    }
+
+    .centeredWithBg{
+        border-style: double;
+        width:fit-content;
+        margin:auto;
+        text-align: center;
+        opacity: 0.99999;
+        background-color: lemonchiffon;
+    }
+
+    .headerHere{
+        position: relative;
+    }
+
+    

@@ -31,7 +31,13 @@ class PostsController < ApplicationController
         }}
         sortedPosts = postsWithInfo.sort{|i| i[:post][:created_at]}
       #  sortedPosts = sortedPosts.reverse
-        render json: {posts: sortedPosts}, status: 200
+      howmanyfollowers = Following.where(followee: params[:id])
+      howmanyfollowees = Following.where(follower: params[:id])
+      follow = {
+        followers: howmanyfollowers.length,
+        followees: howmanyfollowees.length
+      }
+        render json: {posts: sortedPosts, follow: follow}, status: 200
     end
 
     def create

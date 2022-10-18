@@ -9,9 +9,6 @@ function MakeUser() {
 
     const history = useNavigate()
 
-
-  
-    const [userData, setUserData] = useState(null)
     const [sendingData, setSendingData] = useState({})
     const [errors, setErrors] = useState([])
 

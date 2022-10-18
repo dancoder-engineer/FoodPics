@@ -10,6 +10,7 @@ import UsersPage from './components/UsersPage.js';
 import Feed from './components/Feed.js'
 import EditUser from './components/EditUser.js'
 import PostsByTag from './components/PostsByTag';
+import FollowingsPage from './components/FollowingsPage.js';
 
 function App() {
 
@@ -26,6 +27,8 @@ function App() {
         <Route path='/user/:name' element={<UsersPage /> } />
         <Route path='/edituser/' element={<EditUser />} />
         <Route path='/postsbytag/:tag' element={<PostsByTag />} />
+        <Route path='/followedbypage/:user' element={<FollowingsPage whichOne="followedby" />} />
+        <Route path='/followersofpage/:user' element={<FollowingsPage whichOne="followersof" />} />
       </Routes>
     </BrowserRouter>
     
