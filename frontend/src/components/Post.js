@@ -5,7 +5,7 @@ import './info.css'
 import { NavLink, useNavigate } from "react-router-dom";
 import CommentsSection from "./CommentsSection.js";
 
-function Post({post, includeHeader, resetUser}) { 
+function Post({post, resetTags, includeHeader, resetUser}) { 
 
     let [userInfo, setUserInfo] = useState(null)
     let [captions, setCaptions] = useState(null)
@@ -27,16 +27,20 @@ function Post({post, includeHeader, resetUser}) {
         .then(data =>setUserInfo(data))
     }, [])
 
-    function makeTags() { console.log(post)
-        if(post.tags) {
-        return post.tags.map(i => <span className="tag" key={i.tag} onClick={sendToTag} >{i.tag}</span>)
+    function makeTags() {
+        if(post.tags) { console.log(post.tags)
+        return post.tags.map((i) => {return (
+        <span className="tag" key={i} onClick={sendToTag} >{i.tag}</span>
+
+        )})
         }
         else { return []}
     }
 
 
     function sendToTag(e) {
-        resetUser(e.target.innerText)
+        if (!resetTags) {console.log(";kj")}
+        else { resetTags(e.target.innerText) }
     }
 
     function changePic(e) {

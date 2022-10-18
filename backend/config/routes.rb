@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/makefeed/',  to: 'followings#makefeed'
   get '/commentsbypost/:id', to: 'comments#bypost'
   post '/maketags/', to: 'tags#maketags'
-  get '/postsbytag/:tag', to: 'tags#postsbytag'
+  get '/postsbytagback/:tag', to: 'tags#postsbytag'
   get '/followersof/:user', to: 'followings#followersof'
   get '/followedby/:user', to: 'followings#followedby'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

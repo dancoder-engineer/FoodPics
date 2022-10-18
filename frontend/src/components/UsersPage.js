@@ -24,6 +24,11 @@ function UsersPage() {
     setStates()
   }, [params.name])
 
+
+  function resetTags(tag) {
+    history('/postsbytag/'+tag)
+}
+
     function setStates(user=params.name) {
         setUserInfo(null)
         getPostNums(null)
@@ -45,7 +50,7 @@ function UsersPage() {
             setPostData(data.posts.map((i, index) => 
                 (
                 <div key={index}>
-                    <Post resetUser={setStates} post={i}includeHeader="false" /> <br />
+                    <Post resetUser={setStates} resetTags={resetTags} post={i}includeHeader="false" /> <br />
                 </div>
                 )
             ))

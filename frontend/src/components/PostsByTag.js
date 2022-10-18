@@ -21,7 +21,7 @@ function PostsByTag() {
 
 
     function makeFeed(tag=params.tag) { console.log(tag)
-        fetch('/postsbytag/' + tag)
+        fetch('/postsbytagback/' + tag)     
         .then(res => res.json())
         .then(data => { console.log(data)
             if(data.error) {
@@ -29,18 +29,16 @@ function PostsByTag() {
             }
             else 
             {
-            setPostData(data.map((i, index) => 
-                (
-                <div key={index}>
-                    <Post resetUser={resetUser} post={i} key={index} includeHeader="true" /> <br />
-                </div>
-                )
-            ))}
+            setPostData(data.map((i, index) => { return (
+            <div>
+                <Post resetTags={resetTags} resetUser={resetTags} post={i} key={index} includeHeader="true" /><br /> 
+            </div>)
+                        }))}
         })
 
     }
 
-    function resetUser(tag) {
+    function resetTags(tag) {
         console.log(tag)
         setPostData(null)
         makeFeed(tag)
