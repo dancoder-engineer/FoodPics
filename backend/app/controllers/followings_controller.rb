@@ -58,7 +58,8 @@ class FollowingsController < ApplicationController
                     post: j,
                     recipe: j.recipe,
                     recipepic: j.recipe ? rails_blob_path(j.recipe.pic) : nil,
-                    pics: j.pics.map{|p| rails_blob_path(p) }
+                    pics: j.pics.map{|p| rails_blob_path(p) },
+                    tags: tagnames(j.tags)
                  })
             }
         }
@@ -95,6 +96,10 @@ private
         follo.push({UserName: user.UserName, avatar: avatar, description: user.Description})
         }
         return follo
+    end
+
+    def tagnames(tags)
+        tags.map{|i| i.tag}
     end
 
 end
