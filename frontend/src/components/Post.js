@@ -26,8 +26,8 @@ function Post({post, resetTags, includeHeader, resetUser}) {
         .then(data =>setUserInfo(data))
     }, [])
 
-    function makeTags() {  console.log(post)
-        let tagsFromPost = []
+    function makeTags() { // console.log(post)
+  
 
           setTags( post.tags.map((i, index) => {
              return <span className="tag" key={i} onClick={sendToTag} >{i}</span>
@@ -37,8 +37,7 @@ function Post({post, resetTags, includeHeader, resetUser}) {
 
 
     function sendToTag(e) {
-        if (!resetTags) {console.log(";kj")}
-        else { resetTags(e.target.innerText) }
+        if (resetTags) { resetTags(e.target.innerText) }
     }
 
     function changePic(e) {

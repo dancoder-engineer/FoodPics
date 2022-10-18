@@ -6,13 +6,10 @@ import store from "./Redux/store.js";
 import Header from './Header.js'
 
 function Login() {
-    const dispatch = useDispatch();
     const [sendData, setSendData] = useState({})
     const [errorMessage, setErrorMessage] = useState(null)
     
     const history = useNavigate() 
-
-    
 
     function handleChange(e) {
         setSendData({
@@ -23,7 +20,7 @@ function Login() {
 
     function handleClick() {
         
-        fetch("/login/", {
+        fetch("/login", {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
