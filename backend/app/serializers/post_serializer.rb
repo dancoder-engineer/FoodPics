@@ -4,5 +4,7 @@ class PostSerializer < ActiveModel::Serializer
   belongs_to :user
   has_one :recipe
 
+  has_many :tags, through: :posttags
+
 
 end

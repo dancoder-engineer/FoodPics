@@ -10,21 +10,34 @@ function Post({post, includeHeader, resetUser}) {
     let [userInfo, setUserInfo] = useState(null)
     let [captions, setCaptions] = useState(null)
     let [timeDate, setTimeDate] = useState(null)
+    let [tags, setTags] = useState(null)
     let [picNo, setPicNo] = useState(0)
 
+   
     const history=useNavigate()
 
 
     useEffect(() => { 
         setTimeDate(convertTimeDate(post.post.updated_at))
         setCaptions(post.post.captions.split('||'))
+        setTags(makeTags())
         let userId = post.post.user_id
         fetch('/useravatar/' + userId)
         .then(res => res.json())
         .then(data =>setUserInfo(data))
     }, [])
 
+    function makeTags() { console.log(post)
+        if(post.tags) {
+        return post.tags.map(i => <span className="tag" key={i.tag} onClick={sendToTag} >{i.tag}</span>)
+        }
+        else { return []}
+    }
 
+
+    function sendToTag(e) {
+        resetUser(e.target.innerText)
+    }
 
     function changePic(e) {
      //   console.log(post)
@@ -74,6 +87,7 @@ return(
                     {post.recipe && <br /> }
                     {post.recipe && <Recipe recipe={post.recipe} recipepic={post.recipepic} /> }
                     <br />
+                    <div className="tagDiv">{tags && tags}<br /><br /></div>
                     <CommentsSection resetUser={resetUser} postId={post.post.id} />
             </div> )}
 

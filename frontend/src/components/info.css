@@ -330,4 +330,16 @@
     grid-row-end: 1;
 }
 
+.tag{
+    padding: 2px;
+    border-style: groove;
+    margin: auto;
+}
+
+.tagDiv{
+    margin: auto;
+    width:fit-content;
+    display: block;
+}
+
 

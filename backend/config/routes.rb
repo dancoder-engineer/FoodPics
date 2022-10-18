@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :posttags
+  resources :tags
   resources :comments
   
   resources :recipes
@@ -19,6 +21,8 @@ Rails.application.routes.draw do
   get '/checkFollowing/:followee', to: 'followings#checkFollowing'
   get '/makefeed/',  to: 'followings#makefeed'
   get '/commentsbypost/:id', to: 'comments#bypost'
+  post '/maketags/', to: 'tags#maketags'
+  get '/postsbytag/:tag', to: 'tags#postsbytag'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

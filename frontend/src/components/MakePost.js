@@ -15,6 +15,7 @@ function MakePost() {
     let [errorMessage, setErrorMessage] = useState(null)
     let [hasRecipe, setHasRecipe] = useState("↓")
     let [recipeData, setRecipeData] = useState({})
+    let [tags, setTags] = useState(null)
 
     let [sendingData, setSendingData] = useState({
         pics: [],
@@ -62,6 +63,9 @@ function MakePost() {
             dispatch(setCaptions(payload))
             
         }
+        else if(e.target.id===("tags")) {
+            setTags(e.target.value)
+        }
         else if(e.target.id.startsWith("file")) { 
             let fileNo = parseInt(e.target.name.split("file")[1])
        //     console.log(sendingData.pics)
@@ -76,7 +80,6 @@ function MakePost() {
             })
             
         }
-
         else {
             payload = {
                 param: e.target.id,
@@ -155,6 +158,7 @@ function MakePost() {
                     setErrorMessage(data.errors.map((i) => <p>{i}</p>))
                 }
                 else {
+                sendTags(data.id)
                 if (hasRecipe === "↑") { sendRecipe(data.id) }
                 else { history('/') }
                 }
@@ -192,8 +196,6 @@ function MakePost() {
             .then(() => history('/'))
         
     }
-
-
     function seeRedux() {
         console.log(Object.keys(makingPost.recipe).length === 3)
     }
@@ -223,6 +225,26 @@ function MakePost() {
          return true
     }
 
+    
+    function sendTags(e, postId) {console.log(postId)
+        let separatedTags = tags
+        if (!separatedTags) { return 0 }
+        if (!separatedTags.replaceAll(" ","")) { return 0 }
+        fetch("/maketags/", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json',
+                accept: "application/json", },
+            body:JSON.stringify({
+                tags: tags,
+                postId: postId               
+                })
+            })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        
+    }
+
+
     return(
         <div className="makePostPage">
 
@@ -238,6 +260,7 @@ function MakePost() {
                     Where was it taken?:<br /><input id="place" name="place" onChange={handleChange} /> <br />
                     Description:<br /><textarea id="description" name="description" className="textA"  onChange={handleChange} /><br />
                     <MultiplePicUploader handleChange={handleChange} handleRid={handleRid}/><br />
+                    Tags:<br /><input id="tags" name="tags" onChange={handleChange} onClick={sendTags} /> <br />
                     Include a Recipe: <input type="checkbox" onChange={switchRecipe} /><br />
                     <div className={hasRecipe}>
                         <CreateRecipe handleRecipe={handleRecipe} />

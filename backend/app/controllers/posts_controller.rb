@@ -10,11 +10,12 @@ class PostsController < ApplicationController
     def show
         post = Post.find_by(id: params[:id])
         pics = post.pics.map{|p| rails_blob_path(p) }
+        tags = post.tags ? tagnames(post.tags) : []
         if post.recipe
             recipepic = rails_blob_path(post.recipe.pic)
             render json: ({post: post, recipe: post.recipe, pics: pics, recipepic: recipepic}), status: 200
         else
-            render json: ({post: post, pics: pics}), status: 200
+            render json: ({post: post, pics: pics, tags: tags}), status: 200
         end
     end
 
@@ -25,7 +26,8 @@ class PostsController < ApplicationController
                 post: i,
                 recipe: i.recipe,
                 recipepic: i.recipe ? rails_blob_path(i.recipe.pic) : nil,
-                pics: i.pics.map{|p| rails_blob_path(p) }
+                pics: i.pics.map{|p| rails_blob_path(p) },
+                tags: i.tags ? tagnames(i.tags) : []
         }}
         sortedPosts = postsWithInfo.sort{|i| i[:post][:created_at]}
       #  sortedPosts = sortedPosts.reverse
@@ -48,7 +50,7 @@ class PostsController < ApplicationController
 
     rescue ActiveRecord::RecordInvalid => invalid
         render json: { errors: invalid.record.errors.full_messages  }, status: :unprocessable_entity
-        
+
     end
 
     def destroy
@@ -62,5 +64,9 @@ class PostsController < ApplicationController
 
     def allowed
         params.require(:post).permit(:title, :place, :description, :user_id, :captions, pics: [])
+    end
+
+    def tagnames(tags)
+        tags.map{|i| i.tag}
     end
 end
