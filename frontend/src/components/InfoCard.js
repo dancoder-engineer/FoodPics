@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function InfoCard({data}) {
 
@@ -8,6 +9,8 @@ function InfoCard({data}) {
     const [isFollowing, setIsFollowing] = useState(null)
     
     const [loggedIn, setloggedIn] = useState(null)
+
+    const history = useNavigate()
 
 
     function checkLoggedin() {
@@ -60,21 +63,33 @@ function InfoCard({data}) {
 
     }
 
-    function createNewFollowing(follower, followee) {
 
+    function toFollows(e) {
+        console.log(e.target.id)
+        if (e.target.className === "columnThree") { history('/followedbypage/' + data.user.UserName) }
+        else { history('/followersofpage/' + data.user.UserName) }
     }
-
-
-
-
 
 
 
     return(
              <div className="userData">
-                {loggedIn && (
-                    isFollowing ? unfollowButton : followButton                 
-                )}
+                <div className="threeColumns">
+                    <span className="columnOne" onClick={toFollows} >
+                        Followed by: {data.follow.followers}.
+                    </span>
+
+                    <span className="columnTwo">
+                        {loggedIn && (
+                            isFollowing ? unfollowButton : followButton                 
+                        )}
+                        </span>
+
+                    <span className="columnThree" onClick={toFollows} >     
+                        Follows: {data.follow.followees}.        
+                    </span>
+
+                    </div>
                      <h3 className="centered">{data.user.UserName}</h3>
                      <img className="avatarPic" src={data.avatar} /> 
                      <p className="centered">

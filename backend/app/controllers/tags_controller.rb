@@ -31,7 +31,7 @@ class TagsController < ApplicationController
                     recipe: j.recipe,
                     recipepic: j.recipe ? rails_blob_path(j.recipe.pic) : nil,
                     pics: j.pics.map{|p| rails_blob_path(p) },
-                    tags: j.tags
+                    tags: tagnames(j.tags)
                  })
             }
         }
@@ -89,6 +89,10 @@ def maketag(i)
         tag_id: newtag.id
     })
     return newposttag
+end
+
+def tagnames(tags)
+    tags.map{|i| i.tag}
 end
 
 end

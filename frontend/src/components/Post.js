@@ -16,25 +16,23 @@ function Post({post, resetTags, includeHeader, resetUser}) {
    
     const history=useNavigate()
 
-
     useEffect(() => { 
         setTimeDate(convertTimeDate(post.post.updated_at))
         setCaptions(post.post.captions.split('||'))
-        setTags(makeTags())
+        makeTags()
         let userId = post.post.user_id
         fetch('/useravatar/' + userId)
         .then(res => res.json())
         .then(data =>setUserInfo(data))
     }, [])
 
-    function makeTags() {
-        if(post.tags) { console.log(post.tags)
-        return post.tags.map((i) => {return (
-        <span className="tag" key={i} onClick={sendToTag} >{i.tag}</span>
+    function makeTags() {  console.log(post)
+        let tagsFromPost = []
 
-        )})
-        }
-        else { return []}
+          setTags( post.tags.map((i, index) => {
+             return <span className="tag" key={i} onClick={sendToTag} >{i}</span>
+     }))
+        
     }
 
 

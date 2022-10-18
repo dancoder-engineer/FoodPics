@@ -21,7 +21,13 @@ class UsersController < ApplicationController
         user = User.find_by(UserName: params[:name])
         if user
             avatar = rails_blob_path(user.avatar)
-            return render json: ({user: user, avatar: avatar}), status: 200
+            howmanyfollowers = Following.where(followee: user.id)
+            howmanyfollowees = Following.where(follower: user.id)
+            follow = {
+              followers: howmanyfollowers.length,
+              followees: howmanyfollowees.length
+            }
+            return render json: ({user: user, avatar: avatar, follow: follow}), status: 200
         else
             return render json({error: "No such user"})
         end
@@ -62,6 +68,7 @@ class UsersController < ApplicationController
     def userAvatar
         user=User.find_by(id:params[:id])
         avatar = rails_blob_path(user.avatar)
+
         render json: {UserName: user.UserName, avatar: avatar}
     end
 

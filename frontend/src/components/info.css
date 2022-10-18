@@ -363,6 +363,9 @@
     }
 
     .individualUsers{
+        width: 100%;
+        margin: auto;
+        display: block;
         opacity: 0.99999;
         position: absolute
     }
@@ -380,4 +383,29 @@
         position: relative;
     }
 
-    
+    .threeColumns{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;    
+    }
+
+    .columnOne{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        border-style: double;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .columnTwo{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        margin: auto
+    }
+
+    .columnThree{
+        grid-column-start: 3;
+        grid-column-end: 3;
+        border-style: double;
+        border-radius: 10px;
+        text-align: center;
+    }
