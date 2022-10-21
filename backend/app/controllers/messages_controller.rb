@@ -1,6 +1,14 @@
 class MessagesController < ApplicationController
 
+   # skip_before_action :verify_authenticity_token
+
     def firstmessages
+
+        if !session[:user_id]
+            return render json:{error: 'Not logged in.'}, status: :forbidden
+        end
+
+
         lasts = []
         messages = Message.where(recipient: session[:user_id]).or(Message.where(sender: session[:user_id]))
         users = getusers(messages).uniq
@@ -19,7 +27,11 @@ class MessagesController < ApplicationController
 
 
     def messagethread
-        thread = []
+
+        if !session[:user_id]
+            return render json:{error: 'Not logged in.'}, status: :forbidden
+        end
+
         messages = Message.where(recipient: session[:user_id], sender: params[:id]).or(Message.where(sender: session[:user_id], recipient: params[:id]))
         messages = messages.reverse
         user=User.find_by(id:params[:id])
@@ -37,8 +49,7 @@ class MessagesController < ApplicationController
             user = j.sender == session[:user_id] ? User.find_by(id:j[:recipient]) : user=User.find_by(id:j[:sender])
             avatar = rails_blob_path(user.avatar)
             return {
-                sender: j.sender,
-                recipient: j.recipient,
+                otheruser: j.sender == session[:user_id] ? j.recipient : j.sender,
                 content: j.content,
                 user: user.UserName,
                 avatar: avatar}

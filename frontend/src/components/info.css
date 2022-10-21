@@ -409,3 +409,14 @@
         border-radius: 10px;
         text-align: center;
     }
+
+    .convoList{
+        display:grid;
+        margin:auto;
+        width: 60%;
+        grid-template-columns: 10px 120px 20px 1fr 10px;
+        border-style: double;
+        background-color: lemonchiffon;
+        opacity:0.9
+    }
+    

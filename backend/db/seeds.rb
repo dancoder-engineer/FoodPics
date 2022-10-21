@@ -55,3 +55,9 @@ Message.create({
     recipient: 3,
     content: "Message 7"
 })
+
+Message.create({
+    sender: 1,
+    recipient: 4,
+    content: "Message 8"
+})

@@ -1,9 +1,58 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
+import Header from './Header.js'
 
 function PrivateMessageList(){
-    return <div>
+    const [convos, setConvos] = useState(null)
+    const history = useNavigate() 
 
-    </div>
+ 
+
+   
+    useEffect(() => {
+        fetch("firstmessages")
+        .then(res => res.json())
+        .then(data => setConvos(makeConvos(data)))
+
+    }, [])
+
+    function toUser(e) {
+         history('/user/'+e.target.id)
+     }
+
+     function toConvo(e) {
+        console.log(e.target.id)
+     }
+
+    function makeConvos(data) {
+
+        return data.map((i) => { return (
+        <div>
+            <div className="convoList" key={i.user}>
+                <div className="col1comm" onClick={toUser}>
+                    <img id={i.user} className="miniPicOnPostcomm" src={i.avatar} /><br />
+                    {i.user}<br />
+                </div>
+            
+            <div className="col2comm" id={i.otheruser} onClick={toConvo}>
+                {i.content}
+            </div><br />
+            </div><br />
+        </div>
+        )})
+    }
+
+
+    return(
+        <div className="followingsPage">
+            <img className="backImg" src="https://imgur.com/5b8Jev2.png" />
+            <div className="headerHere"><Header /></div>
+            <div className="individualUsers">
+                <br />
+                {convos && convos}
+            </div><br /><br /><br /><br />
+        </div>
+    )
 }
 
 export default PrivateMessageList
