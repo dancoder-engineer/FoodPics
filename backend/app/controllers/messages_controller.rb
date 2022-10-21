@@ -7,30 +7,9 @@ class MessagesController < ApplicationController
         messages = messages.reverse
         users = users.reverse
         users.each{|i|
-            messageList = []
             messages.each{|j|
             if j.sender == i || j.recipient == i
-                if j.sender == session[:user_id]
-                    user=User.find_by(id:j[:recipient])
-                    avatar = rails_blob_path(user.avatar)
-                    ua = {
-                        sender: j.sender,
-                        recipient: j.recipient,
-                        content: j.content,
-                        user: user.UserName,
-                        avatar: avatar}
-                    lasts.push(ua)
-                else
-                    user=User.find_by(id:j[:sender])
-                    avatar = rails_blob_path(user.avatar)
-                    ua = {
-                        sender: j.sender,
-                        recipient: j.recipient,
-                        content: j.content,
-                        user: user.UserName,
-                        avatar: avatar}
-                    lasts.push(ua)
-                end
+                lasts.push(makeua(j))
                 break
             end
             }
@@ -53,6 +32,17 @@ class MessagesController < ApplicationController
     end
 
     private
+
+        def makeua(j)
+            user = j.sender == session[:user_id] ? User.find_by(id:j[:recipient]) : user=User.find_by(id:j[:sender])
+            avatar = rails_blob_path(user.avatar)
+            return {
+                sender: j.sender,
+                recipient: j.recipient,
+                content: j.content,
+                user: user.UserName,
+                avatar: avatar}
+        end
 
         def getusers(userarr)
             return userarr.map{|i| 
