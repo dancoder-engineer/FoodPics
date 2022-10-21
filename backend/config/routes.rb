@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :messages
   resources :posttags
   resources :tags
   resources :comments
@@ -25,6 +26,8 @@ Rails.application.routes.draw do
   get '/postsbytagback/:tag', to: 'tags#postsbytag'
   get '/followersof/:user', to: 'followings#followersof'
   get '/followedby/:user', to: 'followings#followedby'
+  get '/firstmessages/', to: 'messages#firstmessages'
+  get '/messagethread/:id', to: 'messages#messagethread'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

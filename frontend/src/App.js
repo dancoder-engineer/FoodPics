@@ -11,6 +11,7 @@ import Feed from './components/Feed.js'
 import EditUser from './components/EditUser.js'
 import PostsByTag from './components/PostsByTag';
 import FollowingsPage from './components/FollowingsPage.js';
+import PrivateMessageList from './components/PrivateMessageList.js'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='/postsbytag/:tag' element={<PostsByTag />} />
         <Route path='/followedbypage/:user' element={<FollowingsPage whichOne="followedby" />} />
         <Route path='/followersofpage/:user' element={<FollowingsPage whichOne="followersof" />} />
+        <Route path='/privatemessages' element={<PrivateMessageList />} />
       </Routes>
     </BrowserRouter>
     
