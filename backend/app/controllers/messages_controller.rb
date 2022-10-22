@@ -34,16 +34,24 @@ class MessagesController < ApplicationController
 
         messages = Message.where(recipient: session[:user_id], sender: params[:id]).or(Message.where(sender: session[:user_id], recipient: params[:id]))
         messages = messages.reverse
-        user=User.find_by(id:params[:id])
-        avatar = rails_blob_path(user.avatar)
-        userinfo = {    
-                user: user.UserName,
-                avatar: avatar
-            }
-        render json: {messages: messages, userinfo: userinfo}
+
+        otheruser = makeuser(params[:id])
+        myself = makeuser(session[:user_id])
+
+        render json: {messages: messages, otheruser: otheruser, myself: myself}
     end
 
     private
+
+        def makeuser(userid)
+            user=User.find_by(id: userid)
+            avatar = rails_blob_path(user.avatar)
+            return {    
+                    user: user.UserName,
+                    avatar: avatar,
+                    id: user.id
+                }
+        end
 
         def makeua(j)
             user = j.sender == session[:user_id] ? User.find_by(id:j[:recipient]) : user=User.find_by(id:j[:sender])

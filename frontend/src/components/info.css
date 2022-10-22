@@ -413,10 +413,53 @@
     .convoList{
         display:grid;
         margin:auto;
-        width: 60%;
+        width: 75%;
         grid-template-columns: 10px 120px 20px 1fr 10px;
         border-style: double;
         background-color: lemonchiffon;
-        opacity:0.9
+        opacity:0.9;
     }
     
+    .leftBubble{
+        margin-left: auto; 
+        margin-left: 0;
+        background-color: chartreuse;
+        width: 50%;
+        border-radius: 20px;
+    }
+
+    .rightBubble{
+        margin-left: auto; 
+        margin-right: 0;
+        background-color: chartreuse;
+        width: 50%;
+        border-radius: 20px;
+        text-align: right;
+    }
+
+    .convoPic {
+        width: 50px;
+        border-radius: 50px;
+    }
+
+    .convo{
+        width: 50%;
+        margin: auto;
+        display: block;
+        opacity: 0.9;
+        background-color: lemonchiffon;
+        padding: 10px
+    }
+
+    .messagearea{
+        width:90%;
+        height: 50px;
+        margin: auto;
+        display: block;
+    }
+
+    .submitMessage{
+        width:45%;
+        margin: auto;
+        display: block;
+    }

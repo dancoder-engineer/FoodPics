@@ -17,17 +17,17 @@ function PrivateMessageList(){
     }, [])
 
     function toUser(e) {
-         history('/user/'+e.target.id)
+         history('/user/' + e.target.id)
      }
 
      function toConvo(e) {
-        console.log(e.target.id)
+        history("/messagethread/" + e.target.id)
      }
 
     function makeConvos(data) {
 
         return data.map((i) => { return (
-        <div>
+        <div key={i.user}>
             <div className="convoList" key={i.user}>
                 <div className="col1comm" onClick={toUser}>
                     <img id={i.user} className="miniPicOnPostcomm" src={i.avatar} /><br />
