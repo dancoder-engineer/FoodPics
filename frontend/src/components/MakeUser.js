@@ -27,7 +27,7 @@ function MakeUser() {
         }
         if (e.target.id==="Tony") {
             setSendingData ({
-                UserName: "Chef Tony Stark as Portrayed by Antonio Banderas",
+                UserName: "ChefTonyStarkAsPortrayedbyAntonioBanderas",
                 password: "salt",
                 password_confirmation: "salt",
                 ActualName: "Salt Bae",
@@ -143,15 +143,15 @@ function MakeUser() {
                 <br />Login
             </div>
 
-            <div className="devStuff">
-                <button onClick={youGetMe}>Get Me</button>
-                <button id="Ben" onClick={defaultData}>Chef Ben</button> 
-                <button id="Tony" onClick={defaultData}>Chef Tony</button> 
-                <input name="whatever" onClick={getAv} />
-           </div>
-
         </div>
     )
 }
 
 export default MakeUser
+
+{/* <div className="devStuff">
+<button onClick={youGetMe}>Get Me</button>
+<button id="Ben" onClick={defaultData}>Chef Ben</button> 
+<button id="Tony" onClick={defaultData}>Chef Tony</button> 
+<input name="whatever" onClick={getAv} />
+</div> */}

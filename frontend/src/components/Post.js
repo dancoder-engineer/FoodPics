@@ -38,6 +38,7 @@ function Post({post, resetTags, includeHeader, resetUser}) {
 
     function sendToTag(e) {
         if (resetTags) { resetTags(e.target.innerText) }
+        else {history("/postsbytag/" + e.target.innerText)}
     }
 
     function changePic(e) {

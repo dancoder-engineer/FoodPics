@@ -15,7 +15,7 @@ function Header(){
     const newPost = <NavLink to="/newpost/"><img className="headerPic" src="https://imgur.com/1p7Otp1.png" /></NavLink>
     const home = <NavLink to="/"><img className="headerPic" src="https://imgur.com/dWFT3ma.png" /></NavLink>
     const modifySelf = <NavLink to="/editUser/"><img className="headerPic" src="https://imgur.com/DOCcBDY.png" /></NavLink>
-   
+    const messages = <NavLink to="/privatemessages/"><img className="headerPic" src="https://imgur.com/DOCcBDY.png" /></NavLink>
 
     const search = (<div></div>)
 
@@ -40,7 +40,7 @@ function Header(){
             <div className="header">
                 <h1 className="centered">FoodBook</h1>
                 <div className="headerCentered">
-                {userInfo ? logout : login} {userInfo ? home : register} {userInfo ? newPost : null} {userInfo ? modifySelf : null}
+                {userInfo ? logout : login} {userInfo ? home : register} {userInfo ? newPost : null} {userInfo ? modifySelf : null} {userInfo ? messages : null}
                 </div>
                 <br />
             </div>

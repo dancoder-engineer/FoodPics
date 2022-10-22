@@ -7,7 +7,7 @@ function InfoCard({data}) {
     let unfollowButton = <button onClick={deleteFollowing}>Unfollow</button>
 
     const [isFollowing, setIsFollowing] = useState(null)
-    
+    const usersId = data.user.id
     const [loggedIn, setloggedIn] = useState(null)
 
     const history = useNavigate()
@@ -16,8 +16,8 @@ function InfoCard({data}) {
     function checkLoggedin() {
         fetch("/getme/")
         .then(res => res.json())
-        .then(data => {
-            if (data.user) {  
+        .then(log => { //console.log(data)
+            if (log.user) {  
                 setloggedIn("true")
             }
         })
@@ -70,6 +70,10 @@ function InfoCard({data}) {
         else { history('/followersofpage/' + data.user.UserName) }
     }
 
+    function sendtoMessage() {
+        history("/messagethread/" + usersId)
+    }
+
 
 
     return(
@@ -99,6 +103,8 @@ function InfoCard({data}) {
                      <br />
                      {data.user.Description}
                      </p>
+                     <button className="submitMessage" onClick={sendtoMessage}>Send a Message</button><br />
+            
                  </div>
     )
 }
