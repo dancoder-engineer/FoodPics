@@ -1,17 +1,25 @@
 import React, {useEffect, useState} from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 import Header from './Header.js'
 
 function MessageThread() {
 
     const params=useParams()
+    const history=useNavigate()
     const [bubbles, setBubbles] = useState(null)
 
     useEffect(() => {
         fetch("/messagethread/" + params.id)
         .then(res => res.json())
-        .then(data => setBubbles(makeBubbles(data)))
+        .then(data => {
+            if(data.error) {history('/login/')}
+            else {
+                setBubbles(makeBubbles(data))
+                const element = document.getElementById("mainDiv");
+                element.scrollTop = element.scrollHeight;
+            }
+        })
 
     }, [])
 
@@ -39,13 +47,15 @@ function MessageThread() {
 
 
     return(
-        <div className="">
+        <div className="" id="mainDiv">
             <img className="backImg" src="https://imgur.com/5b8Jev2.png" />
             <div className="headerHere"><Header /></div>
             <br /><div>
-            <div className="convo">
+            <div className="convo" id="convo">
                 <br />
                 {bubbles && bubbles}
+                {bubbles && bubbles}
+                {bubbles && bubbles}    
                 <textarea className="messagearea" />
                 <button className="submitMessage">Submit</button><br />
             </div><br /><br /><br /><br /></div>

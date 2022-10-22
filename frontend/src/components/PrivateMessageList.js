@@ -12,7 +12,10 @@ function PrivateMessageList(){
     useEffect(() => {
         fetch("firstmessages")
         .then(res => res.json())
-        .then(data => setConvos(makeConvos(data)))
+        .then(data => {
+            if(data.error) {history('/login/')}
+            else {setConvos(makeConvos(data))}
+        })
 
     }, [])
 

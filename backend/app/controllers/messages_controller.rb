@@ -2,6 +2,11 @@ class MessagesController < ApplicationController
 
    # skip_before_action :verify_authenticity_token
 
+   def create
+    message = Message.create(allowed)
+    render json: message, status: :created
+   end
+
     def firstmessages
 
         if !session[:user_id]
@@ -33,7 +38,6 @@ class MessagesController < ApplicationController
         end
 
         messages = Message.where(recipient: session[:user_id], sender: params[:id]).or(Message.where(sender: session[:user_id], recipient: params[:id]))
-        messages = messages.reverse
 
         otheruser = makeuser(params[:id])
         myself = makeuser(session[:user_id])
@@ -42,6 +46,10 @@ class MessagesController < ApplicationController
     end
 
     private
+
+        def allowed
+            params.permit(:sender, :recipient, :content)
+        end
 
         def makeuser(userid)
             user=User.find_by(id: userid)
