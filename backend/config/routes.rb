@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   get '/followedby/:user', to: 'followings#followedby'
   get '/firstmessages/', to: 'messages#firstmessages'
   get '/messagethread/:id', to: 'messages#messagethread'
+  get '/commentnotifications/:id', to: 'notifications#commentnotifications'
+  get '/messagenotification/:id', to: 'notifications#messagenotification'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

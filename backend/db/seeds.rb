@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Message.destroy_all
+Notification.destroy_all
 
 Message.create({
     sender: 4,
