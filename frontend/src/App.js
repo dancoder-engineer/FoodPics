@@ -13,6 +13,7 @@ import PostsByTag from './components/PostsByTag';
 import FollowingsPage from './components/FollowingsPage.js';
 import PrivateMessageList from './components/PrivateMessageList.js'
 import MessageThread from './components/MessageThread.js'
+import OnePost from './components/OnePost.js'
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
         <Route path='/followersofpage/:user' element={<FollowingsPage whichOne="followersof" />} />
         <Route path='/privatemessages' element={<PrivateMessageList />} />
         <Route path='/messagethread/:id' element={<MessageThread />} />
+        <Route path='/onepost/:id' element={<OnePost />} />
       </Routes>
     </BrowserRouter>
     

@@ -60,11 +60,13 @@ function Header(){
 
     function notificationClick(e) { 
 
+        setSeeNotifications("↓")
+
         if (e.target.id === "0") {
             history('/privatemessages/')
         }
         else {
-            history('localhost:5000/posts/' + e.target.id)
+            history('/onepost/' + e.target.id)
         }
     }
 
