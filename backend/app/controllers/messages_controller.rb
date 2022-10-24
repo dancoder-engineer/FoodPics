@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
 
    def create
     message = Message.create(allowed)
+    messagenotification(message)
     render json: message, status: :created
    end
 
@@ -46,6 +47,23 @@ class MessagesController < ApplicationController
     end
 
     private
+
+    def messagenotification(message)
+
+      #  message = Message.find_by(messageid)
+
+        if !message
+            return render json: {error: "No such message."}
+        end
+
+        Notification.create({
+            whichpost: 0,
+            user_id: message.recipient,
+            read: "unread",
+            content: "You have a new message."
+        })
+
+    end
 
         def allowed
             params.permit(:sender, :recipient, :content)

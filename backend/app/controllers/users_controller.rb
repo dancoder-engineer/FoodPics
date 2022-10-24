@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         if session[:user_id]
             user = User.find_by(id: session[:user_id])
             avatar = rails_blob_path(user.avatar)
-            return render json: ({user: user, avatar: avatar}), status: 200
+            return render json: ({user: user, avatar: avatar, notifications: user.notifications}), status: 200
         else
             return render json: {error: "Not logged in."}
         end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     def show
         user = User.find_by(id: params[:id])
         avatar = rails_blob_path(user.avatar)
-        render json: ({user: user, avatar: avatar}), status: 200
+        render json: ({user: user, avatar: avatar, notifications: user.notifications}), status: 200
     end
 
     def create

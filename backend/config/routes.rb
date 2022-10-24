@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   get '/firstmessages/', to: 'messages#firstmessages'
   get '/messagethread/:id', to: 'messages#messagethread'
   get '/commentnotifications/:id', to: 'notifications#commentnotifications'
-  get '/messagenotification/:id', to: 'notifications#messagenotification'
+  get '/readall/', to: 'notifications#readall'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

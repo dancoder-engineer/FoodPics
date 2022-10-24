@@ -62,3 +62,10 @@ Message.create({
     recipient: 4,
     content: "Message 8"
 })
+
+Notification.create({
+    content: "There's a new comment on a post you commented on.",
+    read: "unread",
+    user_id: 4,
+    whichpost: 34,
+})
