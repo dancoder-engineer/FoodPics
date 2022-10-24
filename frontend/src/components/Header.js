@@ -10,6 +10,8 @@ function Header(){
     const [userInfo, setUserInfo] = useState(null)
     const history = useNavigate()
 
+    const logo = <img className="logo" src="https://imgur.com/M7dt9yO.png" />
+
     const login = <NavLink to="/login/"><img className="headerPic" src="https://imgur.com/TSwaxAl.png" /></NavLink>
     const logout = <NavLink to="/logout/"><img className="headerPic" src="https://imgur.com/JO1znon.png" /></NavLink>
     const register = <NavLink to="/register/"><img className="headerPic" src="https://imgur.com/aaxS2Gq.png" /></NavLink>
@@ -73,7 +75,7 @@ function Header(){
     return(
         <div className="overHeader">
             <div className="header">
-                <h1 className="centered">FoodBook</h1>
+                <h1 className="centered">{logo}</h1>
                 <div className="headerCentered">
                 {userInfo ? logout : login} {userInfo ? home : register} {userInfo ? newPost : null} {userInfo ? modifySelf : null} {userInfo ? messages : null}
                 </div>

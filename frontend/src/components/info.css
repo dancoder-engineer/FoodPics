@@ -463,3 +463,8 @@
         margin: auto;
         display: block;
     }
+
+    .logo {
+        width: 37%;
+        margin: auto;
+    }
