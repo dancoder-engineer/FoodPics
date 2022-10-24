@@ -6,13 +6,9 @@ function Header(){
     const [seeNotifications, setSeeNotifications] = useState("↓")
     const [notificationBar, setNotificationBar] = useState(null)
     const [notifications, setNotifications] = useState(null)
-   const [notificationMessage, setNotificationMessage] = useState("Notifications")
+    const [notificationMessage, setNotificationMessage] = useState("Notifications")
     const [userInfo, setUserInfo] = useState(null)
     const history = useNavigate()
-
-   
-
-//    const userDiv = 
 
     const login = <NavLink to="/login/"><img className="headerPic" src="https://imgur.com/TSwaxAl.png" /></NavLink>
     const logout = <NavLink to="/logout/"><img className="headerPic" src="https://imgur.com/JO1znon.png" /></NavLink>
@@ -21,12 +17,6 @@ function Header(){
     const home = <NavLink to="/"><img className="headerPic" src="https://imgur.com/dWFT3ma.png" /></NavLink>
     const modifySelf = <NavLink to="/editUser/"><img className="headerPic" src="https://imgur.com/DOCcBDY.png" /></NavLink>
     const messages = <NavLink to="/privatemessages/"><img className="headerPic" src="https://imgur.com/DOCcBDY.png" /></NavLink>
-
-    const search = (<div></div>)
-
-
-
-
 
     useEffect(() => {
         fetch("/getme/")
@@ -87,7 +77,6 @@ function Header(){
                 <div className="headerCentered">
                 {userInfo ? logout : login} {userInfo ? home : register} {userInfo ? newPost : null} {userInfo ? modifySelf : null} {userInfo ? messages : null}
                 </div>
-                <br />
                 <h3 className={notificationBar} onClick={switchNotifications}>{seeNotifications}{notificationMessage}{seeNotifications}</h3>
                 <div className={seeNotifications}>
                     {notifications && notifications}

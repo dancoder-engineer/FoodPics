@@ -57,8 +57,11 @@ function CommentsSection({postId, resetUser}) {
           })
           .then(res => res.json())
           .then(data => {
-            console.log(data)
-            document.getElementById("newComment").value = ""
+           // document.getElementById("newComment").value = ""
+            let boxes = document.querySelectorAll(".allAcross")
+            boxes.forEach(element => {
+                element.value=""
+            });
             setCommentContent("")
             getComments()
             checkLoggedIn()
