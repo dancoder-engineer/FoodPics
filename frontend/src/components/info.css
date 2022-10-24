@@ -437,9 +437,16 @@
         text-align: right;
     }
 
-    .convoPic {
+    .convoPicLeft {
         width: 50px;
         border-radius: 50px;
+        float: left;
+    }
+
+    .convoPicRight {
+        width: 50px;
+        border-radius: 50px;
+        float: right;
     }
 
     .convo{

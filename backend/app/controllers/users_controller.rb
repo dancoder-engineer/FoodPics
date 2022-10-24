@@ -45,6 +45,7 @@ class UsersController < ApplicationController
 
         if user.save
             session[:user_id] = user.id     
+            createstuff(user.id)
             render json: {user: user, session: session}, status: :created
         end
 
@@ -93,6 +94,27 @@ class UsersController < ApplicationController
     end
 
     private
+
+    def createstuff(id)
+
+        Notification.create({
+            content: "Welcome to FoodBook!!",
+            read: "unread",
+            user_id: id,
+            whichpost: 0,
+        })
+
+        Following.create({
+            follower: id,
+            followee: id,
+        })
+
+        Following.create({
+            follower: id,
+            followee: 32,
+        })
+
+    end
 
     def allowed
         params.require(:user).permit(:ActualName, :Description, :Pronouns, :UserName, :Website, :avatar, :password, :password_confirmation)
