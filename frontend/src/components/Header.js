@@ -18,7 +18,7 @@ function Header(){
     const newPost = <NavLink to="/newpost/"><img className="headerPic" src="https://imgur.com/1p7Otp1.png" /></NavLink>
     const home = <NavLink to="/"><img className="headerPic" src="https://imgur.com/dWFT3ma.png" /></NavLink>
     const modifySelf = <NavLink to="/editUser/"><img className="headerPic" src="https://imgur.com/DOCcBDY.png" /></NavLink>
-    const messages = <NavLink to="/privatemessages/"><img className="headerPic" src="https://imgur.com/DOCcBDY.png" /></NavLink>
+    const messages = <NavLink to="/privatemessages/"><img className="headerPic" src="https://imgur.com/cqltX1u.png" /></NavLink>
 
     useEffect(() => {
         fetch("/getme/")

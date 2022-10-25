@@ -56,7 +56,7 @@
 .postPic {
     display: block;
     margin: auto;
-    width: 50%;
+    max-height: 250px;
     padding: 10px
 }
 
@@ -426,6 +426,7 @@
         background-color: chartreuse;
         width: 50%;
         border-radius: 20px;
+        min-height: 55px;
     }
 
     .rightBubble{
@@ -435,6 +436,7 @@
         width: 50%;
         border-radius: 20px;
         text-align: right;
+        min-height: 55px;
     }
 
     .convoPicLeft {
