@@ -16,7 +16,7 @@ function Login() {
 
     function handleClick() {
         
-        fetch("https://foodbook-mi1j.onrender.com/login/", {
+        fetch("/login/", {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
