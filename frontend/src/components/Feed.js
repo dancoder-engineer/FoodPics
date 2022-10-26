@@ -7,7 +7,6 @@ import Header from './Header.js'
 
 function Feed() {
 
-    const user = useSelector((state) => state);
     const [postData, setPostData] = useState(null)
     const history = useNavigate() 
 

@@ -26,10 +26,12 @@ function Post({post, resetTags, includeHeader, resetUser}) {
         .then(data =>setUserInfo(data))
     }, [])
 
-    function makeTags() { // console.log(post)
+    function makeTags() {  
+
+        if(!post.tags) {return 0}
   
 
-          setTags( post.tags.map((i, index) => {
+          setTags( post.tags.map((i, index) => { 
              return <span className="tag" key={i} onClick={sendToTag} >{i}</span>
      }))
         

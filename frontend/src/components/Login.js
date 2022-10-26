@@ -1,9 +1,5 @@
 import React, {useState, useEffect} from "react";
 import {NavLink, useNavigate} from 'react-router-dom'
-import { useDispatch, useSelector } from "react-redux";
-import store from "./Redux/store.js";
-
-import Header from './Header.js'
 
 function Login() {
     const [sendData, setSendData] = useState({})
@@ -20,7 +16,7 @@ function Login() {
 
     function handleClick() {
         
-        fetch("https://foodbook-pzco.onrender.com/login/", {
+        fetch("/login/", {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'

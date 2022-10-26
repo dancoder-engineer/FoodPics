@@ -97,6 +97,8 @@ class UsersController < ApplicationController
 
     def createstuff(id)
 
+        dan = User.find_by(UserName: "Dan")
+
         Notification.create({
             content: "Welcome to FoodBook!!",
             read: "unread",
@@ -111,7 +113,7 @@ class UsersController < ApplicationController
 
         Following.create({
             follower: id,
-            followee: 32,
+            followee: dan.id,
         })
 
     end
