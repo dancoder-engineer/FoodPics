@@ -20,7 +20,7 @@ function Login() {
 
     function handleClick() {
         
-        fetch("/login", {
+        fetch("/login/", {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ function Login() {
             body: JSON.stringify(sendData)
         })
         .then(res => res.json())
-        .then(data => {
+        .then(data => { 
             if (data.user) {
                 history('../')
             }
