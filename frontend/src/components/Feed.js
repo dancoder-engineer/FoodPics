@@ -10,8 +10,18 @@ function Feed() {
     const [postData, setPostData] = useState(null)
     const history = useNavigate() 
 
-    useEffect(() => makeFeed(), [])
+    useEffect(() => {
+        
+        fetch("/getme/")
+        .then(res => res.json())
+        .then(data => { 
+            if (data.user) { makeFeed() } 
+            else { history('/login/')}    
+        } )
+        
+        }, [])
 
+        
 
     function makeFeed() {
         fetch('/makefeed/')
