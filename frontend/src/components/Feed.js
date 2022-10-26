@@ -21,7 +21,6 @@ function Feed() {
         
         }, [])
 
-        
 
     function makeFeed() {
         fetch('/makefeed/')
