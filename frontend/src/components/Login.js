@@ -20,7 +20,7 @@ function Login() {
 
     function handleClick() {
         
-        fetch("/login/", {
+        fetch("https://foodbook-pzco.onrender.com/login/", {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
