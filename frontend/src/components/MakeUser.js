@@ -76,7 +76,7 @@ function MakeUser() {
             return 0
         }
         
-            fetch('http://localhost:5000/users', {
+            fetch('/users/', {
             method: 'post',
             body: formData,
             })
