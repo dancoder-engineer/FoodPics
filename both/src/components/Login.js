@@ -16,7 +16,7 @@ function Login() {
 
     function handleClick() {
         
-        fetch("/login/", {
+        fetch("/loginback/", {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'

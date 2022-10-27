@@ -17,7 +17,7 @@ function MessageThread() {
     }, [])
 
     function getMessagesFromServer() {
-        fetch("/messagethread/" + params.id)
+        fetch("/messagethreadback/" + params.id)
         .then(res => res.json())
         .then(data => {
             if(data.error) {history('/login/')}

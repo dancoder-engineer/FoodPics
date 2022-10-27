@@ -8,7 +8,7 @@ function Logout() {
     useEffect(() => handleLogout())
 
     function handleLogout() {
-        fetch("/logout/")
+        fetch("/logoutback/")
         .then(res => res.json())
         .then(() => history("/login/") )
     }
