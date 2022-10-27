@@ -1,0 +1,150 @@
+
+        let userData = {
+            userName: formData.userName,
+            password: formData.password1,
+            password_confirmation: formData.password2,
+            email: formData.email,
+            gotHowFar: 1,
+            paidHowFar: 50,
+            quizzes: [
+              
+            ]
+          }
+
+
+
+
+          
+        fetch("/users/", {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            accept: 'application/json' 
+          },
+          body: JSON.stringify(userData)
+        })
+        .then(res => res.json())
+  //      .then(data => console.log(data))
+        .then(history.push("/login/"))
+
+
+
+
+
+
+        })
+
+      
+        
+
+
+
+
+              t.string :UserName
+      t.string :password_digest
+      t.string :ActualName
+      t.text :Description
+      t.string :Pronouns
+      t.string :Website
+
+
+
+
+
+
+
+        fetch("/users/", {
+            method: 'POST',
+            headers: { 
+              'Content-Type': 'application/json',
+              'accept': 'application/json' 
+            },
+            body: JSON.stringify(sendThis)
+          })
+          .then(res => res.json())
+          .then(data => {
+   //         console.log(data)
+            uploadFile(sendThis.avatar, data)
+        })
+
+
+Post
+BT	User
+	Title
+HM	MainPictures
+	Place ("made" if its a recipe, or restaurant name if not)
+HO	Recipe (just null if its restaurant)
+
+
+
+
+
+
+
+ if (e.target.id==="avatar") {
+            setSendingData({ 
+                ...sendingData,
+                [e.target.id]: e.target.value,
+                avpic: e.target.files[0]
+            })
+
+        }
+
+          Avatar: <input type="file" id="avatar" name="avatar" onChange={handleChange} /> <br />
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('#results')
+  document.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const form = e.target
+    const formData = new FormData()
+    formData.append('event[name]', form.name.value)
+    formData.append('event[start_time]', form.start_time.value)
+    formData.append('event[end_time]', form.end_time.value)
+    formData.append('event[location]', form.location.value)
+    for (let i = 0; i < form.poster.files.length; i++) {
+      formData.append(
+        'event[posters][]',
+        form.poster.files[i],
+        form.poster.files[i].name
+      )
+    }
+
+    fetch('http://localhost:3000/events', {
+      method: 'post',
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((event) => {
+        const eventDiv = document.createElement('div')
+        eventDiv.className = 'shadow bg-green-50 p-3'
+        eventDiv.innerHTML = `
+        <h1 class="event-name text-2xl"></h1>
+        <div class="event-images grid grid-cols-${event.poster_urls.length} gap-1"></div>
+        <p class="event-start-time"></p> 
+        <p class="event-end-time"></p> 
+        <p class="event-location"></p>
+        `
+        eventDiv.querySelector('.event-name').textContent = event.name
+        eventDiv.querySelector(
+          '.event-images'
+        ).innerHTML = event.poster_urls
+          .map((url) => `<img src="${url}" />`)
+          .join('')
+        eventDiv.querySelector('.event-start-time').textContent =
+          event.start_time
+        eventDiv.querySelector('.event-end-time').textContent = event.end_time
+        eventDiv.querySelector('.event-location').textContent = event.location
+
+        container.appendChild(eventDiv)
+      })
+  })
+})
+
+
+
+
+
+npm run build

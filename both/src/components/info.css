@@ -1,0 +1,479 @@
+
+
+.userData {
+    border-style: double;
+    border-radius: 5px;
+    margin: auto;
+    width: 25%;
+    display: block;
+    padding: 20px;
+    background-color: lemonchiffon;
+}
+
+.description {
+    height: 50px
+}
+
+.avatarPic {
+    height: 100px;
+    margin: auto;
+    display:block;
+}
+
+.centered {
+    text-align: center;
+}
+
+.textA{
+    width: 350px;
+    height: 100px
+}
+
+
+
+
+.post {
+    border-style: double;
+    border-radius: 5px;
+    margin: auto;
+    width: 50%;
+    display: block;
+    padding: 10px;
+    background-color: lemonchiffon;
+}
+
+.miniPic {
+    display: block;
+    margin: auto;
+    width: 50px;
+    border-radius: 50px;
+}
+
+.floatCenter{
+    text-align: center;
+}
+
+.postPic {
+    display: block;
+    margin: auto;
+    max-height: 250px;
+    padding: 10px
+}
+
+.nums{
+    text-align: center;
+    font-size: smaller;
+}
+
+.userInfo{
+    display:grid;
+    grid-template-columns: 1fr 55px 20px auto 1fr;
+    margin: auto;
+    width: 50%;
+}
+
+.col1{
+    grid-column-start: 2;
+    width: 55px;
+    font-size: auto;
+    
+}
+
+.col2{
+    grid-column-start: 4;
+}
+
+.miniPicOnPost {
+    width: 50px;
+    border-radius: 50px;
+    float: right
+}
+
+.off{
+    display: none
+}
+
+.on{
+    text-align: center;
+}
+
+
+.recipePic{
+    text-align: center;
+    margin: auto;
+    display: block;
+    width: 100px;
+    border-radius: 100px;
+}
+
+
+.↓{
+    display: none
+}
+
+.↑{
+  
+}
+
+.smallCentered {
+    text-align: center;
+    font-size: smaller;
+}
+
+.centeredLi {
+    margin: auto;
+    display: block;
+}
+
+.overHeader {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.header {
+    width: 50%;
+    margin: auto;
+}
+
+.headerCentered {
+    width: 100%;
+    margin: auto;
+}
+
+.headerPic {
+    width: 19%;
+    margin: auto;
+}
+
+.comment{
+    display:grid;
+    grid-template-columns: 10px 120px 20px 1fr 10px;
+    border-style: double;
+}
+
+.col1comm{
+    grid-column-start: 2;
+    width: auto;
+    font-size: auto;
+    height: auto;
+}
+
+.col2comm{
+    grid-column-start: 4;
+}
+
+.miniPicOnPostcomm {
+    height: 50px;
+    border-radius: 50px;
+}
+
+.allAcross {
+    width: 100%
+}
+
+#newComment {
+    height: 80px
+}
+
+
+
+
+
+.backImg{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+      
+    width: 100%;
+    height: 100%;
+}
+
+.loginPage{
+/*    background-image: url("https://imgur.com/Qe3LN4l.png"); */
+    background-color: #cccccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr 1fr 1fr 1fr 3fr;
+    grid-template-rows:  1fr 1fr 1.25fr 3fr 1.7fr 1.7fr 1.7fr;
+}
+
+.loginInfo{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
+}
+
+.goRegister{
+    grid-column-start: 5;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+
+
+
+.registerPage{
+/*    background-image: url("https://imgur.com/YmGrKF5.png"); */
+    background-color: #cccccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:  0.35fr 1fr 0.35fr 7fr 0.75fr 0.75fr 0.5fr;
+}
+
+.registerInfo{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
+}
+
+.devStuff{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 7;
+    grid-row-end: 7;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
+}
+
+.goLogin{
+    grid-column-start: 5;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
+}
+
+.editPage{
+    /*    background-image: url("https://imgur.com/YmGrKF5.png"); */
+        background-color: #cccccc;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template-columns: 3fr 1fr 3fr 1fr 1fr 1fr 1fr;
+        grid-template-rows:  0.25fr .03fr 5px .35fr .35fr 0.15fr 0.35fr;
+    }
+
+.editHeader {
+    opacity:0.8;
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.deleteButton {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 6;
+    grid-row-end: 6;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
+}
+
+.followeduser{
+    background-color: lemonchiffon;
+}
+
+
+
+.makePostPage{
+    /*    background-image: url("https://imgur.com/YmGrKF5.png"); */
+        background-color: #cccccc;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template-columns: 3fr 1fr 3.9fr 1fr 1fr 1fr 1fr;
+        grid-template-rows:  .5fr 5px 10px .35fr 2px 3px 5px;
+    }
+
+.makePost {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    background-color: black;
+    opacity:0.8;
+    color: white;
+    text-align: center;
+}
+
+.makePostHeader {
+    opacity:0.8;
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.tag{
+    padding: 2px;
+    border-style: groove;
+    margin: auto;
+}
+
+.tagDiv{
+    margin: auto;
+    width:fit-content;
+    display: block;
+}
+
+
+.followeduser{
+    display:grid;
+    margin:auto;
+    width: 70%;
+    grid-template-columns: 10px 120px 20px 1fr 10px;
+    border-style: double;
+}
+
+.followingsPage{
+    /*    background-image: url("https://imgur.com/YmGrKF5.png"); */
+        background-color: #cccccc;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .individualUsers{
+        width: 100%;
+        margin: auto;
+        display: block;
+        opacity: 0.99999;
+        position: absolute
+    }
+
+    .centeredWithBg{
+        border-style: double;
+        width:fit-content;
+        margin:auto;
+        text-align: center;
+        opacity: 0.99999;
+        background-color: lemonchiffon;
+    }
+
+    .headerHere{
+        position: relative;
+    }
+
+    .threeColumns{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;    
+    }
+
+    .columnOne{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        border-style: double;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .columnTwo{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        margin: auto
+    }
+
+    .columnThree{
+        grid-column-start: 3;
+        grid-column-end: 3;
+        border-style: double;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .convoList{
+        display:grid;
+        margin:auto;
+        width: 75%;
+        grid-template-columns: 10px 120px 20px 1fr 10px;
+        border-style: double;
+        background-color: lemonchiffon;
+        opacity:0.9;
+    }
+    
+    .leftBubble{
+        margin-left: auto; 
+        margin-left: 0;
+        background-color: chartreuse;
+        width: 50%;
+        border-radius: 20px;
+        min-height: 50px;
+    }
+
+    .rightBubble{
+        margin-left: auto; 
+        margin-right: 0;
+        background-color: chartreuse;
+        width: 50%;
+        border-radius: 20px;
+        text-align: right;
+        min-height: 50px;
+    }
+
+    .convoPicLeft {
+        height: 50px;
+        border-radius: 50px;
+        float: left;
+    }
+
+    .convoPicRight {
+        height: 50px;
+        border-radius: 50px;
+        float: right;
+    }
+
+    .convo{
+        width: 50%;
+        margin: auto;
+        display: block;
+        opacity: 0.9;
+        background-color: lemonchiffon;
+        padding: 10px
+    }
+
+    .messagearea{
+        width:90%;
+        height: 50px;
+        margin: auto;
+        display: block;
+    }
+
+    .submitMessage{
+        width:45%;
+        margin: auto;
+        display: block;
+    }
+
+    .logo {
+        width: 37%;
+        margin: auto;
+    }
