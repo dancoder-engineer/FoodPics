@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :api do
+ # namespace :api do
     resources :notifications
     resources :messages
     resources :posttags
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     get '/messagethreadback/:id', to: 'messages#messagethread'
     get '/commentnotifications/:id', to: 'notifications#commentnotifications'
     get '/readall/', to: 'notifications#readall'
-  end
+ # end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
