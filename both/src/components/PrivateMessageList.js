@@ -48,10 +48,10 @@ function PrivateMessageList(){
 
         }
 
-        else
+        else{
 
-        return (<h1 className="centered">No private messages yet.</h1>)
-
+            return (<h1 className="centered">No private messages yet.</h1>)
+        }
     }
 
 
