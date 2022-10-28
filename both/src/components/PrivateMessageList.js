@@ -29,6 +29,8 @@ function PrivateMessageList(){
 
     function makeConvos(data) {
 
+        if (data[0]){
+
         return data.map((i) => { return (
         <div key={i.user}>
             <div className="convoList" key={i.user}>
@@ -43,6 +45,13 @@ function PrivateMessageList(){
             </div><br />
         </div>
         )})
+
+        }
+
+        else
+
+        return (<h1 className="centered">No private messages yet.</h1>)
+
     }
 
 
