@@ -28,7 +28,7 @@ function PrivateMessageList(){
      }
 
     function makeConvos(data) {
-        
+
         if (data[0]){
 
         return data.map((i) => { return (
@@ -50,7 +50,7 @@ function PrivateMessageList(){
 
         else{
 
-            return (<h1 className="centered">No private messages yet.</h1>)
+            return (<h1 className="centeredAndNice">No private messages yet.</h1>)
         }
     }
 

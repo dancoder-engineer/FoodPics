@@ -29,14 +29,20 @@ class UsersController < ApplicationController
             }
             return render json: ({user: user, avatar: avatar, follow: follow}), status: 200
         else
-            return render json({error: "No such user"})
+            return render json: ({error: "No such user"})
         end
     end
 
     def show
         user = User.find_by(id: params[:id])
-        avatar = rails_blob_path(user.avatar)
-        render json: ({user: user, avatar: avatar, notifications: user.notifications}), status: 200
+        if user
+            avatar = rails_blob_path(user.avatar)
+            notifications = user.notifications
+        else
+            avatar = "N/A"
+            notifications = []
+        end
+        render json: ({user: user, avatar: avatar, notifications: notifications}), status: 200
     end
 
     def create

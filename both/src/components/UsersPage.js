@@ -35,6 +35,9 @@ function UsersPage() {
         fetch('/userid/' + user)
         .then(res => res.json())
         .then(data => {
+            if(data.error) {
+                setUserInfo(<h1 className="centeredAndNice">User {params.name} doesn't exist..</h1>)
+            }
             setUserInfo(<InfoCard data={data} />)
             getPostNums(data.user.id)
             if (user !== params.name) {history('/user/'+user)}

@@ -478,6 +478,16 @@
         margin: auto;
     }
 
+    .centeredAndNice{
+        border-style: double;
+        width:fit-content;
+        margin:auto;
+        text-align: center;
+        opacity: 0.99999;
+        background-color: lemonchiffon;
+        border-radius: 15px;;
+    }
+
 
 
     @media only screen and (max-device-width: 480px) {
