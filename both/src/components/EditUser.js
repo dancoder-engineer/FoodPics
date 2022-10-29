@@ -83,6 +83,7 @@ function EditUser() {
             .then (res => res.json())
             .then (data => {
                 console.log(data)
+                history('/')
                 // if (data.errors) { 
                 //     setErrors(data.errors.map((i, index) => 
                 //         <p className="error" key={index}>{i}</p>
