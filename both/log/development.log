@@ -27,3 +27,570 @@
   [1m[36mActiveStorage::Attachment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 193]]
   [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 62]]
   [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mPosttag Load (0.1ms)[0m  [1m[34mSELECT "posttags".* FROM "posttags"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 63]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 63]]
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 63]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 63], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 197]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 63]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? LIMIT ?[0m  [["UserName", "Dan"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("UserName", "password_digest", "ActualName", "Description", "Pronouns", "Website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["UserName", "Dan"], ["password_digest", "[FILTERED]"], ["ActualName", "Dan Seminara"], ["Description", "Welcome to my website! Enjoy all the pictures of food and recipes!!"], ["Pronouns", "He/Him"], ["Website", "http://this.one"], ["created_at", "2022-10-29 02:56:40.307992"], ["updated_at", "2022-10-29 02:56:40.307992"]]
+  [1m[36mTRANSACTION (46.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mPosttag Load (0.1ms)[0m  [1m[34mSELECT "posttags".* FROM "posttags"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 64]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 64]]
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 64]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 64], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 64]]
+  [1m[36mTRANSACTION (44.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? LIMIT ?[0m  [["UserName", "Dan"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("UserName", "password_digest", "ActualName", "Description", "Pronouns", "Website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["UserName", "Dan"], ["password_digest", "[FILTERED]"], ["ActualName", "Dan Seminara"], ["Description", "Welcome to my website! Enjoy all the pictures of food and recipes!!"], ["Pronouns", "He/Him"], ["Website", "http://this.one"], ["created_at", "2022-10-29 02:57:01.778716"], ["updated_at", "2022-10-29 02:57:01.778716"]]
+  [1m[36mTRANSACTION (50.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? AND "users"."id" != ? LIMIT ?[0m  [["UserName", "Dan"], ["id", 65], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 65], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 65], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "0vbbqpfcmrmy8rhai4ayjkqhl7fj"], ["filename", "Dan.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 1024232], ["checksum", "doZjXETllgVFar2lqhAmYQ=="], ["created_at", "2022-10-29 02:57:01.873898"]]
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 65], ["blob_id", 198], ["created_at", "2022-10-29 02:57:01.875178"]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2022-10-29 02:57:01.876157"], ["id", 65]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 0vbbqpfcmrmy8rhai4ayjkqhl7fj (checksum: doZjXETllgVFar2lqhAmYQ==)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mPosttag Load (0.1ms)[0m  [1m[34mSELECT "posttags".* FROM "posttags"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 65]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 65]]
+  [1m[36mNotification Load (0.0ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 65]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 65], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 198]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 65]]
+  [1m[36mTRANSACTION (14.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? LIMIT ?[0m  [["UserName", "Dan"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("UserName", "password_digest", "ActualName", "Description", "Pronouns", "Website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["UserName", "Dan"], ["password_digest", "[FILTERED]"], ["ActualName", "Dan Seminara"], ["Description", "Welcome to my website! Enjoy all the pictures of food and recipes!!"], ["Pronouns", "He/Him"], ["Website", "http://this.one"], ["created_at", "2022-10-29 02:57:21.438809"], ["updated_at", "2022-10-29 02:57:21.438809"]]
+  [1m[36mTRANSACTION (46.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mPosttag Load (0.1ms)[0m  [1m[34mSELECT "posttags".* FROM "posttags"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 66]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 66]]
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 66]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 66], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 66]]
+  [1m[36mTRANSACTION (47.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? LIMIT ?[0m  [["UserName", "Dan"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("UserName", "password_digest", "ActualName", "Description", "Pronouns", "Website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["UserName", "Dan"], ["password_digest", "[FILTERED]"], ["ActualName", "Dan Seminara"], ["Description", "Welcome to my website! Enjoy all the pictures of food and recipes!!"], ["Pronouns", "He/Him"], ["Website", "http://this.one"], ["created_at", "2022-10-29 02:57:35.458975"], ["updated_at", "2022-10-29 02:57:35.458975"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? AND "users"."id" != ? LIMIT ?[0m  [["UserName", "Dan"], ["id", 67], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 67], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 67], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "3rtxwkkwuv3mne3lnfmsvuf4zq3f"], ["filename", "Dan.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "google_dev"], ["byte_size", 1024232], ["checksum", "doZjXETllgVFar2lqhAmYQ=="], ["created_at", "2022-10-29 02:57:35.814432"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 67], ["blob_id", 199], ["created_at", "2022-10-29 02:57:35.815553"]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2022-10-29 02:57:35.816349"], ["id", 67]]
+  [1m[36mTRANSACTION (53.7ms)[0m  [1m[36mcommit transaction[0m
+[36m  GCS Storage (0.4ms) [0m[32mUploaded file to key: 3rtxwkkwuv3mne3lnfmsvuf4zq3f (checksum: doZjXETllgVFar2lqhAmYQ==)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mPosttag Load (0.1ms)[0m  [1m[34mSELECT "posttags".* FROM "posttags"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 67]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 67]]
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 67]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 67], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 199]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 67]]
+  [1m[36mTRANSACTION (46.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? LIMIT ?[0m  [["UserName", "Dan"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("UserName", "password_digest", "ActualName", "Description", "Pronouns", "Website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["UserName", "Dan"], ["password_digest", "[FILTERED]"], ["ActualName", "Dan Seminara"], ["Description", "Welcome to my website! Enjoy all the pictures of food and recipes!!"], ["Pronouns", "He/Him"], ["Website", "http://this.one"], ["created_at", "2022-10-29 03:02:30.747902"], ["updated_at", "2022-10-29 03:02:30.747902"]]
+  [1m[36mTRANSACTION (47.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? AND "users"."id" != ? LIMIT ?[0m  [["UserName", "Dan"], ["id", 68], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 68], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 68], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "vu87luoazqnld7io5c0s55zwqqx4"], ["filename", "Dan.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "google_dev"], ["byte_size", 1024232], ["checksum", "doZjXETllgVFar2lqhAmYQ=="], ["created_at", "2022-10-29 03:02:30.986095"]]
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 68], ["blob_id", 200], ["created_at", "2022-10-29 03:02:30.987257"]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2022-10-29 03:02:30.988378"], ["id", 68]]
+  [1m[36mTRANSACTION (46.8ms)[0m  [1m[36mcommit transaction[0m
+[36m  GCS Storage (103.2ms) [0m[32mUploaded file to key: vu87luoazqnld7io5c0s55zwqqx4 (checksum: doZjXETllgVFar2lqhAmYQ==)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mPosttag Load (0.1ms)[0m  [1m[34mSELECT "posttags".* FROM "posttags"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 68]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 68]]
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 68]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 68], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 200]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 68]]
+  [1m[36mTRANSACTION (48.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? LIMIT ?[0m  [["UserName", "Dan"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("UserName", "password_digest", "ActualName", "Description", "Pronouns", "Website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["UserName", "Dan"], ["password_digest", "[FILTERED]"], ["ActualName", "Dan Seminara"], ["Description", "Welcome to my website! Enjoy all the pictures of food and recipes!!"], ["Pronouns", "He/Him"], ["Website", "http://this.one"], ["created_at", "2022-10-29 03:09:19.705983"], ["updated_at", "2022-10-29 03:09:19.705983"]]
+  [1m[36mTRANSACTION (46.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? AND "users"."id" != ? LIMIT ?[0m  [["UserName", "Dan"], ["id", 69], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 69], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 69], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "9cx7kp1mslz0rg0elcdpjgbkjd1o"], ["filename", "Dan.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "google_dev"], ["byte_size", 1024232], ["checksum", "doZjXETllgVFar2lqhAmYQ=="], ["created_at", "2022-10-29 03:09:19.974933"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 69], ["blob_id", 201], ["created_at", "2022-10-29 03:09:19.976458"]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2022-10-29 03:09:19.977509"], ["id", 69]]
+  [1m[36mTRANSACTION (48.3ms)[0m  [1m[36mcommit transaction[0m
+[36m  GCS Storage (0.5ms) [0m[32mUploaded file to key: 9cx7kp1mslz0rg0elcdpjgbkjd1o (checksum: doZjXETllgVFar2lqhAmYQ==)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mPosttag Load (0.1ms)[0m  [1m[34mSELECT "posttags".* FROM "posttags"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 69]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 69]]
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 69]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 69], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 201]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 69]]
+  [1m[36mTRANSACTION (44.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? LIMIT ?[0m  [["UserName", "Dan"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("UserName", "password_digest", "ActualName", "Description", "Pronouns", "Website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["UserName", "Dan"], ["password_digest", "[FILTERED]"], ["ActualName", "Dan Seminara"], ["Description", "Welcome to my website! Enjoy all the pictures of food and recipes!!"], ["Pronouns", "He/Him"], ["Website", "http://this.one"], ["created_at", "2022-10-29 03:09:48.584321"], ["updated_at", "2022-10-29 03:09:48.584321"]]
+  [1m[36mTRANSACTION (43.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? AND "users"."id" != ? LIMIT ?[0m  [["UserName", "Dan"], ["id", 70], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 70], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 70], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "b8cdy5rre556ieo1ggfqanf1h4wd"], ["filename", "Dan.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "google_dev"], ["byte_size", 1024232], ["checksum", "doZjXETllgVFar2lqhAmYQ=="], ["created_at", "2022-10-29 03:09:48.864420"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 70], ["blob_id", 202], ["created_at", "2022-10-29 03:09:48.865616"]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2022-10-29 03:09:48.866508"], ["id", 70]]
+  [1m[36mTRANSACTION (46.6ms)[0m  [1m[36mcommit transaction[0m
+[36m  GCS Storage (0.4ms) [0m[32mUploaded file to key: b8cdy5rre556ieo1ggfqanf1h4wd (checksum: doZjXETllgVFar2lqhAmYQ==)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications"[0m
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mPosttag Load (0.1ms)[0m  [1m[34mSELECT "posttags".* FROM "posttags"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 70]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 70]]
+  [1m[36mNotification Load (0.0ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 70]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 70], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 202]]
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 70]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? LIMIT ?[0m  [["UserName", "Dan"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("UserName", "password_digest", "ActualName", "Description", "Pronouns", "Website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["UserName", "Dan"], ["password_digest", "[FILTERED]"], ["ActualName", "Dan Seminara"], ["Description", "Welcome to my website! Enjoy all the pictures of food and recipes!!"], ["Pronouns", "He/Him"], ["Website", "http://this.one"], ["created_at", "2022-10-29 03:09:58.068275"], ["updated_at", "2022-10-29 03:09:58.068275"]]
+  [1m[36mTRANSACTION (46.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? AND "users"."id" != ? LIMIT ?[0m  [["UserName", "Dan"], ["id", 71], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 71], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 71], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "ftah84ca7k0rd8zemtzuk5p1h223"], ["filename", "Dan.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "google_dev"], ["byte_size", 1024232], ["checksum", "doZjXETllgVFar2lqhAmYQ=="], ["created_at", "2022-10-29 03:09:58.323506"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 71], ["blob_id", 203], ["created_at", "2022-10-29 03:09:58.324651"]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2022-10-29 03:09:58.325512"], ["id", 71]]
+  [1m[36mTRANSACTION (46.4ms)[0m  [1m[36mcommit transaction[0m
+Intiating resumable upload command to https://storage.googleapis.com/upload/storage/v1/b/bucket-of-food/o?name=ftah84ca7k0rd8zemtzuk5p1h223
+Success - nil
+
+Sending upload command to https://storage.googleapis.com/upload/storage/v1/b/bucket-of-food/o?name=ftah84ca7k0rd8zemtzuk5p1h223&name=ftah84ca7k0rd8zemtzuk5p1h223&uploadType=resumable&upload_id=ADPycdvRzMxt76g2x30jdZY4z0K-8NqkLUyclUSh7Tt5upAuMDZ_a1r68bJpxmNi0wtq7gbJB3kY3LMUVPL_gEyyWg7ofg
+Success - #<Google::Apis::StorageV1::Object:0x000055fa56f0c390
+ @bucket="bucket-of-food",
+ @content_type="image/png",
+ @crc32c="R80+jQ==",
+ @etag="COTQ0627hPsCEAE=",
+ @generation=1667013000095844,
+ @id="bucket-of-food/ftah84ca7k0rd8zemtzuk5p1h223/1667013000095844",
+ @kind="storage#object",
+ @md5_hash="doZjXETllgVFar2lqhAmYQ==",
+ @media_link=
+  "https://storage.googleapis.com/download/storage/v1/b/bucket-of-food/o/ftah84ca7k0rd8zemtzuk5p1h223?generation=1667013000095844&alt=media",
+ @metageneration=1,
+ @name="ftah84ca7k0rd8zemtzuk5p1h223",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/bucket-of-food/o/ftah84ca7k0rd8zemtzuk5p1h223",
+ @size=1024232,
+ @storage_class="STANDARD",
+ @time_created=Sat, 29 Oct 2022 03:10:00 +0000,
+ @time_storage_class_updated=Sat, 29 Oct 2022 03:10:00 +0000,
+ @updated=Sat, 29 Oct 2022 03:10:00 +0000>
+
+[36m  GCS Storage (893.9ms) [0m[32mUploaded file to key: ftah84ca7k0rd8zemtzuk5p1h223 (checksum: doZjXETllgVFar2lqhAmYQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 3a3bb05f-92fa-454b-aec7-01947efc030d) to Async(default) with arguments: #<GlobalID:0x000055fa58079628 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/203>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3a3bb05f-92fa-454b-aec7-01947efc030d]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3a3bb05f-92fa-454b-aec7-01947efc030d] Performing ActiveStorage::AnalyzeJob (Job ID: 3a3bb05f-92fa-454b-aec7-01947efc030d) from Async(default) enqueued at 2022-10-29T03:09:59Z with arguments: #<GlobalID:0x00007eff982c79c0 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/203>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3a3bb05f-92fa-454b-aec7-01947efc030d] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3a3bb05f-92fa-454b-aec7-01947efc030d]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3a3bb05f-92fa-454b-aec7-01947efc030d]   [1m[36mActiveStorage::Blob Update (0.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 203]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3a3bb05f-92fa-454b-aec7-01947efc030d]   [1m[36mTRANSACTION (23.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3a3bb05f-92fa-454b-aec7-01947efc030d] Sending HTTP patch https://storage.googleapis.com/storage/v1/b/bucket-of-food/o/ftah84ca7k0rd8zemtzuk5p1h223?
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "place", "description", "captions", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Welcome to FoodBook!"], ["place", "Right Here"], ["description", "Welcome to FoodBook, my Module 5 project for Flatiron School, as well as the future of culinary social media! This post will give you an idea of what you can do here and how it works.\r\n\r\nFirst, you'll notice that posts can have pictures, but if you click on the left or right side of them, you can scroll through all the different pictures in the post. This post has two pictures. Try going between them."], ["captions", "Here's a pizza in the shape of Pac-Man. It's got vegetables and meat on it and pools of cheese baked into the crust. Good stuff. There's another picture in this post, as well.||Very good! Not you see the delicious bowl of soup! Did you know that this post has a recipe, as well? Below here, you can see a ↓. Try clicking anywhere you see that to open and close the recipe.\r\n\r\nYou might notice a ↓ up there on the header, as well. Try clicking it and see what happens. Incidentally, anytime you open anything like that, you can click the line of text again, now that there's a ↑ there. That will close it."], ["user_id", 71], ["created_at", "2022-10-29 03:09:59.320501"], ["updated_at", "2022-10-29 03:09:59.320501"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 75], ["record_type", "Post"], ["name", "pics"]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 75], ["record_type", "Post"], ["name", "pics"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "km19gt2phbisd3cwvtd8vy59dcs7"], ["filename", "Dan.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "google_dev"], ["byte_size", 2183159], ["checksum", "xk8dWllrTPWXT8Pq10a6tg=="], ["created_at", "2022-10-29 03:09:59.346369"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "pics"], ["record_type", "Post"], ["record_id", 75], ["blob_id", 204], ["created_at", "2022-10-29 03:09:59.348732"]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "we8t18as1ebctq58es6p4dqb47bs"], ["filename", "Dan.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "google_dev"], ["byte_size", 2603292], ["checksum", "51hz2Ue7bkNyixgsE+kSwQ=="], ["created_at", "2022-10-29 03:09:59.350095"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "pics"], ["record_type", "Post"], ["record_id", 75], ["blob_id", 205], ["created_at", "2022-10-29 03:09:59.351149"]]
+  [1m[36mPost Update (0.1ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = ? WHERE "posts"."id" = ?[0m  [["updated_at", "2022-10-29 03:09:59.352013"], ["id", 75]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+Intiating resumable upload command to https://storage.googleapis.com/upload/storage/v1/b/bucket-of-food/o?name=km19gt2phbisd3cwvtd8vy59dcs7
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3a3bb05f-92fa-454b-aec7-01947efc030d] 200
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3a3bb05f-92fa-454b-aec7-01947efc030d] #<HTTP::Message:0x000055fa59eca0f0 @http_header=#<HTTP::Message::Headers:0x000055fa59eca0c8 @http_version="1.1", @body_size=0, @chunked=false, @request_method="PATCH", @request_uri=#<Addressable::URI:0x4394 URI:https://storage.googleapis.com/storage/v1/b/bucket-of-food/o/ftah84ca7k0rd8zemtzuk5p1h223?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "ADPycduiwRRr81USecGRtH4B9fLaqxYkq2WRUE8SNR90aCaPhxPeQEDp-jdqUfKotA10GV_Pa4yZJPyyAjvi72u1sGMokg"], ["ETag", "COTQ0627hPsCEAI="], ["Content-Type", "application/json; charset=UTF-8"], ["Date", "Sat, 29 Oct 2022 03:10:00 GMT"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Pragma", "no-cache"], ["Content-Length", "813"], ["Server", "UploadServer"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=storage.googleapis.com>, issuer=#<OpenSSL::X509::Name CN=GTS CA 1C3,O=Google Trust Services LLC,C=US>, serial=#<OpenSSL::BN:0x00007eff98c2f198>, not_before=2022-09-26 08:28:33 UTC, not_after=2022-12-19 08:28:32 UTC>, @http_body=#<HTTP::Message::Body:0x000055fa59eca028 @body="{\n  \"kind\": \"storage#object\",\n  \"id\": \"bucket-of-food/ftah84ca7k0rd8zemtzuk5p1h223/1667013000095844\",\n  \"selfLink\": \"https://www.googleapis.com/storage/v1/b/bucket-of-food/o/ftah84ca7k0rd8zemtzuk5p1h223\",\n  \"mediaLink\": \"https://storage.googleapis.com/download/storage/v1/b/bucket-of-food/o/ftah84ca7k0rd8zemtzuk5p1h223?generation=1667013000095844&alt=media\",\n  \"name\": \"ftah84ca7k0rd8zemtzuk5p1h223\",\n  \"bucket\": \"bucket-of-food\",\n  \"generation\": \"1667013000095844\",\n  \"metageneration\": \"2\",\n  \"contentType\": \"image/png\",\n  \"storageClass\": \"STANDARD\",\n  \"size\": \"1024232\",\n  \"md5Hash\": \"doZjXETllgVFar2lqhAmYQ==\",\n  \"crc32c\": \"R80+jQ==\",\n  \"etag\": \"COTQ0627hPsCEAI=\",\n  \"timeCreated\": \"2022-10-29T03:10:00.133Z\",\n  \"updated\": \"2022-10-29T03:10:00.429Z\",\n  \"timeStorageClassUpdated\": \"2022-10-29T03:10:00.133Z\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3a3bb05f-92fa-454b-aec7-01947efc030d] Success - #<Google::Apis::StorageV1::Object:0x00007eff98c2ea40
+ @bucket="bucket-of-food",
+ @content_type="image/png",
+ @crc32c="R80+jQ==",
+ @etag="COTQ0627hPsCEAI=",
+ @generation=1667013000095844,
+ @id="bucket-of-food/ftah84ca7k0rd8zemtzuk5p1h223/1667013000095844",
+ @kind="storage#object",
+ @md5_hash="doZjXETllgVFar2lqhAmYQ==",
+ @media_link=
+  "https://storage.googleapis.com/download/storage/v1/b/bucket-of-food/o/ftah84ca7k0rd8zemtzuk5p1h223?generation=1667013000095844&alt=media",
+ @metageneration=2,
+ @name="ftah84ca7k0rd8zemtzuk5p1h223",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/bucket-of-food/o/ftah84ca7k0rd8zemtzuk5p1h223",
+ @size=1024232,
+ @storage_class="STANDARD",
+ @time_created=Sat, 29 Oct 2022 03:10:00 +0000,
+ @time_storage_class_updated=Sat, 29 Oct 2022 03:10:00 +0000,
+ @updated=Sat, 29 Oct 2022 03:10:00 +0000>
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3a3bb05f-92fa-454b-aec7-01947efc030d] Performed ActiveStorage::AnalyzeJob (Job ID: 3a3bb05f-92fa-454b-aec7-01947efc030d) from Async(default) in 205.57ms
+Success - nil
+
+Sending upload command to https://storage.googleapis.com/upload/storage/v1/b/bucket-of-food/o?name=km19gt2phbisd3cwvtd8vy59dcs7&name=km19gt2phbisd3cwvtd8vy59dcs7&uploadType=resumable&upload_id=ADPycds3DpDbOIIiNKwgpk8kOAOTAXmpE_fFlqhEzdcvbSJ-OOWBp2R4RjIa0OiYTFtXDn8CKqF6FchJcqWoDaGhPHtoyg
+Success - #<Google::Apis::StorageV1::Object:0x000055fa5b157470
+ @bucket="bucket-of-food",
+ @content_type="image/jpeg",
+ @crc32c="2/Qdqg==",
+ @etag="COv1i667hPsCEAE=",
+ @generation=1667013001018091,
+ @id="bucket-of-food/km19gt2phbisd3cwvtd8vy59dcs7/1667013001018091",
+ @kind="storage#object",
+ @md5_hash="xk8dWllrTPWXT8Pq10a6tg==",
+ @media_link=
+  "https://storage.googleapis.com/download/storage/v1/b/bucket-of-food/o/km19gt2phbisd3cwvtd8vy59dcs7?generation=1667013001018091&alt=media",
+ @metageneration=1,
+ @name="km19gt2phbisd3cwvtd8vy59dcs7",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/bucket-of-food/o/km19gt2phbisd3cwvtd8vy59dcs7",
+ @size=2183159,
+ @storage_class="STANDARD",
+ @time_created=Sat, 29 Oct 2022 03:10:01 +0000,
+ @time_storage_class_updated=Sat, 29 Oct 2022 03:10:01 +0000,
+ @updated=Sat, 29 Oct 2022 03:10:01 +0000>
+
+[36m  GCS Storage (830.0ms) [0m[32mUploaded file to key: km19gt2phbisd3cwvtd8vy59dcs7 (checksum: xk8dWllrTPWXT8Pq10a6tg==)[0m
+Intiating resumable upload command to https://storage.googleapis.com/upload/storage/v1/b/bucket-of-food/o?name=we8t18as1ebctq58es6p4dqb47bs
+Success - nil
+
+Sending upload command to https://storage.googleapis.com/upload/storage/v1/b/bucket-of-food/o?name=we8t18as1ebctq58es6p4dqb47bs&name=we8t18as1ebctq58es6p4dqb47bs&uploadType=resumable&upload_id=ADPycduJNxI6OEcNwLRteJ3hdw8GS7XGDq5QMHGkQHt-pWVPnJDvn4UEcXj3czKLXeznSkGrRdG6Hu3aJ9Q-Gyr-bysV-g
+Success - #<Google::Apis::StorageV1::Object:0x000055fa5b2474e8
+ @bucket="bucket-of-food",
+ @content_type="image/jpeg",
+ @crc32c="vC6EmQ==",
+ @etag="CPKRua67hPsCEAE=",
+ @generation=1667013001758962,
+ @id="bucket-of-food/we8t18as1ebctq58es6p4dqb47bs/1667013001758962",
+ @kind="storage#object",
+ @md5_hash="51hz2Ue7bkNyixgsE+kSwQ==",
+ @media_link=
+  "https://storage.googleapis.com/download/storage/v1/b/bucket-of-food/o/we8t18as1ebctq58es6p4dqb47bs?generation=1667013001758962&alt=media",
+ @metageneration=1,
+ @name="we8t18as1ebctq58es6p4dqb47bs",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/bucket-of-food/o/we8t18as1ebctq58es6p4dqb47bs",
+ @size=2603292,
+ @storage_class="STANDARD",
+ @time_created=Sat, 29 Oct 2022 03:10:01 +0000,
+ @time_storage_class_updated=Sat, 29 Oct 2022 03:10:01 +0000,
+ @updated=Sat, 29 Oct 2022 03:10:01 +0000>
+
+[36m  GCS Storage (716.4ms) [0m[32mUploaded file to key: we8t18as1ebctq58es6p4dqb47bs (checksum: 51hz2Ue7bkNyixgsE+kSwQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: c60eae0c-1c47-40fa-875c-fb1d32d8eeff) to Async(default) with arguments: #<GlobalID:0x000055fa5afd9c60 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/204>>
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 1a302061-3d87-4368-ae26-42d053aca78c) to Async(default) with arguments: #<GlobalID:0x000055fa5b1530a0 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/205>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c60eae0c-1c47-40fa-875c-fb1d32d8eeff]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c60eae0c-1c47-40fa-875c-fb1d32d8eeff] Performing ActiveStorage::AnalyzeJob (Job ID: c60eae0c-1c47-40fa-875c-fb1d32d8eeff) from Async(default) enqueued at 2022-10-29T03:10:00Z with arguments: #<GlobalID:0x00007eff8c032040 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/204>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c60eae0c-1c47-40fa-875c-fb1d32d8eeff] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c60eae0c-1c47-40fa-875c-fb1d32d8eeff]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c60eae0c-1c47-40fa-875c-fb1d32d8eeff]   [1m[36mActiveStorage::Blob Update (0.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 204]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c60eae0c-1c47-40fa-875c-fb1d32d8eeff]   [1m[36mTRANSACTION (42.3ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c60eae0c-1c47-40fa-875c-fb1d32d8eeff] Sending HTTP patch https://storage.googleapis.com/storage/v1/b/bucket-of-food/o/km19gt2phbisd3cwvtd8vy59dcs7?
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1a302061-3d87-4368-ae26-42d053aca78c]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 205], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1a302061-3d87-4368-ae26-42d053aca78c] Performing ActiveStorage::AnalyzeJob (Job ID: 1a302061-3d87-4368-ae26-42d053aca78c) from Async(default) enqueued at 2022-10-29T03:10:00Z with arguments: #<GlobalID:0x000055fa5b0735b8 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/205>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1a302061-3d87-4368-ae26-42d053aca78c] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1a302061-3d87-4368-ae26-42d053aca78c]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1a302061-3d87-4368-ae26-42d053aca78c]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 205]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1a302061-3d87-4368-ae26-42d053aca78c]   [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1a302061-3d87-4368-ae26-42d053aca78c] Sending HTTP patch https://storage.googleapis.com/storage/v1/b/bucket-of-food/o/we8t18as1ebctq58es6p4dqb47bs?
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("tag", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["tag", "foodie"], ["created_at", "2022-10-29 03:10:01.011677"], ["updated_at", "2022-10-29 03:10:01.011677"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 75], ["LIMIT", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mPosttag Create (0.2ms)[0m  [1m[32mINSERT INTO "posttags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 75], ["tag_id", 21], ["created_at", "2022-10-29 03:10:01.041190"], ["updated_at", "2022-10-29 03:10:01.041190"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 75], ["LIMIT", 1]]
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredientlist", "guide", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Daiya Pizza"], ["ingredientlist", "1 Pizza dough\r\nLots of tomato sauce\r\nTons of Daiya Cheese"], ["guide", "Roll out the pizza dough, put the tomato sauce on it, and put the Daiya cheese on top. Bake until ready."], ["post_id", 75], ["created_at", "2022-10-29 03:10:01.066590"], ["updated_at", "2022-10-29 03:10:01.066590"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 38], ["record_type", "Recipe"], ["name", "pic"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 38], ["record_type", "Recipe"], ["name", "pic"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "ouez24ujnd3xrjp1ft6twsk49ux8"], ["filename", "Dan.png"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "google_dev"], ["byte_size", 2326753], ["checksum", "C2jEttaisYnxtP+xnZzszw=="], ["created_at", "2022-10-29 03:10:01.085369"]]
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "pic"], ["record_type", "Recipe"], ["record_id", 38], ["blob_id", 206], ["created_at", "2022-10-29 03:10:01.086352"]]
+  [1m[36mRecipe Update (0.1ms)[0m  [1m[33mUPDATE "recipes" SET "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["updated_at", "2022-10-29 03:10:01.087105"], ["id", 38]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+Intiating resumable upload command to https://storage.googleapis.com/upload/storage/v1/b/bucket-of-food/o?name=ouez24ujnd3xrjp1ft6twsk49ux8
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c60eae0c-1c47-40fa-875c-fb1d32d8eeff] 200
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c60eae0c-1c47-40fa-875c-fb1d32d8eeff] #<HTTP::Message:0x00007eff9409e6e8 @http_header=#<HTTP::Message::Headers:0x00007eff9409e6c0 @http_version="1.1", @body_size=0, @chunked=false, @request_method="PATCH", @request_uri=#<Addressable::URI:0x4484 URI:https://storage.googleapis.com/storage/v1/b/bucket-of-food/o/km19gt2phbisd3cwvtd8vy59dcs7?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "ADPycdve_jkMKbFaf3apXBJQfnYKIwcwbP3hMHYx4e-Sv7oObFxWros_G6AviPuVcabocJX6leZtx2hfVh-lEPJG9OlgRQ"], ["ETag", "COv1i667hPsCEAI="], ["Content-Type", "application/json; charset=UTF-8"], ["Date", "Sat, 29 Oct 2022 03:10:02 GMT"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Pragma", "no-cache"], ["Content-Length", "814"], ["Server", "UploadServer"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=storage.googleapis.com>, issuer=#<OpenSSL::X509::Name CN=GTS CA 1C3,O=Google Trust Services LLC,C=US>, serial=#<OpenSSL::BN:0x000055fa5c764420>, not_before=2022-09-26 08:28:33 UTC, not_after=2022-12-19 08:28:32 UTC>, @http_body=#<HTTP::Message::Body:0x00007eff9409e648 @body="{\n  \"kind\": \"storage#object\",\n  \"id\": \"bucket-of-food/km19gt2phbisd3cwvtd8vy59dcs7/1667013001018091\",\n  \"selfLink\": \"https://www.googleapis.com/storage/v1/b/bucket-of-food/o/km19gt2phbisd3cwvtd8vy59dcs7\",\n  \"mediaLink\": \"https://storage.googleapis.com/download/storage/v1/b/bucket-of-food/o/km19gt2phbisd3cwvtd8vy59dcs7?generation=1667013001018091&alt=media\",\n  \"name\": \"km19gt2phbisd3cwvtd8vy59dcs7\",\n  \"bucket\": \"bucket-of-food\",\n  \"generation\": \"1667013001018091\",\n  \"metageneration\": \"2\",\n  \"contentType\": \"image/jpeg\",\n  \"storageClass\": \"STANDARD\",\n  \"size\": \"2183159\",\n  \"md5Hash\": \"xk8dWllrTPWXT8Pq10a6tg==\",\n  \"crc32c\": \"2/Qdqg==\",\n  \"etag\": \"COv1i667hPsCEAI=\",\n  \"timeCreated\": \"2022-10-29T03:10:01.056Z\",\n  \"updated\": \"2022-10-29T03:10:02.104Z\",\n  \"timeStorageClassUpdated\": \"2022-10-29T03:10:01.056Z\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c60eae0c-1c47-40fa-875c-fb1d32d8eeff] Success - #<Google::Apis::StorageV1::Object:0x000055fa5ae13c78
+ @bucket="bucket-of-food",
+ @content_type="image/jpeg",
+ @crc32c="2/Qdqg==",
+ @etag="COv1i667hPsCEAI=",
+ @generation=1667013001018091,
+ @id="bucket-of-food/km19gt2phbisd3cwvtd8vy59dcs7/1667013001018091",
+ @kind="storage#object",
+ @md5_hash="xk8dWllrTPWXT8Pq10a6tg==",
+ @media_link=
+  "https://storage.googleapis.com/download/storage/v1/b/bucket-of-food/o/km19gt2phbisd3cwvtd8vy59dcs7?generation=1667013001018091&alt=media",
+ @metageneration=2,
+ @name="km19gt2phbisd3cwvtd8vy59dcs7",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/bucket-of-food/o/km19gt2phbisd3cwvtd8vy59dcs7",
+ @size=2183159,
+ @storage_class="STANDARD",
+ @time_created=Sat, 29 Oct 2022 03:10:01 +0000,
+ @time_storage_class_updated=Sat, 29 Oct 2022 03:10:01 +0000,
+ @updated=Sat, 29 Oct 2022 03:10:02 +0000>
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c60eae0c-1c47-40fa-875c-fb1d32d8eeff] Performed ActiveStorage::AnalyzeJob (Job ID: c60eae0c-1c47-40fa-875c-fb1d32d8eeff) from Async(default) in 232.76ms
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1a302061-3d87-4368-ae26-42d053aca78c] 200
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1a302061-3d87-4368-ae26-42d053aca78c] #<HTTP::Message:0x000055fa5b03a380 @http_header=#<HTTP::Message::Headers:0x000055fa5b03a358 @http_version="1.1", @body_size=0, @chunked=false, @request_method="PATCH", @request_uri=#<Addressable::URI:0x4498 URI:https://storage.googleapis.com/storage/v1/b/bucket-of-food/o/we8t18as1ebctq58es6p4dqb47bs?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "ADPycdvxdzLXkzIsdQgiycecxsqToLLqP5i0CiZBf2xpWhObWGGRgf0qSymRFv7WCAJh00cshWS-_XOThgaKsXP_LGO7jg"], ["ETag", "CPKRua67hPsCEAI="], ["Content-Type", "application/json; charset=UTF-8"], ["Date", "Sat, 29 Oct 2022 03:10:02 GMT"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Pragma", "no-cache"], ["Content-Length", "814"], ["Server", "UploadServer"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=storage.googleapis.com>, issuer=#<OpenSSL::X509::Name CN=GTS CA 1C3,O=Google Trust Services LLC,C=US>, serial=#<OpenSSL::BN:0x000055fa5ae054e8>, not_before=2022-09-26 08:28:33 UTC, not_after=2022-12-19 08:28:32 UTC>, @http_body=#<HTTP::Message::Body:0x000055fa5b03a2e0 @body="{\n  \"kind\": \"storage#object\",\n  \"id\": \"bucket-of-food/we8t18as1ebctq58es6p4dqb47bs/1667013001758962\",\n  \"selfLink\": \"https://www.googleapis.com/storage/v1/b/bucket-of-food/o/we8t18as1ebctq58es6p4dqb47bs\",\n  \"mediaLink\": \"https://storage.googleapis.com/download/storage/v1/b/bucket-of-food/o/we8t18as1ebctq58es6p4dqb47bs?generation=1667013001758962&alt=media\",\n  \"name\": \"we8t18as1ebctq58es6p4dqb47bs\",\n  \"bucket\": \"bucket-of-food\",\n  \"generation\": \"1667013001758962\",\n  \"metageneration\": \"2\",\n  \"contentType\": \"image/jpeg\",\n  \"storageClass\": \"STANDARD\",\n  \"size\": \"2603292\",\n  \"md5Hash\": \"51hz2Ue7bkNyixgsE+kSwQ==\",\n  \"crc32c\": \"vC6EmQ==\",\n  \"etag\": \"CPKRua67hPsCEAI=\",\n  \"timeCreated\": \"2022-10-29T03:10:01.798Z\",\n  \"updated\": \"2022-10-29T03:10:02.136Z\",\n  \"timeStorageClassUpdated\": \"2022-10-29T03:10:01.798Z\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1a302061-3d87-4368-ae26-42d053aca78c] Success - #<Google::Apis::StorageV1::Object:0x000055fa5ae04a98
+ @bucket="bucket-of-food",
+ @content_type="image/jpeg",
+ @crc32c="vC6EmQ==",
+ @etag="CPKRua67hPsCEAI=",
+ @generation=1667013001758962,
+ @id="bucket-of-food/we8t18as1ebctq58es6p4dqb47bs/1667013001758962",
+ @kind="storage#object",
+ @md5_hash="51hz2Ue7bkNyixgsE+kSwQ==",
+ @media_link=
+  "https://storage.googleapis.com/download/storage/v1/b/bucket-of-food/o/we8t18as1ebctq58es6p4dqb47bs?generation=1667013001758962&alt=media",
+ @metageneration=2,
+ @name="we8t18as1ebctq58es6p4dqb47bs",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/bucket-of-food/o/we8t18as1ebctq58es6p4dqb47bs",
+ @size=2603292,
+ @storage_class="STANDARD",
+ @time_created=Sat, 29 Oct 2022 03:10:01 +0000,
+ @time_storage_class_updated=Sat, 29 Oct 2022 03:10:01 +0000,
+ @updated=Sat, 29 Oct 2022 03:10:02 +0000>
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1a302061-3d87-4368-ae26-42d053aca78c] Performed ActiveStorage::AnalyzeJob (Job ID: 1a302061-3d87-4368-ae26-42d053aca78c) from Async(default) in 194.04ms
+Success - nil
+
+Sending upload command to https://storage.googleapis.com/upload/storage/v1/b/bucket-of-food/o?name=ouez24ujnd3xrjp1ft6twsk49ux8&name=ouez24ujnd3xrjp1ft6twsk49ux8&uploadType=resumable&upload_id=ADPycduGp5hNqlN4RuIBPImUK3ol6P5TrDDL5Oj0dFm8KsY6DAhmyYsAkLBZHxshk6NVBon4M5-PwpFkEaaQvpIB3Ph8RQ
+Success - #<Google::Apis::StorageV1::Object:0x000055fa57ccfce8
+ @bucket="bucket-of-food",
+ @content_type="image/jpeg",
+ @crc32c="CKcvAA==",
+ @etag="CIa39667hPsCEAE=",
+ @generation=1667013002779526,
+ @id="bucket-of-food/ouez24ujnd3xrjp1ft6twsk49ux8/1667013002779526",
+ @kind="storage#object",
+ @md5_hash="C2jEttaisYnxtP+xnZzszw==",
+ @media_link=
+  "https://storage.googleapis.com/download/storage/v1/b/bucket-of-food/o/ouez24ujnd3xrjp1ft6twsk49ux8?generation=1667013002779526&alt=media",
+ @metageneration=1,
+ @name="ouez24ujnd3xrjp1ft6twsk49ux8",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/bucket-of-food/o/ouez24ujnd3xrjp1ft6twsk49ux8",
+ @size=2326753,
+ @storage_class="STANDARD",
+ @time_created=Sat, 29 Oct 2022 03:10:02 +0000,
+ @time_storage_class_updated=Sat, 29 Oct 2022 03:10:02 +0000,
+ @updated=Sat, 29 Oct 2022 03:10:02 +0000>
+
+[36m  GCS Storage (839.9ms) [0m[32mUploaded file to key: ouez24ujnd3xrjp1ft6twsk49ux8 (checksum: C2jEttaisYnxtP+xnZzszw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9c2d807a-3865-4788-a3d7-bc4902441c9d) to Async(default) with arguments: #<GlobalID:0x000055fa58ca0c08 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/206>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c2d807a-3865-4788-a3d7-bc4902441c9d]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 206], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c2d807a-3865-4788-a3d7-bc4902441c9d] Performing ActiveStorage::AnalyzeJob (Job ID: 9c2d807a-3865-4788-a3d7-bc4902441c9d) from Async(default) enqueued at 2022-10-29T03:10:01Z with arguments: #<GlobalID:0x00007eff981bcb20 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/206>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c2d807a-3865-4788-a3d7-bc4902441c9d] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c2d807a-3865-4788-a3d7-bc4902441c9d]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c2d807a-3865-4788-a3d7-bc4902441c9d]   [1m[36mActiveStorage::Blob Update (0.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 206]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c2d807a-3865-4788-a3d7-bc4902441c9d]   [1m[36mTRANSACTION (44.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c2d807a-3865-4788-a3d7-bc4902441c9d] Sending HTTP patch https://storage.googleapis.com/storage/v1/b/bucket-of-food/o/ouez24ujnd3xrjp1ft6twsk49ux8?
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? LIMIT ?[0m  [["UserName", "Dan2"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("UserName", "password_digest", "ActualName", "Description", "Pronouns", "Website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["UserName", "Dan2"], ["password_digest", "[FILTERED]"], ["ActualName", "Dan Seminara"], ["Description", "Welcome to my website! Enjoy all the pictures of food and recipes!!"], ["Pronouns", "He/Him"], ["Website", "http://this.one"], ["created_at", "2022-10-29 03:10:02.131202"], ["updated_at", "2022-10-29 03:10:02.131202"]]
+  [1m[36mTRANSACTION (46.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."UserName" = ? AND "users"."id" != ? LIMIT ?[0m  [["UserName", "Dan2"], ["id", 72], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "nzqerrjfflid6k9je459oij76366"], ["filename", "Dan.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "google_dev"], ["byte_size", 1024232], ["checksum", "doZjXETllgVFar2lqhAmYQ=="], ["created_at", "2022-10-29 03:10:02.192213"]]
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 72], ["blob_id", 207], ["created_at", "2022-10-29 03:10:02.193944"]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2022-10-29 03:10:02.195396"], ["id", 72]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+Intiating resumable upload command to https://storage.googleapis.com/upload/storage/v1/b/bucket-of-food/o?name=nzqerrjfflid6k9je459oij76366
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c2d807a-3865-4788-a3d7-bc4902441c9d] 200
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c2d807a-3865-4788-a3d7-bc4902441c9d] #<HTTP::Message:0x00007eff986b4e70 @http_header=#<HTTP::Message::Headers:0x00007eff986b4e48 @http_version="1.1", @body_size=0, @chunked=false, @request_method="PATCH", @request_uri=#<Addressable::URI:0x44fc URI:https://storage.googleapis.com/storage/v1/b/bucket-of-food/o/ouez24ujnd3xrjp1ft6twsk49ux8?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "ADPycds6Pj86MyyENkV-OgewYawViyoexh0Lu9LFQdlmTF3uAiyMT6iZ9GcG3jKd7BjVrfCDZl5eNXqTzWayY3T70klwoQ"], ["ETag", "CIa39667hPsCEAI="], ["Content-Type", "application/json; charset=UTF-8"], ["Date", "Sat, 29 Oct 2022 03:10:03 GMT"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Pragma", "no-cache"], ["Content-Length", "814"], ["Server", "UploadServer"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=storage.googleapis.com>, issuer=#<OpenSSL::X509::Name CN=GTS CA 1C3,O=Google Trust Services LLC,C=US>, serial=#<OpenSSL::BN:0x000055fa588a85d8>, not_before=2022-09-26 08:28:33 UTC, not_after=2022-12-19 08:28:32 UTC>, @http_body=#<HTTP::Message::Body:0x00007eff986b4dd0 @body="{\n  \"kind\": \"storage#object\",\n  \"id\": \"bucket-of-food/ouez24ujnd3xrjp1ft6twsk49ux8/1667013002779526\",\n  \"selfLink\": \"https://www.googleapis.com/storage/v1/b/bucket-of-food/o/ouez24ujnd3xrjp1ft6twsk49ux8\",\n  \"mediaLink\": \"https://storage.googleapis.com/download/storage/v1/b/bucket-of-food/o/ouez24ujnd3xrjp1ft6twsk49ux8?generation=1667013002779526&alt=media\",\n  \"name\": \"ouez24ujnd3xrjp1ft6twsk49ux8\",\n  \"bucket\": \"bucket-of-food\",\n  \"generation\": \"1667013002779526\",\n  \"metageneration\": \"2\",\n  \"contentType\": \"image/jpeg\",\n  \"storageClass\": \"STANDARD\",\n  \"size\": \"2326753\",\n  \"md5Hash\": \"C2jEttaisYnxtP+xnZzszw==\",\n  \"crc32c\": \"CKcvAA==\",\n  \"etag\": \"CIa39667hPsCEAI=\",\n  \"timeCreated\": \"2022-10-29T03:10:02.818Z\",\n  \"updated\": \"2022-10-29T03:10:03.111Z\",\n  \"timeStorageClassUpdated\": \"2022-10-29T03:10:02.818Z\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c2d807a-3865-4788-a3d7-bc4902441c9d] Success - #<Google::Apis::StorageV1::Object:0x00007eff98b637a0
+ @bucket="bucket-of-food",
+ @content_type="image/jpeg",
+ @crc32c="CKcvAA==",
+ @etag="CIa39667hPsCEAI=",
+ @generation=1667013002779526,
+ @id="bucket-of-food/ouez24ujnd3xrjp1ft6twsk49ux8/1667013002779526",
+ @kind="storage#object",
+ @md5_hash="C2jEttaisYnxtP+xnZzszw==",
+ @media_link=
+  "https://storage.googleapis.com/download/storage/v1/b/bucket-of-food/o/ouez24ujnd3xrjp1ft6twsk49ux8?generation=1667013002779526&alt=media",
+ @metageneration=2,
+ @name="ouez24ujnd3xrjp1ft6twsk49ux8",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/bucket-of-food/o/ouez24ujnd3xrjp1ft6twsk49ux8",
+ @size=2326753,
+ @storage_class="STANDARD",
+ @time_created=Sat, 29 Oct 2022 03:10:02 +0000,
+ @time_storage_class_updated=Sat, 29 Oct 2022 03:10:02 +0000,
+ @updated=Sat, 29 Oct 2022 03:10:03 +0000>
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c2d807a-3865-4788-a3d7-bc4902441c9d] Performed ActiveStorage::AnalyzeJob (Job ID: 9c2d807a-3865-4788-a3d7-bc4902441c9d) from Async(default) in 269.05ms
+Success - nil
+
+Sending upload command to https://storage.googleapis.com/upload/storage/v1/b/bucket-of-food/o?name=nzqerrjfflid6k9je459oij76366&name=nzqerrjfflid6k9je459oij76366&uploadType=resumable&upload_id=ADPycdsGCgjz4ov8TQZ1w6xY-Rw0RVpzLssMWEFMOjIsCPdN_bavjPGBHLCQ2P3ydbg-Vyc7B6PjcVMUjAkBvX6YGx66ew
+Success - #<Google::Apis::StorageV1::Object:0x00007eff8c0c86d0
+ @bucket="bucket-of-food",
+ @content_type="image/png",
+ @crc32c="R80+jQ==",
+ @etag="CLK0qK+7hPsCEAE=",
+ @generation=1667013003582002,
+ @id="bucket-of-food/nzqerrjfflid6k9je459oij76366/1667013003582002",
+ @kind="storage#object",
+ @md5_hash="doZjXETllgVFar2lqhAmYQ==",
+ @media_link=
+  "https://storage.googleapis.com/download/storage/v1/b/bucket-of-food/o/nzqerrjfflid6k9je459oij76366?generation=1667013003582002&alt=media",
+ @metageneration=1,
+ @name="nzqerrjfflid6k9je459oij76366",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/bucket-of-food/o/nzqerrjfflid6k9je459oij76366",
+ @size=1024232,
+ @storage_class="STANDARD",
+ @time_created=Sat, 29 Oct 2022 03:10:03 +0000,
+ @time_storage_class_updated=Sat, 29 Oct 2022 03:10:03 +0000,
+ @updated=Sat, 29 Oct 2022 03:10:03 +0000>
+
+[36m  GCS Storage (546.8ms) [0m[32mUploaded file to key: nzqerrjfflid6k9je459oij76366 (checksum: doZjXETllgVFar2lqhAmYQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 061df068-14ff-4503-be73-2322116bafd7) to Async(default) with arguments: #<GlobalID:0x00007eff98dfaba8 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/207>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [061df068-14ff-4503-be73-2322116bafd7]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [061df068-14ff-4503-be73-2322116bafd7] Performing ActiveStorage::AnalyzeJob (Job ID: 061df068-14ff-4503-be73-2322116bafd7) from Async(default) enqueued at 2022-10-29T03:10:02Z with arguments: #<GlobalID:0x00007eff98e39650 @uri=#<URI::GID gid://backend/ActiveStorage::Blob/207>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [061df068-14ff-4503-be73-2322116bafd7] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [061df068-14ff-4503-be73-2322116bafd7]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [061df068-14ff-4503-be73-2322116bafd7]   [1m[36mActiveStorage::Blob Update (0.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 207]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [061df068-14ff-4503-be73-2322116bafd7]   [1m[36mTRANSACTION (45.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [061df068-14ff-4503-be73-2322116bafd7] Sending HTTP patch https://storage.googleapis.com/storage/v1/b/bucket-of-food/o/nzqerrjfflid6k9je459oij76366?
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFollowing Create (0.4ms)[0m  [1m[32mINSERT INTO "followings" ("follower", "followee", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower", 72], ["followee", 71], ["created_at", "2022-10-29 03:10:02.820804"], ["updated_at", "2022-10-29 03:10:02.820804"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [061df068-14ff-4503-be73-2322116bafd7] Performed ActiveStorage::AnalyzeJob (Job ID: 061df068-14ff-4503-be73-2322116bafd7) from Async(default) in 67.12ms
+Started GET "/users" for ::1 at 2022-10-28 23:10:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+No serializer found for resource: #<User id: 71, UserName: "Dan", password_digest: [FILTERED], ActualName: "Dan Seminara", Description: "Welcome to my website! Enjoy all the pictures of f...", Pronouns: "He/Him", Website: "http://this.one", created_at: "2022-10-29 03:09:58.068275000 +0000", updated_at: "2022-10-29 03:09:58.325512000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.6ms)
+Completed 200 OK in 33ms (Views: 16.8ms | ActiveRecord: 0.7ms | Allocations: 31164)
+
+
+Started GET "/users/71" for ::1 at 2022-10-28 23:11:00 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"71"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 71], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:39:in `show'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:39:in `show'
+[active_model_serializers]   [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 71]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:45:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.23ms)
+Completed 200 OK in 290ms (Views: 6.5ms | ActiveRecord: 2.9ms | Allocations: 253244)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBY3M9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7d8dd3224be25d310feb0d484e3968e6d245f70a/Dan.png" for ::1 at 2022-10-28 23:11:02 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBY3M9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7d8dd3224be25d310feb0d484e3968e6d245f70a", "filename"=>"Dan"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+[36m  GCS Storage (107.8ms) [0m[34mGenerated URL for file at key: ftah84ca7k0rd8zemtzuk5p1h223 (https://storage.googleapis.com/bucket-of-food/ftah84ca7k0rd8zemtzuk5p1h223?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1667013362&Signature=p%2B5bqIygSLORVBoRpDfQknpr8OdnB0kWCEw6knqL5dwK5%2FoeJJHxU%2FA2bYVYHXF685sXUFfWHMdw0M3ArKsKCSUo2fc%2FC8q1Yc6rTcvdTg3VDMOBDRWxWQrH9xugBjXzY0C3pUso9YkOTF49DrAVQJwWZD39xLy6v2%2Bf6GkYF4IHdOfYC6An%2FixI5Ew3%2FKY5yr8y8YibTo9ktPgNU11SORMK1u0vPWqS9%2FTW6ftsNogpyM4%2FhOxNlwc02XjCUolZxGaqoN%2BPRZi1Eb16Tvy9wb1aJDuY93mCfY0gGurbPzRCfg3JSsKb%2FpixHpaelxok5FupE%2FE5DIhZVEmq4ABQCw%3D%3D&response-content-disposition=inline%3B+filename%3D%22Dan.png%22%3B+filename%2A%3DUTF-8%27%27Dan.png&response-content-type=image%2Fpng)[0m
+Redirected to https://storage.googleapis.com/bucket-of-food/ftah84ca7k0rd8zemtzuk5p1h223?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1667013362&Signature=p%2B5bqIygSLORVBoRpDfQknpr8OdnB0kWCEw6knqL5dwK5%2FoeJJHxU%2FA2bYVYHXF685sXUFfWHMdw0M3ArKsKCSUo2fc%2FC8q1Yc6rTcvdTg3VDMOBDRWxWQrH9xugBjXzY0C3pUso9YkOTF49DrAVQJwWZD39xLy6v2%2Bf6GkYF4IHdOfYC6An%2FixI5Ew3%2FKY5yr8y8YibTo9ktPgNU11SORMK1u0vPWqS9%2FTW6ftsNogpyM4%2FhOxNlwc02XjCUolZxGaqoN%2BPRZi1Eb16Tvy9wb1aJDuY93mCfY0gGurbPzRCfg3JSsKb%2FpixHpaelxok5FupE%2FE5DIhZVEmq4ABQCw%3D%3D&response-content-disposition=inline%3B+filename%3D%22Dan.png%22%3B+filename%2A%3DUTF-8%27%27Dan.png&response-content-type=image%2Fpng
+Completed 302 Found in 112ms (ActiveRecord: 0.1ms | Allocations: 6440)
+
+

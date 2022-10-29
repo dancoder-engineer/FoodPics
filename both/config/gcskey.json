@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "brilliant-era-367002",
+  "private_key_id": "77ddf66a7b113be70532986a90102ead2e2142ff",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC+YgrvUp18ZjZ8\ng78k0jVGf9seofyyuO8YNbNLd3Edip5l7hro+5tCUOGi4KA0XfUW9rZ0ra7vK8x3\nOxY/zxBdANh1yO/PXExupv0VbKZNecXbHE8Hw7dqZ7ChQr+mg4HDF7GesA05fW7x\nALdx+5VM1HyntvUZLMJTGeGORQuUauv7k9/yZk1h3sD91u1NP+39K7cfQdE1VaJZ\nhiERt1jHpaTw1GSQBnx5iLosYVe5/G0r/gRGYoppMs7XdIpiDqlSf73559xCZbyZ\nKAm3lMJBH/R4BQpq71FjkDeJVR5gLFip+ARcbMPWY65+HGfuBpsnFEQ9SlJMKdw/\nb7amBnkPAgMBAAECggEAAnd74VuorG49dn1DFMFWyIQ0Jgl1jd/VQmDCB6u38TIL\nvaQSblSmhlaV8UUsYIFSk6GX2VIGx/BBVxfbwMx4T4VSJBkeZuTVivl8oo3bjAxL\nS/ygxPD8PkFFHAikzDJhJlKJaXqp6A8SSOrTvswLsgjcfcIZGuJmJr199qsVNZzH\nTBbOsRdEHmzHKjVp2mdXTxv2FapNJ9/J0OzYWreAHaoY8OOrMuViVGtCGBcPxMt5\nyIBcKM/3Ijgd+qFc02jZKL3G+HNdG7Zn/HDCvyB6aKh+rTZ5mHPwcIOYCOT3Rh/X\n2KVi6C8leX9TN/+ANlQJLjc7kiYFnX01HvNPBDPKQQKBgQDyg/u/TILflzRD1ZQn\nVqHiSCJrEeCpcNg9wMDLakilr4B888Z61Q+Amdrpxi1HH1qxOpEgFnVsiiHreNAy\nwm1x7zI5eyZIYb4wRv0CZXCLBRTKd0xlEQ1ekGhz1VGgFFiiXAlK4MYWqlyUJvMd\nNacB2fkfrveL6PVgaED3OYvzZQKBgQDI9/5PMVt77Nm6yuLMOGkobWr2HRzF8uQ/\ng8/5cmpmbO0SEg9v2Rv/dvlfwYFJU12Y+m01fe3SchHcrx7SOPdaveU0v9x/0+FZ\n2QGVTxoa+8Vr0E86hQFgxYkbPmSa/uoH0KluwlqMPui9K/Y8NuuiRQ6LgRhF2IjM\n7yvqS5blYwKBgDtXGC6C5jMXqG5AwHOvuwTHacSRJ0vOlNrnY0ViyEviWao5bAN6\nRsTM4Mf6+fFBNsvO7NvRIwJf+lTHxwnkkSsjwEJYY9GqOQNPG3GOqK8bmy6/ai4A\nsijFZQmS1No6oEV6B7wOq+m33ddSgIJRMoA9ebvK8D+HzSK938eeiSQRAoGBALY9\n3QmncpRwdgkjjoMu7H1Sq9o/ECaZWk4Wk/Raww3a3Siz4/fDY9ZH51/kM/9wb8IX\n5gzKA24BLx12WHa+XeCVr1IkYiow03wMg5kIQF4TzjU0k4Q3tMYym2BvNgAwBb3M\nhLkB2eav7ZIOWZ7FFuzxvnzXNlGwSG2+vY4budyNAoGBAKTFy0pUrMa205JjEBph\n/iIy7zKrmqtTwJaHX11jhfwZSdQDNjwowJTy9biVs6ucbN7+7dbViL3vCPQdxDPB\nfGKyTLe3OoPrzoyKsNNWr9RXgLNlmJdxiF19qLX/qc6qkWthZuB6yJywQ2mXtf/2\n5OtN2GqbfZrm7W6veSOlpPB9\n-----END PRIVATE KEY-----\n",
+  "client_email": "foodbook@brilliant-era-367002.iam.gserviceaccount.com",
+  "client_id": "117984987672409521345",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/foodbook%40brilliant-era-367002.iam.gserviceaccount.com"
+}
