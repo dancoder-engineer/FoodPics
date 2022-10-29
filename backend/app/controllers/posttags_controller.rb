@@ -1,2 +1,0 @@
-class PosttagsController < ApplicationController
-end
