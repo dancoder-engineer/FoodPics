@@ -20,7 +20,6 @@ function MakePost() {
     let [sendingData, setSendingData] = useState({
         pics: [],
         captions: [],
-        user_id: 5
     })
 
     const dispatch = useDispatch();
