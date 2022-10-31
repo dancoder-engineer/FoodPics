@@ -8,7 +8,7 @@ npm install && npm run build
 mv ./build/* public
 
 bundle install
-bundle exec rake db:migrate 
-bundle exec rake db:seed 
+#bundle exec rake db:migrate 
+#bundle exec rake db:seed 
 
 
