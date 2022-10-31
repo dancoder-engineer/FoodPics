@@ -107,7 +107,7 @@ function MakePost() {
     }
 
 
-    function makeFormData(type, postId=0) {
+    function makeFormData(type, postId=0) { console.log(sendingData)
 
         let formData = new FormData()
 
