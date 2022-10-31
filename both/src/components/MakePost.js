@@ -107,7 +107,7 @@ function MakePost() {
     }
 
 
-    function makeFormData(type, postId=0) { console.log(sendingData)
+    function makeFormData(type, postId=0) { 
 
         let formData = new FormData()
 
@@ -225,7 +225,7 @@ function MakePost() {
     }
 
     
-    function sendTags(e, postId) {console.log(postId)
+    function sendTags(e, postId) {console.log(sendingData)
         let separatedTags = tags
         if (!separatedTags) { return 0 }
         if (!separatedTags.replaceAll(" ","")) { return 0 }
