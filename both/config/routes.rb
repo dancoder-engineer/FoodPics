@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     get '/checkFollowing/:followee', to: 'followings#checkFollowing'
     get '/makefeed/',  to: 'followings#makefeed'
     get '/commentsbypost/:id', to: 'comments#bypost'
-    post '/maketags/:tags', to: 'tags#maketags'
+    post '/maketags/', to: 'tags#maketags'
     get '/postsbytagback/:tag', to: 'tags#postsbytag'
     get '/followersof/:user', to: 'followings#followersof'
     get '/followedby/:user', to: 'followings#followedby'
