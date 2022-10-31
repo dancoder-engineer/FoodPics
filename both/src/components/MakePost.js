@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 function MakePost() {
 
 
-    let userid = 0
+  
     let [errorMessage, setErrorMessage] = useState(null)
     let [hasRecipe, setHasRecipe] = useState("↓")
     let [recipeData, setRecipeData] = useState({})
@@ -118,7 +118,7 @@ function MakePost() {
             formData.append('post[title]', makingPost.post.title )
             formData.append('post[place]', makingPost.post.place )
             formData.append('post[description]', makingPost.post.description)
-            formData.append('post[user_id]', userid)
+            formData.append('post[user_id]', sendingData.user_id)
             let picCaptions = makingPost.captions.join("||")
 
             formData.append('post[captions]', picCaptions)
