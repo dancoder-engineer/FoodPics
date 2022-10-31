@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 function MakePost() {
 
 
-    const userid = 0
+    let userid = 0
     let [errorMessage, setErrorMessage] = useState(null)
     let [hasRecipe, setHasRecipe] = useState("↓")
     let [recipeData, setRecipeData] = useState({})
@@ -229,6 +229,8 @@ function MakePost() {
 
     
     function sendTags(e, postId) {
+        console.log(userid)
+        console.log(sendingData)
         let separatedTags = tags
         if (!separatedTags) { return 0 }
         if (!separatedTags.replaceAll(" ","")) { return 0 }
