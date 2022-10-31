@@ -42,7 +42,6 @@ function MakePost() {
                 history('/login/')
             }
             else {
-                userid = data.user.id
                 setSendingData({
                     ...sendingData,
                     user_id: data.user.id
@@ -229,7 +228,6 @@ function MakePost() {
 
     
     function sendTags(e, postId) {
-        console.log(userid)
         console.log(sendingData)
         let separatedTags = tags
         if (!separatedTags) { return 0 }
