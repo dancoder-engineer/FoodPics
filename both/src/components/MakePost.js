@@ -158,7 +158,7 @@ function MakePost() {
                     setErrorMessage(data.errors.map((i) => <p>{i}</p>))
                 }
                 else { 
-                sendTags(data)
+                sendTags(data.id)
                 console.log(data)
                 if (hasRecipe === "↑") { sendRecipe(data.id) }
                 else { history('/') }
@@ -227,15 +227,14 @@ function MakePost() {
     }
 
     
-    function sendTags(e, post) {
+    function sendTags(postid) {
         let separatedTags = tags
         if (!separatedTags) { return 0 }
         if (!separatedTags.replaceAll(" ","")) { return 0 }
     
         console.log({
             tags: tags,
-            postId: post,
-            post: post
+            postId: postid,
             })
 
         fetch("/maketags/", {
@@ -244,7 +243,7 @@ function MakePost() {
                 accept: "application/json", },
             body:JSON.stringify({
                 tags: tags,
-                postId: post
+                postId: postid
                 })
             })
         .then(res => res.json())
