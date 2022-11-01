@@ -26,7 +26,7 @@
     let year = timeDate.slice(0,4)
     let month = timeDate.slice(5,7)
     let day = timeDate.slice(8,10)
-    let ampm = ""
+    let ampm = "AM"
     let hour = parseInt(timeDate.slice(11,13))
     if (hour > 11) { ampm = "PM" }
     if (hour > 12) { hour -= 12 }
