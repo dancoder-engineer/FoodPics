@@ -153,7 +153,7 @@ function MakePost() {
                 body: formData,
             })
             .then(res => res.json())
-            .then(data => {
+            .then(data => { console.log(data)
                 if (data.errors) {
                     setErrorMessage(data.errors.map((i) => <p>{i}</p>))
                 }
