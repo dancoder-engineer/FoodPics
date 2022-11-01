@@ -3,16 +3,16 @@ class TagsController < ApplicationController
     skip_before_action :verify_authenticity_token
 
     def maketags
-        if !session[:user_id]
-            return render json: ({error: "Not logged in."})
-        end
-        tags = params[:tags].split(" ")
-        werethere = []
-        tags.each{|i| 
-            found = Tag.find_by(tag: i)
-            found ? werethere.push(messwithtags(found.id)): werethere.push(maketag(i))}
-        render json: {tags: Tag.all, posttags: Posttag.all}
-   #     render json: {par: params}
+        # if !session[:user_id]
+        #     return render json: ({error: "Not logged in."})
+        # end
+        # tags = params[:tags].split(" ")
+        # werethere = []
+        # tags.each{|i| 
+        #     found = Tag.find_by(tag: i)
+        #     found ? werethere.push(messwithtags(found.id)): werethere.push(maketag(i))}
+        # render json: {tags: Tag.all, posttags: Posttag.all}
+        render json: {par: params}
     end
 
     def postsbytag

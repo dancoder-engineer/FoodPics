@@ -230,6 +230,12 @@ function MakePost() {
         let separatedTags = tags
         if (!separatedTags) { return 0 }
         if (!separatedTags.replaceAll(" ","")) { return 0 }
+    
+        console.log({
+            tags: tags,
+            postId: postId               
+            })
+
         fetch("/maketags/", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json',
