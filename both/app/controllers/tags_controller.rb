@@ -83,7 +83,7 @@ end
 
 def maketag(i)
     smallTag = i.downcase
-    newtag = Tag.create({tag: smalltag})
+    newtag = Tag.create({tag: smallTag})
     postNo = params[:postId].to_i
     newposttag = Posttag.create({
         post_id: postNo,
