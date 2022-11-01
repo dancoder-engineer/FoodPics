@@ -41,9 +41,6 @@ function MakePost() {
             if (!data.user) { 
                 history('/login/')
             }
-            else {
-    
-            }
         })
     }, [])
 
@@ -114,7 +111,7 @@ function MakePost() {
             formData.append('post[title]', makingPost.post.title )
             formData.append('post[place]', makingPost.post.place )
             formData.append('post[description]', makingPost.post.description)
-            formData.append('post[user_id]', sendingData.id)
+            formData.append('post[user_id]', id)
             let picCaptions = makingPost.captions.join("||")
 
             formData.append('post[captions]', picCaptions)
@@ -144,14 +141,7 @@ function MakePost() {
     function handleClick() {
         fetch("/getme/")
         .then(res => res.json())
-        .then(data => { 
-            if (!data.user) { 
-                history('/login/')
-            }
-            else {
-                sendPost(data.user.id)
-            }
-        })
+        .then(data => { sendPost(data.user.id) })
     }
 
     function sendPost(userid) {
