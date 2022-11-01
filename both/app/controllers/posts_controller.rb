@@ -49,13 +49,13 @@ class PostsController < ApplicationController
         post = Post.create!(allowed)
 
         if post.save
-            render json: post, status: :created
+            return render json: post, status: :created
         else
-            render json: {error: "Faild!", post: post}
+            return render json: {error: "Faild!", post: post}
         end
 
     rescue ActiveRecord::RecordInvalid => invalid
-        render json: { errors: invalid.record.errors.full_messages  }, status: :unprocessable_entity
+        return render json: { errors: invalid.record.errors.full_messages  }, status: :unprocessable_entity
 
     end
 
