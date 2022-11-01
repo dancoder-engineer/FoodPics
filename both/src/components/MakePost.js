@@ -227,7 +227,6 @@ function MakePost() {
 
     
     function sendTags(e, postId) {
-        console.log(sendingData)
         let separatedTags = tags
         if (!separatedTags) { return 0 }
         if (!separatedTags.replaceAll(" ","")) { return 0 }
@@ -261,7 +260,7 @@ function MakePost() {
                     Where was it taken?:<br /><input id="place" name="place" onChange={handleChange} /> <br />
                     Description:<br /><textarea id="description" name="description" className="textA"  onChange={handleChange} /><br />
                     <MultiplePicUploader handleChange={handleChange} handleRid={handleRid}/><br />
-                    Tags:<br /><input id="tags" name="tags" onChange={handleChange} onClick={sendTags} /> <br />
+                    Tags:<br /><input id="tags" name="tags" onChange={handleChange} /> <br />
                     Include a Recipe: <input type="checkbox" onChange={switchRecipe} /><br />
                     <div className={hasRecipe}>
                         <CreateRecipe handleRecipe={handleRecipe} />
