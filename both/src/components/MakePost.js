@@ -233,7 +233,8 @@ function MakePost() {
     
         console.log({
             tags: tags,
-            postId: post.id     
+            postId: post.id,
+            post: post
             })
 
         fetch("/maketags/", {
@@ -242,7 +243,7 @@ function MakePost() {
                 accept: "application/json", },
             body:JSON.stringify({
                 tags: tags,
-                postId: post.id     
+                postId: post.id
                 })
             })
         .then(res => res.json())
