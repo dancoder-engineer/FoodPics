@@ -153,12 +153,12 @@ function MakePost() {
                 body: formData,
             })
             .then(res => res.json())
-            .then(data => { console.log(data)
+            .then(data => {
                 if (data.errors) {
                     setErrorMessage(data.errors.map((i) => <p>{i}</p>))
                 }
                 else {
-                sendTags(data.id)
+                sendTags(data)
                 if (hasRecipe === "↑") { sendRecipe(data.id) }
                 else { history('/') }
                 }
