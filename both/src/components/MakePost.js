@@ -226,14 +226,14 @@ function MakePost() {
     }
 
     
-    function sendTags(e, postId) {
+    function sendTags(e, post) {
         let separatedTags = tags
         if (!separatedTags) { return 0 }
         if (!separatedTags.replaceAll(" ","")) { return 0 }
     
         console.log({
             tags: tags,
-            postId: postId               
+            postId: post.id     
             })
 
         fetch("/maketags/", {
@@ -242,7 +242,7 @@ function MakePost() {
                 accept: "application/json", },
             body:JSON.stringify({
                 tags: tags,
-                postId: postId               
+                postId: post.id     
                 })
             })
         .then(res => res.json())
