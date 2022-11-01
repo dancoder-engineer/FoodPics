@@ -157,7 +157,7 @@ function MakePost() {
                 if (data.errors) {
                     setErrorMessage(data.errors.map((i) => <p>{i}</p>))
                 }
-                else {
+                else { console.log(data)
                 sendTags(data)
                 if (hasRecipe === "↑") { sendRecipe(data.id) }
                 else { history('/') }
