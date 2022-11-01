@@ -22,7 +22,6 @@ function MakePost() {
     let [sendingData, setSendingData] = useState({
         pics: [],
         captions: [],
-        user_id: 0
     })
 
     const dispatch = useDispatch();
@@ -43,10 +42,7 @@ function MakePost() {
                 history('/login/')
             }
             else {
-                setSendingData({
-                    ...sendingData,
-                    user_id: data.user.id
-                })
+    
             }
         })
     }, [])
@@ -110,7 +106,7 @@ function MakePost() {
     }
 
 
-    function makeFormData(type, postId=0) { 
+    function makeFormData(type, id) { 
 
         let formData = new FormData()
 
@@ -118,7 +114,7 @@ function MakePost() {
             formData.append('post[title]', makingPost.post.title )
             formData.append('post[place]', makingPost.post.place )
             formData.append('post[description]', makingPost.post.description)
-            formData.append('post[user_id]', sendingData.user_id)
+            formData.append('post[user_id]', sendingData.id)
             let picCaptions = makingPost.captions.join("||")
 
             formData.append('post[captions]', picCaptions)
@@ -137,7 +133,7 @@ function MakePost() {
         formData.append('recipe[title]', makingPost.recipe.title )
         formData.append('recipe[ingredientlist]', makingPost.recipe.ingredientlist )
         formData.append('recipe[guide]', makingPost.recipe.guide )
-        formData.append('recipe[post_id]', postId)
+        formData.append('recipe[post_id]', id)
         formData.append('recipe[pic]', recipeData.picFile, recipeData.pic)
     }
 
@@ -146,9 +142,21 @@ function MakePost() {
     }
 
     function handleClick() {
+        fetch("/getme/")
+        .then(res => res.json())
+        .then(data => { 
+            if (!data.user) { 
+                history('/login/')
+            }
+            else {
+                sendPost(data.user.id)
+            }
+        })
+    }
 
+    function sendPost(userid) {
         checkPics()
-        let formData = makeFormData("Post")
+        let formData = makeFormData("Post", userid)
             
             fetch('/posts/', {
                 method: 'post',
