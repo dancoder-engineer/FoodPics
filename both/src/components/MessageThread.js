@@ -42,14 +42,14 @@ function MessageThread() {
             {
                 return(<div key={index}>
                     <div className="rightBubble">
-                        <span>{i.content}</span> <img className="convoPicRight" src={data.myself.avatar} />
+                        <span>{i.content}</span> <img className="convoPicRight" alt="" src={data.myself.avatar} />
                     </div><br /></div>
             )}
             else
             {
                 return(<div key={index}>
                     <div className="leftBubble">
-                        <img className="convoPicLeft" src={data.otheruser.avatar} /> <span>{i.content}</span><br />
+                        <img className="convoPicLeft" alt="" src={data.otheruser.avatar} /> <span>{i.content}</span><br />
                     </div><br /></div>
             )}
         })
@@ -94,7 +94,7 @@ function MessageThread() {
     }
     return(
         <div className="" id="mainDiv">
-            <img className="backImg" src="https://imgur.com/5b8Jev2.png" />
+            <img className="backImg" alt="" src="https://imgur.com/5b8Jev2.png" />
             <div className="headerHere"><Header /></div>
             <br /><div>
             <div className="convo" id="convo">

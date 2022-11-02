@@ -26,7 +26,7 @@ function Recipe({recipe, recipepic}) {
         <div>
             <h3 className="centered" onClick={switchRecipe}>{seeRecipe} Recipe: {recipe.title} {seeRecipe}</h3>
             <div className={seeRecipe}>
-                <img src={recipepic} className="recipePic" /> <br />
+                <img src={recipepic} alt="" className="recipePic" /> <br />
                 <ul className="centeredLi">{liSet && liSet}</ul> <br />
                 <p>{recipe.guide}</p>
             </div>

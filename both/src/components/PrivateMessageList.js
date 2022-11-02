@@ -35,7 +35,7 @@ function PrivateMessageList(){
         <div key={i.user}>
             <div className="convoList" key={i.user}>
                 <div className="col1comm" onClick={toUser}>
-                    <img id={i.user} className="miniPicOnPostcomm" src={i.avatar} /><br />
+                    <img id={i.user} className="miniPicOnPostcomm" alt="" src={i.avatar} /><br />
                     {i.user}<br />
                 </div>
             
@@ -57,7 +57,7 @@ function PrivateMessageList(){
 
     return(
         <div className="followingsPage">
-            <img className="backImg" src="https://imgur.com/5b8Jev2.png" />
+            <img className="backImg" alt="" src="https://imgur.com/5b8Jev2.png" />
             <div className="headerHere"><Header /></div>
             <div className="individualUsers">
                 <br />
