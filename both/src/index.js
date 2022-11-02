@@ -3,15 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, Routes, Route} from "react-router-dom"
 import { Provider } from "react-redux";
 import store from "./components/Redux/store.js";
-
-import MakeUser from './components/MakeUser.js'
-import MakePost from './components/MakePost.js'
-import Login from './components/Login.js'
-import UsersPage from './components/UsersPage.js';
-import Feed from './components/Feed.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

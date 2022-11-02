@@ -72,27 +72,27 @@ class FollowingsController < ApplicationController
     def followersof
         userid = User.find_by(UserName: params[:user])
         users = Following.where(followee: userid.id)
-        follo = getuserslist(users)
+        follo = getuserslist(users, false)
         render json: follo 
     end
 
     def followedby
         userid = User.find_by(UserName: params[:user])
         users = Following.where(follower: userid.id)
-        follo = getuserslist(users)
+        follo = getuserslist(users, true)
         render json: follo 
     end
 
 private
 
-    def getuserslist(foll)
+    def getuserslist(foll, isfollowedby)
       #  foll = Following.where({follower: userId})
          if !foll[0]
              return {error: "No such followings."}
          end
         follo = []
         listofUsers = foll.each{|i| 
-        user=User.find_by(id: i.followee)
+        user= isfollowedby ? User.find_by(id: i.followee) : User.find_by(id: i.follower)
         avatar = rails_blob_path(user.avatar)
         follo.push({UserName: user.UserName, avatar: avatar, description: user.Description})
         }
