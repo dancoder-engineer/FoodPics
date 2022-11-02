@@ -514,5 +514,15 @@
     background-color: lemonchiffon;
 }
 
+.header {
+    width: 75%;
+    margin: auto;
+}
+
+.headerPic {
+    width: 19%;
+    margin: auto;
+}
+
 
     }
