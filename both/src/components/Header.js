@@ -12,13 +12,13 @@ function Header(){
 
     const logo = <img className="logo" src="https://imgur.com/M7dt9yO.png" />
 
-    const login = <NavLink to="/login/"><img className="headerPic" src="https://imgur.com/TSwaxAl.png" /></NavLink>
-    const logout = <NavLink to="/logout/"><img className="headerPic" src="https://imgur.com/JO1znon.png" /></NavLink>
-    const register = <NavLink to="/register/"><img className="headerPic" src="https://imgur.com/aaxS2Gq.png" /></NavLink>
-    const newPost = <NavLink to="/newpost/"><img className="headerPic" src="https://imgur.com/1p7Otp1.png" /></NavLink>
-    const home = <NavLink to="/"><img className="headerPic" src="https://imgur.com/dWFT3ma.png" /></NavLink>
-    const modifySelf = <NavLink to="/editUser/"><img className="headerPic" src="https://imgur.com/DOCcBDY.png" /></NavLink>
-    const messages = <NavLink to="/privatemessages/"><img className="headerPic" src="https://imgur.com/cqltX1u.png" /></NavLink>
+    const login = <NavLink to="/login/"><img className="headerPic" alt="" src="https://imgur.com/TSwaxAl.png" /></NavLink>
+    const logout = <NavLink to="/logout/"><img className="headerPic" alt="" src="https://imgur.com/JO1znon.png" /></NavLink>
+    const register = <NavLink to="/register/"><img className="headerPic" alt="" src="https://imgur.com/aaxS2Gq.png" /></NavLink>
+    const newPost = <NavLink to="/newpost/"><img className="headerPic" alt="" src="https://imgur.com/1p7Otp1.png" /></NavLink>
+    const home = <NavLink to="/"><img className="headerPic" alt="" src="https://imgur.com/dWFT3ma.png" /></NavLink>
+    const modifySelf = <NavLink to="/editUser/"><img className="headerPic" alt="" src="https://imgur.com/DOCcBDY.png" /></NavLink>
+    const messages = <NavLink to="/privatemessages/"><img className="headerPic" alt="" src="https://imgur.com/cqltX1u.png" /></NavLink>
 
     useEffect(() => {
         fetch("/getme/")

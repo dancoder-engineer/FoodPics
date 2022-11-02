@@ -34,9 +34,9 @@ function FollowingsPage({whichOne}) {
     }
 
     function makeMessage(state){ console.log(state, whichOne)
-        if (state = "success"){
-            if (whichOne = "followersof") { setMessage(<h1 className="centeredWithBg">{"Followers of " + params.user}</h1>)}
-            if (whichOne = "followedby") { setMessage(<h1 className="centeredWithBg">{"Users Followed By " + params.user}</h1>)}
+        if (state === "success"){
+            if (whichOne === "followersof") { setMessage(<h1 className="centeredWithBg">{"Followers of " + params.user}</h1>)}
+            if (whichOne === "followedby") { setMessage(<h1 className="centeredWithBg">{"Users Followed By " + params.user}</h1>)}
         }
     }
 
@@ -46,7 +46,7 @@ function FollowingsPage({whichOne}) {
             return (<div>
             <div className="followeduser" key={i.UserName}>
               <div className="col1comm" onClick={toUser}>
-                <img className="miniPicOnPostcomm" src={i.avatar} /><br />
+                <img className="miniPicOnPostcomm" alt="" src={i.avatar} /><br />
                 {i.UserName}<br />
               </div>
               <div className="col2comm">
@@ -64,7 +64,7 @@ function FollowingsPage({whichOne}) {
 
     return(
         <div className="followingsPage">
-            <img className="backImg" src="https://imgur.com/5b8Jev2.png" />
+            <img className="backImg" alt="" src="https://imgur.com/5b8Jev2.png" />
             <div className="headerHere"><Header /></div>
             <div className="individualUsers">
                 <br />

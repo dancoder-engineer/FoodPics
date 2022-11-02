@@ -5,9 +5,7 @@ function EachPicUpload ({handleChange, number, ridThis}) {
     const num = parseInt(number)
     const idName = "file" + number
     const captName = "caption" + number
-    const buttonName = "pic" + number
 
-    let testButton = (<button onClick={ridThis}>-</button>)
   
 
     return(

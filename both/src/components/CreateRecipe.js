@@ -1,6 +1,5 @@
 import React from "react";
-import store from "./Redux/store.js";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setRecipeParam } from './Redux/postSlice.js'
 
 

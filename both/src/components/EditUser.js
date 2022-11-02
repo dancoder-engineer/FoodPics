@@ -13,7 +13,6 @@ function EditUser() {
 
     const [userId, setUserId] = useState(null)
     const [sendingData, setSendingData] = useState({})
-    const [errors, setErrors] = useState([])
 
     useEffect(() => {
         youGetMe() 
@@ -84,14 +83,7 @@ function EditUser() {
             .then (data => {
                 console.log(data)
                 history('/')
-                // if (data.errors) { 
-                //     setErrors(data.errors.map((i, index) => 
-                //         <p className="error" key={index}>{i}</p>
-                //     ))
-                //  }
-                //  else {
-                //     setErrors([])
-                //  }
+
                
             })
     }
@@ -115,7 +107,7 @@ function EditUser() {
         
         <div className="editPage">
             
-            <img className="backImg" src="https://imgur.com/i164KEC.png" />
+            <img className="backImg" alt="" src="https://imgur.com/i164KEC.png" />
             <div className="editHeader">
                 <Header />
             </div>
@@ -133,7 +125,6 @@ function EditUser() {
                 <br />
                 </form>
                 <button onClick={handleSubmit}>Submit</button><br />
-                {errors && errors}
                 <br />
             </div>
 
