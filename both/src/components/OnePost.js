@@ -8,6 +8,12 @@ function OnePost() {
     const [post, setPost] = useState(null)
     const params = useParams()
     const history=useNavigate()
+    
+function makePost() {
+    fetch("/posts/" + params.id)
+    .then(res => res.json())
+    .then(data => setPost(data))
+}
 
     useEffect(() => {
         makePost()
@@ -19,11 +25,6 @@ function OnePost() {
     }, [params.id])
 
     
-function makePost() {
-    fetch("/posts/" + params.id)
-    .then(res => res.json())
-    .then(data => setPost(data))
-}
 
 
 function resetUser(user) {
