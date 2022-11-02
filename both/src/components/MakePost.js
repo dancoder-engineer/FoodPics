@@ -5,7 +5,6 @@ import MultiplePicUploader from './MultiplePicUploader.js'
 import CreateRecipe from './CreateRecipe.js'
 import Header from './Header.js'
 
-import store from "./Redux/store.js";
 import { useDispatch, useSelector } from "react-redux";
 import { setParam, setCaptions, popPic } from './Redux/postSlice.js'
 import { useNavigate } from "react-router-dom";
@@ -197,9 +196,7 @@ function MakePost() {
             .then(() => history('/'))
         
     }
-    function seeRedux() {
-        console.log(Object.keys(makingPost.recipe).length === 3)
-    }
+
 
 
     function checkPics() {
@@ -255,7 +252,7 @@ function MakePost() {
     return(
         <div className="makePostPage">
 
-            <img className="backImg" src="https://imgur.com/OLunZTA.png" />
+            <img className="backImg" alt="" src="https://imgur.com/OLunZTA.png" />
             <div className="makePostHeader">
                 <Header />
             </div>

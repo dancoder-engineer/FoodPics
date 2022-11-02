@@ -2,7 +2,6 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import './info.css'
-import InfoCard from './InfoCard.js'
 import {assembleData} from './sharedfunctions/assembleData.js'
 
 function MakeUser() {
@@ -11,37 +10,6 @@ function MakeUser() {
 
     const [sendingData, setSendingData] = useState({})
     const [errors, setErrors] = useState([])
-
-    function defaultData(e) {
-        if (e.target.id==="Ben") {
-            setSendingData ({
-                UserName: "ChefBenShapiro",
-                password: "mywifeisadoctor",
-                password_confirmation: "mywifeisadoctor",
-                ActualName: "It's not Ben Shapiro... At least I THINK it's not...",
-                Description: "I, who am married to a doctor, am most famous for bombarding the internet will a million videos of myself. If you finsh watching one, any algorithm will show you everything I upload and you will literally never see anything else! Did I mention my wife's a doctor? Because she is.",
-                Pronouns: "I'm right wing. I don't do this!",
-                Website: "http://www.toiletpaperusa.com/",
-                avatar: ""
-        })
-        }
-        if (e.target.id==="Tony") {
-            setSendingData ({
-                UserName: "ChefTonyStarkAsPortrayedbyAntonioBanderas",
-                password: "salt",
-                password_confirmation: "salt",
-                ActualName: "Salt Bae",
-                Description: "I'm famous for putting salt on solid gold that you will put in your body because it's wrapped around meat, but since gold is a metal, your body won't digest it, and it'll go straight into your shitter whole, so you can literally flush solid gold down the toilet to prove how rich you are.",
-                Pronouns: "He/Him",
-                Website: "http://www.saltbae.com/",
-                avatar: ""
-        })
-        
-        
-        
-
-        }
-    }
 
     function handleChange(e){
 
@@ -96,18 +64,7 @@ function MakeUser() {
             })
     }
 
-    function getAv(e) { 
 
-        if (!e.target.value) {return 0}
-        let url = "/posts/"+ e.target.value
-         fetch(url, {method: 'DELETE'})
- }
-
-         function youGetMe() {
-            fetch('/getme/')
-            .then(res => res.json())
-            .then(data => console.log(data))
-         }
 
 
          function goLog() {
@@ -118,7 +75,7 @@ function MakeUser() {
     return(
         
         <div className="registerPage">
-            <img className="backImg" src="https://imgur.com/YmGrKF5.png" />
+            <img className="backImg" alt=""     src="https://imgur.com/YmGrKF5.png" />
             <div className="registerInfo">
                 <h1>Make User</h1>
                 <form id="form">
@@ -149,9 +106,9 @@ function MakeUser() {
 
 export default MakeUser
 
-{/* <div className="devStuff">
+/* <div className="devStuff">
 <button onClick={youGetMe}>Get Me</button>
 <button id="Ben" onClick={defaultData}>Chef Ben</button> 
 <button id="Tony" onClick={defaultData}>Chef Tony</button> 
 <input name="whatever" onClick={getAv} />
-</div> */}
+</div> */

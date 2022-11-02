@@ -95,7 +95,7 @@ function InfoCard({data}) {
 
                     </div>
                      <h3 className="centered">{data.user.UserName}</h3>
-                     <img className="avatarPic" src={data.avatar} /> 
+                     <img className="avatarPic" alt="" src={data.avatar} /> 
                      <p className="centered">
                      Name: {data.user.ActualName} <br />
                      Pronouns: {data.user.Pronouns} <br />

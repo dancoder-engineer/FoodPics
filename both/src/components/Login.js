@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react";
-import {NavLink, useNavigate} from 'react-router-dom'
+import React, {useState} from "react";
+import {useNavigate} from 'react-router-dom'
 
 function Login() {
     const [sendData, setSendData] = useState({})
@@ -43,7 +43,7 @@ function Login() {
 
 return(
     <div className="loginPage">
-        <img className="backImg" src="https://imgur.com/Qe3LN4l.png" />
+        <img className="backImg" alt="" src="https://imgur.com/Qe3LN4l.png" />
         <div className="loginInfo">
             <h1>Login</h1>
             Username: <input id="username" onChange={handleChange} /> <br />
