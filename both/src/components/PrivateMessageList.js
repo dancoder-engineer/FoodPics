@@ -52,7 +52,7 @@ function PrivateMessageList(){
 
             return (
             <div className="centeredAndNice">
-            <h1>No private messages yet.</h1><br />
+            <h1>No private messages yet.</h1>
             <p>If you wish to send someone a private message,<br />please go to their page and click "send a message."</p>
             </div>
             )
