@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     
     resources :recipes, only: [:create, :show]
     resources :posts, only: [:create, :show]
-    resources :users, only [:create, :show, :update, :destroy]
+    resources :users, only: [:create, :show, :update, :destroy]
     resources :followings, only: [:index]
 
     put '/addavatar/:id', to: 'users#addavatar'
