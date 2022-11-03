@@ -64,7 +64,7 @@ class FollowingsController < ApplicationController
             }
         }
         #sort that array by posting time
-        feedPosts = feedPosts.sort{|i| i[:post][:created_at]}
+        feedPosts = feedPosts.sort_by{|i| i[:post][:created_at]}
         feedPosts = feedPosts.reverse
         render json: feedPosts
     end
