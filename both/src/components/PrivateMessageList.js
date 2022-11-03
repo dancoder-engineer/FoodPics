@@ -31,16 +31,17 @@ function PrivateMessageList(){
 
         if (data[0]){
 
-        return data.map((i) => { return (
+        return data.map((i) => {  console.log(i) 
+            return (
         <div key={i.user}>
             <div className="convoList" key={i.user}>
-                <div className="col1comm" onClick={toUser}>
-                    <img id={i.user} className="miniPicOnPostcomm" alt="" src={i.avatar} /><br />
+                <div className="col1comm" id={i.user} onClick={toUser}>
+                    <img id={i.user} className="miniPicOnPostcomm" alt="" src={i.avatar} />
                     {i.user}<br />
                 </div>
             
             <div className="col2comm" id={i.otheruser} onClick={toConvo}>
-                {i.content}
+                {i.sender}: {i.content}
             </div><br />
             </div><br />
         </div>

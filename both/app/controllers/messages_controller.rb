@@ -84,6 +84,7 @@ class MessagesController < ApplicationController
             avatar = rails_blob_path(user.avatar)
             return {
                 otheruser: j.sender == session[:user_id] ? j.recipient : j.sender,
+                sender:j.sender == session[:user_id] ? "You" : User.find(j.sender).UserName,
                 content: j.content,
                 user: user.UserName,
                 avatar: avatar}
