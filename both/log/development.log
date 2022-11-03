@@ -594,3 +594,71 @@ Redirected to https://storage.googleapis.com/bucket-of-food/ftah84ca7k0rd8zemtzu
 Completed 302 Found in 112ms (ActiveRecord: 0.1ms | Allocations: 6440)
 
 
+Started GET "/static/js/main.8a1b40ce.js" for ::1 at 2022-11-02 21:38:37 -0400
+Started GET "/static/css/main.6c539665.css" for ::1 at 2022-11-02 21:38:37 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/static/css/main.6c539665.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/main.8a1b40ce.js"):
+  
+Started GET "/getme/" for ::1 at 2022-11-02 21:38:37 -0400
+Processing by UsersController#getme as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 10ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 7507)
+
+
+Started GET "/getme/" for ::1 at 2022-11-02 21:38:37 -0400
+Processing by UsersController#getme as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 2838)
+
+
+Started GET "/login/main.84ade1f51dc2f289b8f1.hot-update.json" for 127.0.0.1 at 2022-11-02 21:40:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login/main.84ade1f51dc2f289b8f1.hot-update.json"):
+  
+Started GET "/login/static/js/main.8a1b40ce.js" for 127.0.0.1 at 2022-11-02 21:40:05 -0400
+Started GET "/login/static/css/main.6c539665.css" for 127.0.0.1 at 2022-11-02 21:40:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login/static/css/main.6c539665.css"):
+  
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/login/static/js/main.8a1b40ce.js"):
+  
+Started GET "/login/getme/" for 127.0.0.1 at 2022-11-02 21:40:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login/getme"):
+  
+Started GET "/login/getme/" for 127.0.0.1 at 2022-11-02 21:40:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login/getme"):
+  
+Started GET "/login/getme/" for 127.0.0.1 at 2022-11-02 21:40:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login/getme"):
+  
+Started GET "/login/getme/" for 127.0.0.1 at 2022-11-02 21:40:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/login/getme"):
+  
+Started GET "/login/getme/" for 127.0.0.1 at 2022-11-02 21:40:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login/getme"):
+  
+Started GET "/login/getme/" for 127.0.0.1 at 2022-11-02 21:40:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/login/getme"):
+  
+Started GET "/login/getme/" for 127.0.0.1 at 2022-11-02 21:40:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login/getme"):
+  
+Started GET "/login/getme/" for 127.0.0.1 at 2022-11-02 21:40:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login/getme"):
+  
