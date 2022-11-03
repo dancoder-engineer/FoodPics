@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
  # namespace :api do
-    resources :notifications
-    resources :messages
-   resources :posttags
-    resources :tags
-    resources :comments
-    
-    resources :recipes
-    resources :posts
-    resources :users
-    resources :followings
+
+ 
+
+   # resources :notifications
+   resources :messages, only: [:create]
+   #    resources :posttags
+    #   resources :tags
+       resources :comments, only: [:create]
+       
+       resources :recipes, only: [:create, :show]
+       resources :posts, only: [:create, :show]
+       resources :users, only: [:create, :show, :update, :destroy]
+       resources :followings, only: [:index]
+   
 
     put '/addavatar/:id', to: 'users#addavatar'
     get '/useravatar/:id', to: 'users#userAvatar'
