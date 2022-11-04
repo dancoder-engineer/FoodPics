@@ -45,7 +45,7 @@ function FollowingsPage({whichOne}) {
         let uData = data.map((i) => {
             return (<div>
             <div className="followeduser" key={i.UserName}>
-              <div className="col1comm" onClick={toUser}>
+              <div className="col1comm" key={i.UserName} onClick={toUser}>
                 <img className="miniPicOnPostcomm" alt="" src={i.avatar} /><br />
                 {i.UserName}<br />
               </div>
@@ -58,8 +58,8 @@ function FollowingsPage({whichOne}) {
         setUsers(uData)
     }
 
-    function toUser() {
-        history('/user/' + params.user)
+    function toUser(e) {
+        history('/user/' + e.key)
     }
 
     return(
