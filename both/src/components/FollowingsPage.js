@@ -44,9 +44,9 @@ function FollowingsPage({whichOne}) {
     function makeUsersList(data) { 
         let uData = data.map((i) => {
             return (<div>
-            <div className="followeduser" key={i.UserName}>
+            <div className="followeduser" id={i.UserName}>
               <div className="col1comm" id={i.UserName} onClick={toUser}>
-                <img className="miniPicOnPostcomm" alt="" src={i.avatar} /><br />
+                <img className="miniPicOnPostcomm" alt="" id={i.UserName} src={i.avatar} /><br />
                 {i.UserName}<br />
               </div>
               <div className="col2comm">
@@ -59,7 +59,8 @@ function FollowingsPage({whichOne}) {
     }
 
     function toUser(e) {
-        history('/user/' + e.id)
+       // console.log(e.target.id)
+       history('/user/' + e.target.id)
     }
 
     return(
