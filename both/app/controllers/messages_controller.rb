@@ -50,8 +50,6 @@ class MessagesController < ApplicationController
 
     def messagenotification(message)
 
-      #  message = Message.find_by(messageid)
-
         if !message
             return render json: {error: "No such message."}
         end

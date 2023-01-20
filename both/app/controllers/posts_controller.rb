@@ -30,7 +30,7 @@ class PostsController < ApplicationController
                 tags: i.tags ? tagnames(i.tags) : []
         }}
         sortedPosts = postsWithInfo.sort{|i| i[:post][:created_at]}
-      #  sortedPosts = sortedPosts.reverse
+        
       howmanyfollowers = Following.where(followee: params[:id])
       howmanyfollowees = Following.where(follower: params[:id])
       follow = {
@@ -41,17 +41,17 @@ class PostsController < ApplicationController
     end
 
     def create
-   #     return render json: session
+        
         if !session[:user_id]
             return render json:{error: 'Not logged in.'}, status: :forbidden
         end
 
         post = Post.create!(allowed)
 
-        if post.save
-            return render json: post, status: :created
+        return if post.save
+            render json: post, status: :created
         else
-            return render json: {error: "Faild!", post: post}
+            render json: {error: "Faild!", post: post}
         end
 
     rescue ActiveRecord::RecordInvalid => invalid

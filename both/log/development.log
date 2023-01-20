@@ -11668,3 +11668,602 @@ No serializer found for resource: {:UserName=>"Dan", :avatar=>"/rails/active_sto
 Completed 200 OK in 13ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 5418)
 
 
+Started GET "/static/js/main.efe34346.js" for 127.0.0.1 at 2022-12-08 10:22:39 -0500
+Started GET "/static/css/main.1c089a60.css" for 127.0.0.1 at 2022-12-08 10:22:39 -0500
+Started GET "/static/js/main.8a1b40ce.js" for 127.0.0.1 at 2022-12-08 10:22:39 -0500
+Started GET "/static/css/main.6c539665.css" for 127.0.0.1 at 2022-12-08 10:22:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/main.8a1b40ce.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/static/css/main.1c089a60.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/static/css/main.6c539665.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/main.efe34346.js"):
+  
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:22:40 -0500
+Processing by UsersController#getme as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 29ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 7502)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:22:40 -0500
+Processing by UsersController#getme as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 7502)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:22:40 -0500
+Processing by UsersController#getme as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 17ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 7502)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:22:41 -0500
+Processing by UsersController#getme as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 2838)
+
+
+Started POST "/loginback/" for 127.0.0.1 at 2022-12-08 10:22:44 -0500
+Processing by SessionsController#login as JSON
+  Parameters: {"username"=>"Dan", "password"=>"[FILTERED]", "session"=>{"username"=>"Dan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."UserName" = ? LIMIT ?[0m  [["UserName", "Dan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `login'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 71], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `login'
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 200 OK in 294ms (Views: 0.6ms | ActiveRecord: 2.5ms | Allocations: 76464)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:22:45 -0500
+Processing by UsersController#getme as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 71], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+[active_model_serializers]   [1m[36mNotification Load (0.4ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 71]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.58ms)
+Completed 200 OK in 111ms (Views: 9.2ms | ActiveRecord: 2.0ms | Allocations: 93872)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:22:45 -0500
+Processing by UsersController#getme as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 71], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+[active_model_serializers]   [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 71]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.39ms)
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 3512)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:22:45 -0500
+Processing by UsersController#getme as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 71], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+[active_model_serializers]   [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 71]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.31ms)
+Completed 200 OK in 130ms (Views: 10.2ms | ActiveRecord: 2.1ms | Allocations: 93872)
+
+
+Started GET "/makefeed/" for 127.0.0.1 at 2022-12-08 10:22:46 -0500
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:22:46 -0500
+Processing by UsersController#getme as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+Processing by FollowingsController#makefeed as */*
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 71], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  [1m[36mFollowing Load (0.7ms)[0m  [1m[34mSELECT "followings".* FROM "followings" WHERE "followings"."follower" = ?[0m  [["follower", 71]]
+  ↳ app/controllers/followings_controller.rb:50:in `map'
+[active_model_serializers]   [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 71]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 1.0ms | Allocations: 2923)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.34ms)
+Completed 200 OK in 22ms (Views: 12.3ms | ActiveRecord: 0.9ms | Allocations: 22537)
+
+
+Started GET "/makefeed/" for 127.0.0.1 at 2022-12-08 10:22:46 -0500
+Processing by FollowingsController#makefeed as */*
+  [1m[36mFollowing Load (0.2ms)[0m  [1m[34mSELECT "followings".* FROM "followings" WHERE "followings"."follower" = ?[0m  [["follower", 71]]
+  ↳ app/controllers/followings_controller.rb:50:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 16ms (Views: 8.0ms | ActiveRecord: 0.3ms | Allocations: 6322)
+
+
+Started GET "/logoutback/" for 127.0.0.1 at 2022-12-08 10:22:55 -0500
+Processing by SessionsController#logout as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 422)
+
+
+Started GET "/logoutback/" for 127.0.0.1 at 2022-12-08 10:22:55 -0500
+Processing by SessionsController#logout as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started POST "/loginback/" for 127.0.0.1 at 2022-12-08 10:22:58 -0500
+Processing by SessionsController#login as JSON
+  Parameters: {"username"=>"Dan2", "password"=>"[FILTERED]", "session"=>{"username"=>"Dan2", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."UserName" = ? LIMIT ?[0m  [["UserName", "Dan2"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `login'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `login'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 200 OK in 210ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 2634)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:22:58 -0500
+Processing by UsersController#getme as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+[active_model_serializers]   [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 72]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.86ms)
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 3519)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:22:58 -0500
+Processing by UsersController#getme as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+[active_model_serializers]   [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 72]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.49ms)
+Completed 200 OK in 108ms (Views: 10.3ms | ActiveRecord: 1.7ms | Allocations: 95183)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:22:58 -0500
+Processing by UsersController#getme as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+[active_model_serializers]   [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 72]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.54ms)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 3520)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:22:59 -0500
+Started GET "/makefeed/" for 127.0.0.1 at 2022-12-08 10:22:59 -0500
+Processing by UsersController#getme as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+[active_model_serializers]   [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 72]]
+Processing by FollowingsController#makefeed as */*
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.94ms)
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 3522)
+
+
+  [1m[36mFollowing Load (0.1ms)[0m  [1m[34mSELECT "followings".* FROM "followings" WHERE "followings"."follower" = ?[0m  [["follower", 72]]
+  ↳ app/controllers/followings_controller.rb:50:in `map'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 71]]
+  ↳ app/controllers/followings_controller.rb:56:in `block in makefeed'
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."post_id" = ? LIMIT ?[0m  [["post_id", 75], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:59:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 38], ["record_type", "Recipe"], ["name", "pic"], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:60:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 206], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:60:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 75], ["record_type", "Post"], ["name", "pics"]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (3 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 205], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (3 levels) in makefeed'
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posttags" ON "tags"."id" = "posttags"."tag_id" WHERE "posttags"."post_id" = ?[0m  [["post_id", 75]]
+  ↳ app/controllers/followings_controller.rb:103:in `map'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 72]]
+  ↳ app/controllers/followings_controller.rb:56:in `block in makefeed'
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."post_id" = ? LIMIT ?[0m  [["post_id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:59:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 76], ["record_type", "Post"], ["name", "pics"]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 208], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (3 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 209], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (3 levels) in makefeed'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posttags" ON "tags"."id" = "posttags"."tag_id" WHERE "posttags"."post_id" = ?[0m  [["post_id", 76]]
+  ↳ app/controllers/followings_controller.rb:103:in `map'
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."post_id" = ? LIMIT ?[0m  [["post_id", 77], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:59:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 39], ["record_type", "Recipe"], ["name", "pic"], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:60:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 211], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:60:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 77], ["record_type", "Post"], ["name", "pics"]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 210], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (3 levels) in makefeed'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posttags" ON "tags"."id" = "posttags"."tag_id" WHERE "posttags"."post_id" = ?[0m  [["post_id", 77]]
+  ↳ app/controllers/followings_controller.rb:103:in `map'
+No serializer found for resource: {:post=>#<Post id: 77, title: "fdsg", place: "fdg", description: "gfd", captions: "fdgfdg", user_id: 72, created_at: "2022-11-03 22:16:12.196741000 +0000", updated_at: "2022-11-03 22:16:12.205668000 +0000">, :recipe=>#<Recipe id: 39, title: "gdf", ingredientlist: "gfd", guide: "gfd", post_id: 77, created_at: "2022-11-03 22:16:12.917646000 +0000", updated_at: "2022-11-03 22:16:12.932471000 +0000">, :recipepic=>"/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZE09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bd4d092ca82fb334fdaab65e2629d269b8bbb85a/10459104_10154549631590377_7695942079911347144_o.jpg", :pics=>["/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZEk9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85a5abcfc30695595f5fbbad65529101ba7bb5c5/FoodBook%20Logo.png"], :tags=>[]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.62ms)
+Completed 200 OK in 83ms (Views: 2.1ms | ActiveRecord: 4.1ms | Allocations: 93052)
+
+
+Started GET "/makefeed/" for 127.0.0.1 at 2022-12-08 10:22:59 -0500
+Started GET "/useravatar/72" for 127.0.0.1 at 2022-12-08 10:22:59 -0500
+Processing by FollowingsController#makefeed as */*
+Started GET "/useravatar/71" for 127.0.0.1 at 2022-12-08 10:22:59 -0500
+Processing by UsersController#userAvatar as */*
+  Parameters: {"id"=>"72"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[36mFollowing Load (0.1ms)[0m  [1m[34mSELECT "followings".* FROM "followings" WHERE "followings"."follower" = ?[0m  [["follower", 72]]
+  ↳ app/controllers/users_controller.rb:76:in `userAvatar'
+  ↳ app/controllers/followings_controller.rb:50:in `map'
+Processing by UsersController#userAvatar as */*
+  Parameters: {"id"=>"71"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `userAvatar'
+  ↳ app/controllers/users_controller.rb:77:in `userAvatar'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 71], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:77:in `userAvatar'
+  ↳ app/controllers/users_controller.rb:77:in `userAvatar'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 2314)
+
+
+  ↳ app/controllers/users_controller.rb:77:in `userAvatar'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 2296)
+
+
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 71]]
+  ↳ app/controllers/followings_controller.rb:56:in `block in makefeed'
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."post_id" = ? LIMIT ?[0m  [["post_id", 75], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:59:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 38], ["record_type", "Recipe"], ["name", "pic"], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:60:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 206], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:60:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 75], ["record_type", "Post"], ["name", "pics"]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (3 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 205], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (3 levels) in makefeed'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posttags" ON "tags"."id" = "posttags"."tag_id" WHERE "posttags"."post_id" = ?[0m  [["post_id", 75]]
+  ↳ app/controllers/followings_controller.rb:103:in `map'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 72]]
+  ↳ app/controllers/followings_controller.rb:56:in `block in makefeed'
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."post_id" = ? LIMIT ?[0m  [["post_id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:59:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 76], ["record_type", "Post"], ["name", "pics"]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 208], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (3 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 209], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (3 levels) in makefeed'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posttags" ON "tags"."id" = "posttags"."tag_id" WHERE "posttags"."post_id" = ?[0m  [["post_id", 76]]
+  ↳ app/controllers/followings_controller.rb:103:in `map'
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."post_id" = ? LIMIT ?[0m  [["post_id", 77], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:59:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 39], ["record_type", "Recipe"], ["name", "pic"], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:60:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 211], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:60:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 77], ["record_type", "Post"], ["name", "pics"]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (2 levels) in makefeed'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 210], ["LIMIT", 1]]
+  ↳ app/controllers/followings_controller.rb:61:in `block (3 levels) in makefeed'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posttags" ON "tags"."id" = "posttags"."tag_id" WHERE "posttags"."post_id" = ?[0m  [["post_id", 77]]
+  ↳ app/controllers/followings_controller.rb:103:in `map'
+No serializer found for resource: {:post=>#<Post id: 77, title: "fdsg", place: "fdg", description: "gfd", captions: "fdgfdg", user_id: 72, created_at: "2022-11-03 22:16:12.196741000 +0000", updated_at: "2022-11-03 22:16:12.205668000 +0000">, :recipe=>#<Recipe id: 39, title: "gdf", ingredientlist: "gfd", guide: "gfd", post_id: 77, created_at: "2022-11-03 22:16:12.917646000 +0000", updated_at: "2022-11-03 22:16:12.932471000 +0000">, :recipepic=>"/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZE09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bd4d092ca82fb334fdaab65e2629d269b8bbb85a/10459104_10154549631590377_7695942079911347144_o.jpg", :pics=>["/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZEk9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85a5abcfc30695595f5fbbad65529101ba7bb5c5/FoodBook%20Logo.png"], :tags=>[]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.0ms)
+Completed 200 OK in 100ms (Views: 1.9ms | ActiveRecord: 4.8ms | Allocations: 92206)
+
+
+Started GET "/useravatar/72" for 127.0.0.1 at 2022-12-08 10:22:59 -0500
+Processing by UsersController#userAvatar as */*
+  Parameters: {"id"=>"72"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `userAvatar'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:77:in `userAvatar'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:77:in `userAvatar'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 2296)
+
+
+Started GET "/useravatar/71" for 127.0.0.1 at 2022-12-08 10:22:59 -0500
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:22:59 -0500
+Started GET "/commentsbypost/75" for 127.0.0.1 at 2022-12-08 10:22:59 -0500
+Processing by UsersController#getme as */*
+Processing by UsersController#userAvatar as */*
+  Parameters: {"id"=>"71"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+  ↳ app/controllers/users_controller.rb:76:in `userAvatar'
+Started GET "/commentsbypost/77" for 127.0.0.1 at 2022-12-08 10:22:59 -0500
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 71], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  ↳ app/controllers/users_controller.rb:77:in `userAvatar'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  ↳ app/controllers/users_controller.rb:77:in `userAvatar'
+[active_model_serializers]   [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 72]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 2299)
+
+
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.04ms)
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 3514)
+
+
+Processing by CommentsController#bypost as */*
+  Parameters: {"id"=>"75"}
+Processing by CommentsController#bypost as */*
+  Parameters: {"id"=>"77"}
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 75]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 77]]
+  ↳ app/controllers/comments_controller.rb:12:in `bypost'
+  ↳ app/controllers/comments_controller.rb:12:in `bypost'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 13ms (Views: 1.1ms | ActiveRecord: 0.9ms | Allocations: 4161)
+
+
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 3623)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZEk9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85a5abcfc30695595f5fbbad65529101ba7bb5c5/FoodBook%20Logo.png" for 127.0.0.1 at 2022-12-08 10:23:00 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZEk9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85a5abcfc30695595f5fbbad65529101ba7bb5c5", "filename"=>"FoodBook Logo"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 210], ["LIMIT", 1]]
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYzg9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c7482efa0de774e0e354affaf5c991e0d52e9d41/Dan.png" for 127.0.0.1 at 2022-12-08 10:23:00 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYzg9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c7482efa0de774e0e354affaf5c991e0d52e9d41", "filename"=>"Dan"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+Started GET "/useravatar/72" for 127.0.0.1 at 2022-12-08 10:23:00 -0500
+Started GET "/commentsbypost/76" for 127.0.0.1 at 2022-12-08 10:23:00 -0500
+Processing by UsersController#userAvatar as */*
+  Parameters: {"id"=>"72"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `userAvatar'
+Processing by CommentsController#bypost as */*
+  Parameters: {"id"=>"76"}
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:77:in `userAvatar'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:77:in `userAvatar'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 2404)
+
+
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 76]]
+  ↳ app/controllers/comments_controller.rb:12:in `bypost'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 3014)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:23:00 -0500
+Started GET "/commentsbypost/75" for 127.0.0.1 at 2022-12-08 10:23:00 -0500
+Processing by UsersController#getme as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+Processing by CommentsController#bypost as */*
+  Parameters: {"id"=>"75"}
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 75]]
+  ↳ app/controllers/comments_controller.rb:12:in `bypost'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 696)
+
+
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+[active_model_serializers]   [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 72]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.94ms)
+Completed 200 OK in 9ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 3513)
+
+
+[36m  GCS Storage (129.7ms) [0m[34mGenerated URL for file at key: ya5qrn28k165ixpbedof04441jfa (https://storage.googleapis.com/bucket-of-food/ya5qrn28k165ixpbedof04441jfa?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513280&Signature=BV3jJG1%2FKb4%2BycmZMNDEShGmopKlccmAitevX43ygedPVt8jkWEDUURPmQsvbK81azw9kQnpbs%2FhOC3T7eUPC%2FB22rwGzcIj3MNU407lLO0oWJ7%2FjsErMjtuQiKUmMx1e2alm%2Bc%2F2bvxl1sRHrovtnplZJpARQQLIssTz3Ps2xDnRdXqAE0BlJ45izRmBX2Jz56oZkDbca0p01IO5f6EobAsMM7YzY%2ByMqrFUCG7l3TZSgxLcWNyA3Q%2FfqouqKUawMuDfk49lM96Kq2lGqAXn6hT%2BAOibYUWkwPEbslrGu0%2FwytIsNa0rYF3UYwZagBauniC3bDjcCfn2ntMmZumYw%3D%3D&response-content-disposition=inline%3B+filename%3D%22FoodBook+Logo.png%22%3B+filename%2A%3DUTF-8%27%27FoodBook%2520Logo.png&response-content-type=image%2Fpng)[0m
+[36m  GCS Storage (129.7ms) [0m[34mGenerated URL for file at key: nzqerrjfflid6k9je459oij76366 (https://storage.googleapis.com/bucket-of-food/nzqerrjfflid6k9je459oij76366?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513280&Signature=s3H9%2F%2Bz8FayuZn0eEwxPLLGHa%2BqQmEQgusv7HySieYn%2FpqcPebclLgBwFDA28MWzbMxHhEQSK7tiIDoWSq7zcn7v3oaghlxjH5Qp32HCIaG52IbKbY5oXzg3tyXLvXzxm0o5Co5ewHYaXdCpM%2FTYDVQiqrhiv%2Bn5eTlaNY8UVp490CHF4f7LNcRR4B%2FHTJsSMGGqS0h1367k3vC0yxq%2BGhapWGIcjRqo%2FSWkgq3KKhcbKqKfXgPYBsnW2dkBVefuoQrvhJUzlIHkdVqOAylRD48ptoPwi%2BpZ6dI4LEBCN1sDE%2BVQMP9b8zzrBANP4qRhqdpDQEHg3xvR0toBXsI19Q%3D%3D&response-content-disposition=inline%3B+filename%3D%22Dan.png%22%3B+filename%2A%3DUTF-8%27%27Dan.png&response-content-type=image%2Fpng)[0m
+Redirected to https://storage.googleapis.com/bucket-of-food/ya5qrn28k165ixpbedof04441jfa?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513280&Signature=BV3jJG1%2FKb4%2BycmZMNDEShGmopKlccmAitevX43ygedPVt8jkWEDUURPmQsvbK81azw9kQnpbs%2FhOC3T7eUPC%2FB22rwGzcIj3MNU407lLO0oWJ7%2FjsErMjtuQiKUmMx1e2alm%2Bc%2F2bvxl1sRHrovtnplZJpARQQLIssTz3Ps2xDnRdXqAE0BlJ45izRmBX2Jz56oZkDbca0p01IO5f6EobAsMM7YzY%2ByMqrFUCG7l3TZSgxLcWNyA3Q%2FfqouqKUawMuDfk49lM96Kq2lGqAXn6hT%2BAOibYUWkwPEbslrGu0%2FwytIsNa0rYF3UYwZagBauniC3bDjcCfn2ntMmZumYw%3D%3D&response-content-disposition=inline%3B+filename%3D%22FoodBook+Logo.png%22%3B+filename%2A%3DUTF-8%27%27FoodBook%2520Logo.png&response-content-type=image%2Fpng
+Redirected to https://storage.googleapis.com/bucket-of-food/nzqerrjfflid6k9je459oij76366?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513280&Signature=s3H9%2F%2Bz8FayuZn0eEwxPLLGHa%2BqQmEQgusv7HySieYn%2FpqcPebclLgBwFDA28MWzbMxHhEQSK7tiIDoWSq7zcn7v3oaghlxjH5Qp32HCIaG52IbKbY5oXzg3tyXLvXzxm0o5Co5ewHYaXdCpM%2FTYDVQiqrhiv%2Bn5eTlaNY8UVp490CHF4f7LNcRR4B%2FHTJsSMGGqS0h1367k3vC0yxq%2BGhapWGIcjRqo%2FSWkgq3KKhcbKqKfXgPYBsnW2dkBVefuoQrvhJUzlIHkdVqOAylRD48ptoPwi%2BpZ6dI4LEBCN1sDE%2BVQMP9b8zzrBANP4qRhqdpDQEHg3xvR0toBXsI19Q%3D%3D&response-content-disposition=inline%3B+filename%3D%22Dan.png%22%3B+filename%2A%3DUTF-8%27%27Dan.png&response-content-type=image%2Fpng
+Completed 302 Found in 326ms (ActiveRecord: 0.1ms | Allocations: 199955)
+
+
+Completed 302 Found in 490ms (ActiveRecord: 0.1ms | Allocations: 200473)
+
+
+Started GET "/commentsbypost/77" for 127.0.0.1 at 2022-12-08 10:23:00 -0500
+Processing by CommentsController#bypost as */*
+  Parameters: {"id"=>"77"}
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 77]]
+  ↳ app/controllers/comments_controller.rb:12:in `bypost'
+Started GET "/useravatar/72" for 127.0.0.1 at 2022-12-08 10:23:00 -0500
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 3340)
+
+
+Processing by UsersController#userAvatar as */*
+  Parameters: {"id"=>"72"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `userAvatar'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:77:in `userAvatar'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+Started GET "/commentsbypost/76" for 127.0.0.1 at 2022-12-08 10:23:00 -0500
+  ↳ app/controllers/users_controller.rb:77:in `userAvatar'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 2325)
+
+
+Processing by CommentsController#bypost as */*
+  Parameters: {"id"=>"76"}
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 76]]
+  ↳ app/controllers/comments_controller.rb:12:in `bypost'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 695)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:23:00 -0500
+Processing by UsersController#getme as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+[active_model_serializers]   [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 72]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.81ms)
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 3820)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:23:00 -0500
+Processing by UsersController#getme as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+[active_model_serializers]   [1m[36mNotification Load (0.2ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 72]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.07ms)
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 3544)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZE09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bd4d092ca82fb334fdaab65e2629d269b8bbb85a/10459104_10154549631590377_7695942079911347144_o.jpg" for 127.0.0.1 at 2022-12-08 10:23:00 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZE09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bd4d092ca82fb334fdaab65e2629d269b8bbb85a", "filename"=>"10459104_10154549631590377_7695942079911347144_o"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 211], ["LIMIT", 1]]
+[36m  GCS Storage (86.2ms) [0m[34mGenerated URL for file at key: befgnfutuoq9qn1ief19545ob5st (https://storage.googleapis.com/bucket-of-food/befgnfutuoq9qn1ief19545ob5st?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513281&Signature=CyKwAolGqqNdtI75oTwLIk1RArww4ool8tARzRxHa9N%2BOnTylA%2FDRd2BpnEaPZRe%2FXIw899p44FrmlDUDGTDeJMYZrcaMRl66aucU%2B%2F3WTbfVmSu0g1oOxEexCcl6rcE%2FcGITuKH8gM3ylDE%2FRPQOG5wnrR4SNHMk6zpJexEn67LWe2iAf3gT7W14tDS15Rr4TguJyTqhDSPvlRiNI0kGOn7wNSvyQiQQare7WKJZsQeT%2B7zv8Nj7wjZwKwdDq3vVl%2BuWoeaDxqTP8rBkhX9YPciRDwTu8oG4%2BE7txxNzMQ9GjexDAe8oDsY9D0%2BIA3wQIyKtf1u9YOGQfXP2%2ByVUw%3D%3D&response-content-disposition=inline%3B+filename%3D%2210459104_10154549631590377_7695942079911347144_o.jpg%22%3B+filename%2A%3DUTF-8%27%2710459104_10154549631590377_7695942079911347144_o.jpg&response-content-type=image%2Fjpeg)[0m
+Redirected to https://storage.googleapis.com/bucket-of-food/befgnfutuoq9qn1ief19545ob5st?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513281&Signature=CyKwAolGqqNdtI75oTwLIk1RArww4ool8tARzRxHa9N%2BOnTylA%2FDRd2BpnEaPZRe%2FXIw899p44FrmlDUDGTDeJMYZrcaMRl66aucU%2B%2F3WTbfVmSu0g1oOxEexCcl6rcE%2FcGITuKH8gM3ylDE%2FRPQOG5wnrR4SNHMk6zpJexEn67LWe2iAf3gT7W14tDS15Rr4TguJyTqhDSPvlRiNI0kGOn7wNSvyQiQQare7WKJZsQeT%2B7zv8Nj7wjZwKwdDq3vVl%2BuWoeaDxqTP8rBkhX9YPciRDwTu8oG4%2BE7txxNzMQ9GjexDAe8oDsY9D0%2BIA3wQIyKtf1u9YOGQfXP2%2ByVUw%3D%3D&response-content-disposition=inline%3B+filename%3D%2210459104_10154549631590377_7695942079911347144_o.jpg%22%3B+filename%2A%3DUTF-8%27%2710459104_10154549631590377_7695942079911347144_o.jpg&response-content-type=image%2Fjpeg
+Completed 302 Found in 230ms (ActiveRecord: 0.1ms | Allocations: 199837)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:23:01 -0500
+Processing by UsersController#getme as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+[active_model_serializers]   [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 72]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.4ms)
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 3503)
+
+
+Started GET "/getme/" for 127.0.0.1 at 2022-12-08 10:23:01 -0500
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBY3M9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7d8dd3224be25d310feb0d484e3968e6d245f70a/Dan.png" for 127.0.0.1 at 2022-12-08 10:23:01 -0500
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBY3c9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--83d967473da0669d2e0a14134f0d9b02e2403a97/Dan.png" for 127.0.0.1 at 2022-12-08 10:23:01 -0500
+Processing by UsersController#getme as */*
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBY3c9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--83d967473da0669d2e0a14134f0d9b02e2403a97", "filename"=>"Dan"}
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBY3M9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7d8dd3224be25d310feb0d484e3968e6d245f70a", "filename"=>"Dan"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `getme'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 72], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+[36m  GCS Storage (1.3ms) [0m[34mGenerated URL for file at key: km19gt2phbisd3cwvtd8vy59dcs7 (https://storage.googleapis.com/bucket-of-food/km19gt2phbisd3cwvtd8vy59dcs7?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513281&Signature=nPFBXjBax5%2Fsw1354xWxZAlKWbUU9M03d4Ht%2B3aiA46PEuqkSrW5SCfbKIrWUCa2ZhgNIAeKHHeoSVwYdz7UkpFU68oCW%2FlxcI6l3jTfTeNDAcyt40LRY%2BvLb4ZuVuLbajjQZotcx07l1dlBEBmvaFP2CRPHn1ZzLWtVnbdSswh5dDUxzQvgoSk%2B5J4H0gAYQKhqtJxoDRMTxyHnOTin2HF6wBgspv3pnHxYHaLRSp%2FYIrMXNYRerbiZOx6elrA0F%2B%2FgLyPOwWpqVGm9fwEIAE7ubR5iDjW3gsLdCl84rVkv7AnpmDseS2eSikPWR3%2FEm31IoXQPO%2F9S85FSWF4Brg%3D%3D&response-content-disposition=inline%3B+filename%3D%22Dan.png%22%3B+filename%2A%3DUTF-8%27%27Dan.png&response-content-type=image%2Fjpeg)[0m
+Redirected to https://storage.googleapis.com/bucket-of-food/km19gt2phbisd3cwvtd8vy59dcs7?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513281&Signature=nPFBXjBax5%2Fsw1354xWxZAlKWbUU9M03d4Ht%2B3aiA46PEuqkSrW5SCfbKIrWUCa2ZhgNIAeKHHeoSVwYdz7UkpFU68oCW%2FlxcI6l3jTfTeNDAcyt40LRY%2BvLb4ZuVuLbajjQZotcx07l1dlBEBmvaFP2CRPHn1ZzLWtVnbdSswh5dDUxzQvgoSk%2B5J4H0gAYQKhqtJxoDRMTxyHnOTin2HF6wBgspv3pnHxYHaLRSp%2FYIrMXNYRerbiZOx6elrA0F%2B%2FgLyPOwWpqVGm9fwEIAE7ubR5iDjW3gsLdCl84rVkv7AnpmDseS2eSikPWR3%2FEm31IoXQPO%2F9S85FSWF4Brg%3D%3D&response-content-disposition=inline%3B+filename%3D%22Dan.png%22%3B+filename%2A%3DUTF-8%27%27Dan.png&response-content-type=image%2Fjpeg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1084)
+
+
+[36m  GCS Storage (1.3ms) [0m[34mGenerated URL for file at key: ftah84ca7k0rd8zemtzuk5p1h223 (https://storage.googleapis.com/bucket-of-food/ftah84ca7k0rd8zemtzuk5p1h223?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513281&Signature=cqAcNiDyZ0ZAFPopb0Gb%2FTflU4WRAaj35DIJvItuiAXG%2F3r2757p0n%2B6ZbaO6S0oA1yiQHwihzUR%2F%2B1UhZ%2BR3xzGvQL9ayMVeEQAOkXvL21xpMObZQ3hin1vl57czMNUAhSKKb7uDN593HBYL7X4Zw4%2F7DFEmz34vwO1aktFDUVwMMMpQXJA%2FGwF9vNW7MdMez%2BZ2v5PsiqJxt8rjfoN6232sw8V9v%2F2bltUuPtHr4egqdajwPI4ZfNda1FqoYZrFXVRG7eckXBif3xu7xUs1Fq6cwl%2Fz%2FbAzc4xeJp%2FWPRX00wHS3JmxayEEFw4f1QcMRyvghF1t9nbIQR%2FTPORag%3D%3D&response-content-disposition=inline%3B+filename%3D%22Dan.png%22%3B+filename%2A%3DUTF-8%27%27Dan.png&response-content-type=image%2Fpng)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+Redirected to https://storage.googleapis.com/bucket-of-food/ftah84ca7k0rd8zemtzuk5p1h223?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513281&Signature=cqAcNiDyZ0ZAFPopb0Gb%2FTflU4WRAaj35DIJvItuiAXG%2F3r2757p0n%2B6ZbaO6S0oA1yiQHwihzUR%2F%2B1UhZ%2BR3xzGvQL9ayMVeEQAOkXvL21xpMObZQ3hin1vl57czMNUAhSKKb7uDN593HBYL7X4Zw4%2F7DFEmz34vwO1aktFDUVwMMMpQXJA%2FGwF9vNW7MdMez%2BZ2v5PsiqJxt8rjfoN6232sw8V9v%2F2bltUuPtHr4egqdajwPI4ZfNda1FqoYZrFXVRG7eckXBif3xu7xUs1Fq6cwl%2Fz%2FbAzc4xeJp%2FWPRX00wHS3JmxayEEFw4f1QcMRyvghF1t9nbIQR%2FTPORag%3D%3D&response-content-disposition=inline%3B+filename%3D%22Dan.png%22%3B+filename%2A%3DUTF-8%27%27Dan.png&response-content-type=image%2Fpng
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1146)
+
+
+  ↳ app/controllers/users_controller.rb:13:in `getme'
+[active_model_serializers]   [1m[36mNotification Load (0.1ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."user_id" = ?[0m  [["user_id", 72]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:14:in `getme'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.38ms)
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 0.4ms | Allocations: 3658)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYzQ9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cc62229fc93593050f047a438a804913a7d7ee53/Dan.png" for 127.0.0.1 at 2022-12-08 10:23:01 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYzQ9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cc62229fc93593050f047a438a804913a7d7ee53", "filename"=>"Dan"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 206], ["LIMIT", 1]]
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZEE9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d1a8bda2c4b75b076007923572fc496ed14fdccb/burak.png" for 127.0.0.1 at 2022-12-08 10:23:01 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZEE9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d1a8bda2c4b75b076007923572fc496ed14fdccb", "filename"=>"burak"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 208], ["LIMIT", 1]]
+[36m  GCS Storage (1.1ms) [0m[34mGenerated URL for file at key: qsgcufmr1lvnmmaa6iao5tng5aes (https://storage.googleapis.com/bucket-of-food/qsgcufmr1lvnmmaa6iao5tng5aes?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513281&Signature=fUpo9ry%2FrMndBOF%2BKEV7HKUJ9f9uJnSM7TN%2FwmK3%2BwyVsMBalKcEJnuRiqXo18NVQMkuWAF5DwZpbnhOVnfjbHX7Noh1rofO%2BimZaDSieJfrp7L7LcTJgZJN1qA2CgMAi6yVI3OJFpt0XEm8qd2tL%2BvoDDE4loV5y6%2FkE90eX9pm5%2F1yWAuXGLaukCEusUh75L5qtustihPJTH9U2URHfP%2FAUC1YDTNQLwpgRDJ0eXvuDBl7u%2FZLp8IE4QG%2Fzh6xPErHWQ9me86zB4Y%2Fwf%2BTz6iQf3kAQHsMrwMSpKQqC9YBCUUqZRxw635Krk4U%2FIFsTSZAVGjkmAq6MBH1UMqvtQ%3D%3D&response-content-disposition=inline%3B+filename%3D%22burak.png%22%3B+filename%2A%3DUTF-8%27%27burak.png&response-content-type=image%2Fpng)[0m
+Redirected to https://storage.googleapis.com/bucket-of-food/qsgcufmr1lvnmmaa6iao5tng5aes?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513281&Signature=fUpo9ry%2FrMndBOF%2BKEV7HKUJ9f9uJnSM7TN%2FwmK3%2BwyVsMBalKcEJnuRiqXo18NVQMkuWAF5DwZpbnhOVnfjbHX7Noh1rofO%2BimZaDSieJfrp7L7LcTJgZJN1qA2CgMAi6yVI3OJFpt0XEm8qd2tL%2BvoDDE4loV5y6%2FkE90eX9pm5%2F1yWAuXGLaukCEusUh75L5qtustihPJTH9U2URHfP%2FAUC1YDTNQLwpgRDJ0eXvuDBl7u%2FZLp8IE4QG%2Fzh6xPErHWQ9me86zB4Y%2Fwf%2BTz6iQf3kAQHsMrwMSpKQqC9YBCUUqZRxw635Krk4U%2FIFsTSZAVGjkmAq6MBH1UMqvtQ%3D%3D&response-content-disposition=inline%3B+filename%3D%22burak.png%22%3B+filename%2A%3DUTF-8%27%27burak.png&response-content-type=image%2Fpng
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1083)
+
+
+[36m  GCS Storage (117.7ms) [0m[34mGenerated URL for file at key: ouez24ujnd3xrjp1ft6twsk49ux8 (https://storage.googleapis.com/bucket-of-food/ouez24ujnd3xrjp1ft6twsk49ux8?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513281&Signature=GKedthZ1crec4AaGNrJ61ItttjoNf3vqoG3%2BmrBwKlRFV9CAknz4NfLjeiWUdwsM2w%2BkRvq4ykKdHe4qr0Yn1MPgC56XPyHZiROqdl5Jp0%2F2C3%2Fw5yngdfvgsQfRD59FT2aka%2BAhWbyIL63ApxDDsqLBxeEAFOAepWyPRTDeR9rCzm12ysjOhFmR8grFlOKK9J87nDQl5w1c%2FVCP%2F93YWAkSivw4yVfv8LsSZ3CkNU5IL2foHdAy0KyT2EWI3iW0L%2FlKz%2FnFVlSVt79kiC0yE%2F5HSrmqgwA0zN%2BixhPbmNEExAUh%2FMrEndyoFLdlt2xNFZNVf9yNLijg3sYxWxWIQQ%3D%3D&response-content-disposition=inline%3B+filename%3D%22Dan.png%22%3B+filename%2A%3DUTF-8%27%27Dan.png&response-content-type=image%2Fjpeg)[0m
+Redirected to https://storage.googleapis.com/bucket-of-food/ouez24ujnd3xrjp1ft6twsk49ux8?GoogleAccessId=foodbook%40brilliant-era-367002.iam.gserviceaccount.com&Expires=1670513281&Signature=GKedthZ1crec4AaGNrJ61ItttjoNf3vqoG3%2BmrBwKlRFV9CAknz4NfLjeiWUdwsM2w%2BkRvq4ykKdHe4qr0Yn1MPgC56XPyHZiROqdl5Jp0%2F2C3%2Fw5yngdfvgsQfRD59FT2aka%2BAhWbyIL63ApxDDsqLBxeEAFOAepWyPRTDeR9rCzm12ysjOhFmR8grFlOKK9J87nDQl5w1c%2FVCP%2F93YWAkSivw4yVfv8LsSZ3CkNU5IL2foHdAy0KyT2EWI3iW0L%2FlKz%2FnFVlSVt79kiC0yE%2F5HSrmqgwA0zN%2BixhPbmNEExAUh%2FMrEndyoFLdlt2xNFZNVf9yNLijg3sYxWxWIQQ%3D%3D&response-content-disposition=inline%3B+filename%3D%22Dan.png%22%3B+filename%2A%3DUTF-8%27%27Dan.png&response-content-type=image%2Fjpeg
+Completed 302 Found in 264ms (ActiveRecord: 0.1ms | Allocations: 199845)
+
+
+Started GET "/logoutback/" for 127.0.0.1 at 2022-12-08 10:23:06 -0500
+Processing by SessionsController#logout as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 463)
+
+
+Started GET "/logoutback/" for 127.0.0.1 at 2022-12-08 10:23:06 -0500
+Processing by SessionsController#logout as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 513)
+
+

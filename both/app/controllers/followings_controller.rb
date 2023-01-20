@@ -86,7 +86,6 @@ class FollowingsController < ApplicationController
 private
 
     def getuserslist(foll, isfollowedby)
-      #  foll = Following.where({follower: userId})
          if !foll[0]
              return {error: "No such followings."}
          end
@@ -104,7 +103,3 @@ private
     end
 
 end
-
-
-#get '/followersof/:user', to: 'followings#followersof'
-#get '/followedby/:user', to: 'followings#followedby'

@@ -28,8 +28,6 @@ function MakePost() {
 
     const makingPost = useSelector((state) => state.post);
 
-    //store.subscribe(() => console.log(makingPost))
-
 
 
 

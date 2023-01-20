@@ -12,7 +12,6 @@ class TagsController < ApplicationController
             found = Tag.find_by(tag: i)
             found ? werethere.push(messwithtags(found.id)): werethere.push(maketag(i))}
         render json: {tags: Tag.all, posttags: Posttag.all}
-    #    render json: {par: params}
     end
 
     def postsbytag
