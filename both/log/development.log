@@ -12267,3 +12267,4 @@ Processing by SessionsController#logout as */*
 Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 513)
 
 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
