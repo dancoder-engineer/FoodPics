@@ -70,7 +70,7 @@ function EditUser() {
         let formData = new FormData()
         formData = assembleData(sendingData, "user")
 
-        if (sendingData.avpic, sendingData.avatar) {
+        if (sendingData.avpic && sendingData.avatar) {
             formData.append('user[avatar]', sendingData.avpic, sendingData.avatar)
         }
 
