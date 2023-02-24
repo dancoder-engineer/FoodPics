@@ -29,7 +29,7 @@ user = User.create({
     Website: "http://this.one",
 })
 
-user.avatar.attach({io: File.open('./pics/Dan.png'), filename: 'Dan.png'})
+user.avatar.attach({io: File.open('./pics/Dan.png'), filename: 'Dan.png', content_type: 'image/png'})
 
 
 
@@ -43,8 +43,8 @@ post = Post.create({
 })
 
 post.pics.attach([
-    {io: File.open('./pics/pizza.jpg'), filename: 'Dan.png'},
-     {io: File.open('./pics/soup.jpg'), filename: 'Dan.png'}
+    {io: File.open('./pics/pizza.jpg'), filename: 'pizza.png', content_type: 'image/png'},
+     {io: File.open('./pics/soup.jpg'), filename: 'soup.png', content_type: 'image/png'}
     ])
 
     tag = Tag.create({tag: "foodie"})
