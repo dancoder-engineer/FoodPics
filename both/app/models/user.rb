@@ -8,5 +8,6 @@ class User < ApplicationRecord
     
     validates :UserName, format: { with: /\A[a-zA-Z0-9]+\Z/ }
     validates :UserName, uniqueness: true
-    validates :UserName, :ActualName, :Description, :Pronouns, :Website, :avatar, presence: true
+    validates :UserName, :ActualName, :Description, :Pronouns, :Website, presence: true
+    #validates :UserName, :ActualName, :Description, :Pronouns, :Website, :avatar, presence: true
 end

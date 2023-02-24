@@ -8,7 +8,8 @@ class Post < ApplicationRecord
 
     has_many_attached :pics, dependent: :destroy
 
-    validates :title, :description, :place, :pics, presence: true
+    validates :title, :description, :place, presence: true
+    #validates :title, :description, :place, :pics, presence: true
 
     # def pic_urls
     #     pics.map{|p| Rails.application.routes.url_helpers.url_for(p) }

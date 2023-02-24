@@ -17,9 +17,12 @@ Recipe.destroy_all
 
 
 
+
+
 user = User.create({
     UserName: "Dan",
     password: "a",
+    password_confirmation: "a",
     ActualName: "Dan Seminara",
     Description: "Welcome to my website! Enjoy all the pictures of food and recipes!!",
     Pronouns: "He/Him",
@@ -69,6 +72,7 @@ recipe.pic.attach({io: File.open('./pics/daiyapizza.jpg'), filename: 'Dan.png'})
 userb = User.create({
     UserName: "Dan2",
     password: "a",
+    password_confirmation: "a",
     ActualName: "Dan Seminara",
     Description: "Welcome to my website! Enjoy all the pictures of food and recipes!!",
     Pronouns: "He/Him",
