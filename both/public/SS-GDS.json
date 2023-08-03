@@ -1,0 +1,38 @@
+{
+"title": "South Shore's Very Own GDS",
+
+"data": [
+    
+    {
+            "label": "0",
+            "type": "multiplechoice",
+            "text": "Who's the caller?",
+            "options":[
+                "1. The patient or an agent on their behalf",
+                "2. A pharmacy",
+                "3. A doctor's office",
+                "4. A lab",
+                "5. Other"
+            ],
+            "labels": ["70", "40", "20", "65", "sendEmail"]
+        },
+
+        {
+            "label": "sendEmail",
+            "type": "message",
+            "text": "Use the message form to send an e-mail to Toni and Gigi with a message and callback number."
+        },
+
+        {
+            "label": "70",
+            "type": "yesno",
+            "text": "Well, yes or no?",
+            "labels": ["0", "sendEmail"]
+        }
+  
+
+
+]
+
+}
+

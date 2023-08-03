@@ -14,6 +14,8 @@ import FollowingsPage from './components/FollowingsPage.js';
 import PrivateMessageList from './components/PrivateMessageList.js'
 import MessageThread from './components/MessageThread.js'
 import OnePost from './components/OnePost.js'
+import QbLike from './QbLike/QbLike.js'
+import SSGMain from './SS-GDS/SSGMain.js'
 
 function App() {
 
@@ -35,6 +37,8 @@ function App() {
         <Route path='/privatemessages' element={<PrivateMessageList />} />
         <Route path='/messagethread/:id' element={<MessageThread />} />
         <Route path='/onepost/:id' element={<OnePost />} />
+        <Route path='/qb/' element={<QbLike />} />
+        <Route path='/ssgds/' element={<SSGMain />} />
       </Routes>
     </BrowserRouter>
     
