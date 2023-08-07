@@ -12,7 +12,7 @@ function DivYesNo({data, onChange, pl}){
     function makeButtons(){
         return(
             <div>
-                <button id={data.labels[0] + "-" + pl + "-" + data.label} onClick={onChange}>Yes</button>
+                <button id={data.labels[0] + "-" + pl + "-" + data.label} onClick={onChange}>Yes</button><span>   </span>   
                 <button id={data.labels[1] + "-" + pl + "-" + data.label} onClick={onChange}>No</button>
             </div>
         )

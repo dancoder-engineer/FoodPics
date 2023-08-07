@@ -92,7 +92,7 @@
         {
             "label": "53",
             "type": "message",
-            "text": ["Do a med refill task. Don’t forget the following in the text box:","ast appointment ","Next appointment ","*****************any extra info"]
+            "text": ["Do a med refill task. Don’t forget the following in the text box:","Last appointment ","Next appointment ","*****************any extra info"]
         },
         {
             "label": "57",

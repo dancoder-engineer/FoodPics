@@ -10,7 +10,6 @@ function DivMultipleChoice({data, onChange, pl}){
     
 
     useEffect(() => {
-        clearBox()
         if(box) { document.getElementById(pl).selectedIndex = 0 }
         setBox(makeBox())
         
@@ -19,7 +18,6 @@ function DivMultipleChoice({data, onChange, pl}){
 
 
 
-    function clearBox(){ setBox(null) }
 
     function makeBox(){
 
