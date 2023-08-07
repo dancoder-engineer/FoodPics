@@ -14,13 +14,123 @@
                 "4. A lab",
                 "5. Other"
             ],
-            "labels": ["70", "40", "20", "65", "sendEmail"]
+            "labels": ["64", "40", "20", "60", "sendEmail"]
         },
+
+        {
+            "label": "20",
+            "type": "multiplechoice",
+            "text": "What does the doctor's office need?",
+            "options":[
+                "1. A referral",
+                "2. Patient’s bw/ekg/other tests",
+                "3. Medical records"
+            ],
+            "labels": ["23", "30", "27"]
+        },
+
+        {
+            "label": "23",
+            "type": "yesno",
+            "text": "Has the pt been seen in the past 6 months (3 for a controlled substance?)",
+            "labels": ["25", "24"]
+        },
+ 
+        {
+            "label": "24",
+            "type": "message",
+            "text": ["The pt will need an appointment before they can have a referral if they haven’t been seen in too long."]
+        },
+        {
+            "label": "25",
+            "type": "message",
+            "text": ["Gather the following info and make a referral authorization message (Note, if they don’t have the NPI number or any other info, you can usually find it on Google):","1. Confirm if the patient needs a referral or pre-authorization: Referral","2. Specialist name, address, phone number, and their specialty:","3. Providers NPI # (or ID for specific insurance):","4. Reason for the visit and the number of visits required:","5. Appointment date:","6. Date of patients last visit in this office:","7. Fax number: "]
+        },
+        {
+            "label": "27",
+            "type": "message",
+            "text": ["Have them call Verisma at 833-321-3388 for the medical records."]
+        },
+
+        {
+            "label": "30",
+            "type": "yesno",
+            "text": "Is the patient at the other doctor’s office now?",
+            "labels": ["33", "37"]
+        },
+        {
+            "label": "33",
+            "type": "message",
+            "text": ["Get the doctor’s name and fax number and call the backline to get that info over right away."]
+        },
+        {
+            "label": "37",
+            "type": "message",
+            "text": ["Send a task with what’s needed and the dr’s office phone and fax numbers, such as:", "The office of Dr. _______ is requesting this patient’s _____________. Please fax to ____________. Can call back at ___________ Thank you."]
+        },
+        {
+            "label": "40",
+            "type": "multiplechoice",
+            "text": "What does the pharmacy need?",
+            "options":[
+                "1. A med refill",
+                "2. A prior authorization"
+            ],
+            "labels": ["50", "45"]
+        },
+        {
+            "label": "45",
+            "type": "message",
+            "text": ["Please call the backline, as any time a pharmacy calls about a prior auth, that’s a backline call."]
+        },
+        {
+            "label": "50",
+            "type": "yesno",
+            "text": "Has the pt been seen in the past 6 months?",
+            "labels": ["53", "57"]
+        },
+        {
+            "label": "53",
+            "type": "message",
+            "text": ["Do a med refill task. Don’t forget the following in the text box:","ast appointment ","Next appointment ","*****************any extra info"]
+        },
+        {
+            "label": "57",
+            "type": "message",
+            "text": ["Schedule the pt for an appointment. The patient will need to call the patient and get another appointment for any med refills."]
+        },
+        {
+            "label": "60",
+            "type": "multiplechoice",
+            "text": "Why is the lab calling?",
+            "options":[
+                "1. An abnormal result",
+                "2. A billing question"
+            ],
+            "labels": ["62", "65"]
+        },
+        {
+            "label": "62",
+            "type": "message",
+            "text": ["Call the backline and tell them the lab has an abnormal result."]
+        },
+        {
+            "label": "65",
+            "type": "message",
+            "text": ["All billing questions go to the billing department at (516) 876-5555."]
+        },
+
+    {
+        "label": "57x",
+        "type": "message",
+        "text": ""
+    },
+
 
         {
             "label": "sendEmail",
             "type": "message",
-            "text": "Use the message form to send an e-mail to Toni and Gigi with a message and callback number."
+            "text": ["Use the message form to send an e-mail to Toni and Gigi with a message and callback number."]
         },
 
         {

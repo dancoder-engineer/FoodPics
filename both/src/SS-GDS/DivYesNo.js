@@ -1,4 +1,4 @@
-import './Qb.css';
+import './SSGDS.css';
 import { useState, useEffect } from 'react';
 
 function DivYesNo({data, onChange, pl}){
@@ -12,16 +12,20 @@ function DivYesNo({data, onChange, pl}){
     function makeButtons(){
         return(
             <div>
-                <button id={data.labels[0] + "-" + pl} onClick={onChange}>Yes</button>
-                <button id={data.labels[1] + "-" + pl} onClick={onChange}>No</button>
+                <button id={data.labels[0] + "-" + pl + "-" + data.label} onClick={onChange}>Yes</button>
+                <button id={data.labels[1] + "-" + pl + "-" + data.label} onClick={onChange}>No</button>
             </div>
         )
     }
 
     return(
         <div>
-            <p>{data.text}</p>
-            {buttons && buttons}
+            <div className='question'>
+                <p>{data.text}</p>
+            </div>
+            <div className='content'>
+                {buttons && buttons}
+            </div>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import './Qb.css';
+import './SSGDS.css';
 import { useState, useEffect } from 'react';
 
 import DivMessage from "./DivMessage.js"
@@ -9,10 +9,7 @@ function SSGMain() {
 
   let curr = {}
 
-  const [text, setText] = useState(null)
-  const [options, setOptions] = useState(null)
-  const [showFileLoad, setShowFileLoad] = useState("shown")
-  const [showGame, setShowGame] = useState("unshown")
+
   const [title, setTitle] = useState("")
   const [divs, setDivs] = useState([])
   let flags = {}
@@ -34,6 +31,7 @@ function SSGMain() {
   function setup(lbl) { 
 
     let newDiv
+    let divList = divs
 
     curr = getPlace(lbl)
     console.log(curr)
@@ -51,7 +49,7 @@ function SSGMain() {
       newDiv = <DivYesNo data={curr} onChange={handleChangeButton} pl={divs.length}/>
     }
 
-      let divList = divs
+      
       divList.push(newDiv)
   //    console.log(divList)
       setDivs([...divList])
@@ -67,67 +65,54 @@ function SSGMain() {
     if (curr.instructions[0] === "send") { flags[curr.instructions[1]] === curr.instructions[2] ? setup(curr.instructions[3]) : setup(curr.instructions[4])}
   }
 
-  function makeText(text) {
-    let pars = text.split('\n')
-    setText(pars.map((i, index) => <p key={index}>{i}</p>))
-  }
 
   function getPlace(lbl) { 
     return (gdsData.find(i => i.label === lbl))
   }
 
-  function clickOption(e) {
-    setup(curr.labels[parseInt(e.target.id)])
-  }
-
-  function makeOptions(info) { 
-      let opts = info.options.map((i, index) => {
-          return(
-          <div key={index}>
-            <button id={index} className='centered' onClick={clickOption}>{i}</button><br />
-          </div>
-          )
-    })
-      setOptions(opts)
-  }
+  
 
   function handleChangeDropdown(e) {
+    
    
 
-  let divList = divs
+    clearList(parseInt(e.target.id))
 
-   while(divList.length > parseInt(e.target.id)+1) {
-      
-      divList.pop()
-   }
-
-    setDivs([...divList])
     setup(e.target.value)
   }
 
 
 
   function handleChangeButton(e) {
-    //console.log(e.target.id)
-    let strs = e.target.id.split("-")
+
+      let strs = e.target.id.split("-")
  
-    let divList = divs
- 
-    while(divList.length > parseInt(strs[1])+1) {
-      // console.log("a")
-       divList.pop()
-    }
- 
-     setDivs([...divList])
-     setup(strs[0])
+      clearList(parseInt(strs[1]))
+
+      setup(strs[0])
    }
 
 
 
+   function clearList(len){
+    let divList = divs
+ 
+    while(divList.length > len+1) {
+       divList.pop()
+    }
+ 
+     setDivs(divList)
+
+   }
+
+
+
+
   return (
-    
-    <div>
-      {divs && divs}
+    <div className='bg-div'>
+      <div className='main-div'>
+        {divs && divs}
+      </div>
     </div>
   );
 }

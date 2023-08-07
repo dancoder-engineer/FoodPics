@@ -1,0 +1,29 @@
+.bg-div{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(180deg, blue, darkblue);
+  width:100%;
+  min-height:100vh;
+}
+
+.main-div{
+  padding:30px;
+  background-color: #c3c3ca;
+  min-height:85vh;
+  width:90%;
+}
+
+.question{
+  border-radius: 10px;
+  background-color: lightblue;
+  width:90%;
+  padding-left: 15px;
+  padding-top:.001ch;
+  padding-bottom:.0009ch;
+}
+
+.content{
+  padding-left: 30px;
+}
