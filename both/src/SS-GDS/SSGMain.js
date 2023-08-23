@@ -56,15 +56,6 @@ function SSGMain() {
 
   }
 
-  function checkFlags(curr) {
-    // Set a flag to something
-    //    ["set", "weapon", "dagger"]
-    // If the flag (weapon) is (dagger), go to (36), or else go to (37)
-    //    ["send", "weapon", "dagger", "36", "37"]
-    if (curr.instructions[0] === "set") { flags[curr.instructions[1]] = curr.instructions[2] }
-    if (curr.instructions[0] === "send") { flags[curr.instructions[1]] === curr.instructions[2] ? setup(curr.instructions[3]) : setup(curr.instructions[4])}
-  }
-
 
   function getPlace(lbl) { 
     return (gdsData.find(i => i.label === lbl))

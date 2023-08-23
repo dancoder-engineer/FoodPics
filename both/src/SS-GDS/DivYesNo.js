@@ -5,7 +5,7 @@ function DivYesNo({data, onChange, pl}){
 
     const[buttons, setButtons] = useState([])
 
-    useEffect(() => setButtons(makeButtons()), [])
+    useEffect(() => setButtons(makeButtons()), [data.text])
 
 
 

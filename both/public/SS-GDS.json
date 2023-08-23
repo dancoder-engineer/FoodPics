@@ -32,7 +32,7 @@
         {
             "label": "23",
             "type": "yesno",
-            "text": "Has the pt been seen in the past 6 months (3 for a controlled substance?)",
+            "text": "Has the pt been seen in the past 6 months?",
             "labels": ["25", "24"]
         },
  
@@ -86,7 +86,7 @@
         {
             "label": "50",
             "type": "yesno",
-            "text": "Has the pt been seen in the past 6 months?",
+            "text": "Has the pt been seen in the past 6 months (3 for a controlled substance?)",
             "labels": ["53", "57"]
         },
         {
